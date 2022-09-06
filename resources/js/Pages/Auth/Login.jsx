@@ -37,23 +37,8 @@ export default function Login({ status, canResetPassword }) {
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <form onSubmit={submit}>
+
                 <div>
-                    <Label forInput="username" value="Username" />
-
-                    <Input
-                        type="text"
-                        name="username"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
-
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
-
-                {/* <div>
                     <Label forInput="email" value="Email" />
 
                     <Input
@@ -67,7 +52,7 @@ export default function Login({ status, canResetPassword }) {
                     />
 
                     <InputError message={errors.email} className="mt-2" />
-                </div> */}
+                </div>
 
                 <div className="mt-4">
                     <Label forInput="password" value="Password" />
