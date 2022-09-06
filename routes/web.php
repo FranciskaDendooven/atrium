@@ -28,4 +28,12 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::get('brainfarts', [BrainFartsController::class, 'show'])->name("brainFart");
+
+
+
+
 require __DIR__.'/auth.php';
+
+
