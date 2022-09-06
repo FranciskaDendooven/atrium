@@ -32,9 +32,6 @@ Route::get('/codeQA', function () {
     return Inertia::render('CodeQA');
 })->middleware(['auth', 'verified'])->name('codeQA');
 
-<<<<<<< HEAD
-require __DIR__ . '/auth.php';
-=======
 Route::get('/codeShare', function () {
     return Inertia::render('CodeShare');
 })->middleware(['auth', 'verified'])->name('codeShare');
@@ -67,4 +64,3 @@ Route::get('/userSettings', function () {
 
 
 require __DIR__.'/auth.php';
->>>>>>> 25a388e65564513362cee686e37128e01514fc87
