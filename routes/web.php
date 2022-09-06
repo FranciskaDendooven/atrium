@@ -28,17 +28,6 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-<<<<<<< HEAD
-
-Route::get('brainfarts', [BrainFartsController::class, 'show'])->name("brainFart");
-
-
-
-=======
-Route::get('/codeQA', function () {
-    return Inertia::render('CodeQA');
-})->middleware(['auth', 'verified'])->name('codeQA');
->>>>>>> 1b8880624a09c82804ac22f44f0b8bea3e1f3587
 
 require __DIR__.'/auth.php';
 
