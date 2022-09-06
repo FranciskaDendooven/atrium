@@ -32,4 +32,35 @@ Route::get('/codeQA', function () {
     return Inertia::render('CodeQA');
 })->middleware(['auth', 'verified'])->name('codeQA');
 
+Route::get('/codeShare', function () {
+    return Inertia::render('CodeShare');
+})->middleware(['auth', 'verified'])->name('codeShare');
+
+Route::get('/brainFarts', function () {
+    return Inertia::render('BrainFarts');
+})->middleware(['auth', 'verified'])->name('brainFarts');
+
+Route::get('/pif', function () {
+    return Inertia::render('Pif');
+})->middleware(['auth', 'verified'])->name('pif');
+
+Route::get('/techNews', function () {
+    return Inertia::render('TechNews');
+})->middleware(['auth', 'verified'])->name('techNews');
+
+Route::get('/userProfile', function () {
+    return Inertia::render('UserProfile');
+})->middleware(['auth', 'verified'])->name('userProfile');
+
+Route::get('/userSettings', function () {
+    return Inertia::render('UserSettings');
+})->middleware(['auth', 'verified'])->name('userSettings');
+
+
+
+
+
+
+
+
 require __DIR__.'/auth.php';

@@ -12,7 +12,7 @@ export default function CodeQA(props) {
             <Head title="Code Q&A" />
 
             <div className="py-12">
-              test some!
+              test some! CodeQA
             </div>
         </Authenticated>
     );
