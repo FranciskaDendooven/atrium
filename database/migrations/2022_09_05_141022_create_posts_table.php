@@ -19,8 +19,8 @@ return new class extends Migration
             // $table->foreignId('community_id')->constrained();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('url');
-            $table->text('content');
+            $table->string('url')->nullable();
+            $table->text('content')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
