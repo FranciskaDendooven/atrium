@@ -58,44 +58,6 @@ export default function Dashboard(props) {
 
                                     <div className="flex flex-col">
                                     <div className="mb-0">
-                                        <label className="">Slug</label>
-                                        <input 
-                                            type="text"
-                                            className="w-full px-4 py-2"
-                                            label="slug"
-                                            name="slug"
-                                            value={data.slug}
-                                            onChange={(e)=>
-                                            setData("slug", e.target.value)}
-                                         />
-
-                                        <span className="text-red-600">
-                                            {errors.slug}
-                                        </span>
-                                    </div>
-                                    </div>
-
-                                    <div className="flex flex-col">
-                                    <div className="mb-0">
-                                        <label className="">Url</label>
-                                        <input 
-                                            type="text"
-                                            className="w-full px-4 py-2"
-                                            label="url"
-                                            name="url"
-                                            value={data.url}
-                                            onChange={(e)=>
-                                            setData("url", e.target.value)}
-                                         />
-
-                                        <span className="text-red-600">
-                                            {errors.url}
-                                        </span>
-                                    </div>
-                                    </div>
-
-                                    <div className="flex flex-col">
-                                    <div className="mb-0">
                                         <label className="">Content</label>
                                         <input 
                                             type="text"
@@ -112,6 +74,26 @@ export default function Dashboard(props) {
                                         </span>
                                     </div>
                                     </div>
+
+                                    <div className="flex flex-col">
+                                    <div className="mb-0">
+                                        <label className="">Tag</label>
+                                        <input 
+                                            type="text"
+                                            className="w-full px-4 py-2"
+                                            label="tag"
+                                            name="tag"
+                                            value={data.tag}
+                                            onChange={(e)=>
+                                            setData("tag", e.target.value)}
+                                         />
+
+                                        <span className="text-red-600">
+                                            {errors.tag}
+                                        </span>
+                                    </div>
+                                    </div>
+                                    
                                     <div className="mt-4">
                                         <button
                                             type="submit"

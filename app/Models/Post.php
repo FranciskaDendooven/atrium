@@ -2,29 +2,28 @@
 
 namespace App\Models;
 
-// use Cviebrock\EloquentSluggable\Sluggable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    public function save(array $options = array())
+    {
+        if( $this->user_id)
+        {
+            $this->user_id = Auth::id();
+        }
+
+        parent::save($options);
+    }
+
+    protected $fillable = [ 
         'title',
-        'slug',
-        'url',
         'content',
+        'tag',
     ];
-
-// public function sluggable() : array
-// {
-//     return [
-//         'slug'=>[
-//             'source' => 'name'
-//         ]
-//         ];
-
-// }
 
 }

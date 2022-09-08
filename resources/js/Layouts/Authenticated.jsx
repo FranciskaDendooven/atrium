@@ -28,8 +28,8 @@ export default function Authenticated({ auth, header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    href={route("codeQA")}
-                                    active={route().current("codeQA")}
+                                    href={route("posts.index")}
+                                    active={route().current("posts.index")}
                                 >
                                     Code Q&A
                                 </NavLink>

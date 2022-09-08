@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Inertia\Inertia;
 use App\Models\Post;
-use Illuminate\Support\Facades\Validator; 
+use Inertia\Inertia;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('updated_at', 'DESC')->get();
         return Inertia::render('Posts/Index', ['posts' => $posts]);
+    }
+
+    public function showUser($id)
+    {
+        $user = User::find($id);
+        $posts = $user->posts;
+        return view('posts.user')->with("user", $user)->with('title', $posts);
     }
 
     public function create()
@@ -22,38 +30,45 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        Validator::make($request->all(), [
-            'user_id' => auth()->id(),
-            'title' => ['required', 'min:5'],
-            'slug' => ['nullable'],
-            'url' => ['nullable', 'url'],
-            'content' => ['required', 'min:10'],
+        $newPost = Post::create([
+            'user_id' => auth()->user()->id,
+            'title' => $request->title,
+            'content' => $request->content,
+            'tag' => $request->tag,
         ])->validate();
 
-        Post::create($request->all());
+        // if($newPost){
+        // return response()->json(["status" => 200]);
+        // }
 
         return redirect()->route('posts.index');
+        
     }
 
-    public function edit(Post $post)
+
+    public function edit($id)
     {
+        $posts = Post::find($id);
+
+        // if($posts -> save()){
+        // return response()->json(["status" => 200]);
+        // }
+
         return Inertia::render('Posts/Edit', [
-            'post'=> $post
+            'posts'=> $posts
         ]);
     }
 
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
-        Validator::make($request->all(), [
-            'user_id' => auth()->id(),
-            'title' => ['required', 'min:5'],
-            'slug' => ['nullable'],
-            'url' => ['nullable', 'url'],
-            'content' => ['required', 'min:10'],
-        ])->validate();
+        $posts = Post::find($id)->validate();
+        $posts->title =$request->title;
+        $posts->content =$request->content;
+        $posts->tag =$request->tag;
 
-        Post::find($id)->update($request->all());
-
+        // if($posts -> save()){
+        // return response()->json(["status" => 200]);
+        // }
         return redirect()->route('posts.index');
     }
 
@@ -61,7 +76,12 @@ class PostController extends Controller
     {
         Post::find($id)->delete();
 
+        // if($posts -> delete()){
+        // return response()->json(["status" => 200]);
+        // }
+
         return redirect()->route('posts.index');
     }
 
 }
+ 

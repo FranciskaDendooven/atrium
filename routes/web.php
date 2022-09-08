@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
 
 /*
@@ -58,12 +58,6 @@ Route::get('/userProfile', function () {
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->middleware(['auth', 'verified'])->name('userSettings');
-
-
-
-
-
-
 
 
 require __DIR__.'/auth.php';
