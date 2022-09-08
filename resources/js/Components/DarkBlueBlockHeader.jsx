@@ -1,11 +1,9 @@
 import React from "react";
 
-export default function DarkBlueBlockHeader() {
+export default function DarkBlueBlockHeader({ children }) {
     return (
-        <div className="w-full flex flex-row flex-wrap sm:justify-center items-center px-6 py-4 pt-6 sm:pt-0 bg-darkblue rounded-lg shadow-md">
-
-                <img src=" {{ asset('images/atrium-icon-darkblue.png') }} " width="200px" alt="User Avatar picture" />
-
+        <div className="max-w-7xl flex flex-col flex-wrap sm:justify-center items-center px-6 py-4 pt-6 sm:pt-0 bg-darkblue shadow-md ">
+            {children}
         </div>
     );
 }
