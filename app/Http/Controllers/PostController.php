@@ -51,10 +51,6 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        // if($posts -> save()){
-        // return response()->json(["status" => 200]);
-        // }
-
         return Inertia::render('Posts/Edit', [
             'post'=> $post
         ]);
@@ -74,19 +70,15 @@ class PostController extends Controller
         $post->tag =$request->tag;
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('Success', 'Post udated!');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        // confirmation!
+        dd($request);
         Post::find($id)->delete();
 
-        // if($posts -> delete()){
-        // return response()->json(["status" => 200]);
-        // }
-
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('Success', 'Post deleted!');
     }
 
 }

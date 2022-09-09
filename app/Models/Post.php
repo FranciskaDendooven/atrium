@@ -14,6 +14,7 @@ class Post extends Model
         'title',
         'content',
         'tag',
+        'soft_delete',
     ];
 
 }

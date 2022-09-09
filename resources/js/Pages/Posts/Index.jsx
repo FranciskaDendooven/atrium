@@ -6,7 +6,7 @@ export default function Dashboard(props) {
     const {posts} = usePage().props;
 
     const destroy = (event) => {
-        if(confirm("Are you sure you want to delete this user?")){
+        if(confirm("Are you sure you want to delete this post?")){
             Inertia.delete(route("posts.destroy", e.currentTarget.id));
         }
     };
@@ -60,11 +60,12 @@ export default function Dashboard(props) {
                                                     </Link>
 
                                                     <button
-                                                        onclick={destroy}
+                                                        onClick={destroy}
                                                         id={id}
                                                         tabIndex="-1"
                                                         type="button"
                                                         className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                                        // href={route("posts.edit", id)}
                                                     >
                                                         Delete
                                                     </button>
@@ -78,7 +79,7 @@ export default function Dashboard(props) {
                                                     className="px-6 py-4 border-t"
                                                     colSpan={4}
                                                 >    
-                                                No content found.
+                                                Be the first to post!
                                                 </td>
                                             </tr>
                                         )}
