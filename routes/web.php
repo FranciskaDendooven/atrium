@@ -58,9 +58,4 @@ Route::get('/userSettings', function () {
 
 
 
-
-
-
-
-
 require __DIR__.'/auth.php';

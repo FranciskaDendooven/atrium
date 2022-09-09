@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
-import Title from "@/Components/Title";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -13,7 +12,7 @@ export default function Profile(props, auth) {
             errors={props.errors}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Home
+                    {props.auth.user.name} Profile
                 </h2>
             }
         >
@@ -23,18 +22,18 @@ export default function Profile(props, auth) {
                 <div>
                     <DarkBlueBlockHeader>
                         <section className="flex flex-row ">
-                            <Title title="Hello" />
-                            <h1 className="font-bold text-gray-200 text-2xl ml-2">
-                                {props.auth.user.name}
+                            <h1 className="font-bold text-gray-100 text-6xl m-4 p-2">
+                                Hello {props.auth.user.name}
                             </h1>
                         </section>
                         <CentralLogo src="images/icon/waldo.png" />
-                        <Title 
-                            title="this is a subtitle"
-                        />
-                   
+
+                        <h1 className="text-gray-400 text-4xl m-4 p-2">
+                            This is a subtitle
+                        </h1>
                     </DarkBlueBlockHeader>
                 </div>
+
                 <div className="absolute inset-96 min-h-7xl flex flex-col items-center sm:items-center sm:pt-10">
                     <section>
                         <h3>Search bar</h3>
@@ -45,7 +44,7 @@ export default function Profile(props, auth) {
                         <h1 className="text-3xl">Code Q&A</h1>
 
                         <PostCard className="py-12 px-12">
-                            <h1>title </h1>
+                            <h1>title</h1>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Animi assumenda rem dolore
