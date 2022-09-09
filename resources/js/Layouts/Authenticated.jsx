@@ -50,7 +50,8 @@ export default function Authenticated({ auth, header, children }) {
 
                                         <Dropdown.Content>
                                             <Dropdown.Link
-                                                href={route("codeQA")}
+                                                href={route("posts.index")}
+                                                // active={route().current("posts.index")}
                                                 method="get"
                                                 as="button"
                                             >

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('posts', PostController::class);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -57,5 +60,8 @@ Route::get('/userSettings', function () {
 })->middleware(['auth', 'verified'])->name('userSettings');
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> de0bd5e2f4372c1bb690ab90a844d40c01b1a431
 require __DIR__.'/auth.php';
