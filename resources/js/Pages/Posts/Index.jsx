@@ -43,26 +43,25 @@ export default function Dashboard(props) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {posts.map(({user_id, title, slug, url, content})=> (
+                                        {posts.map(({id, title, content, tag})=> (
                                             <tr>
-                                                <td className="border px-4 py-2">{user_id }</td>
+                                                <td className="border px-4 py-2">{ id }</td>
                                                 <td className="border px-4 py-2">{ title }</td>
-                                                <td className="border px-4 py-2">{ slug }</td>
-                                                <td className="border px-4 py-2">{ url }</td>
                                                 <td className="border px-4 py-2">{ content }</td>
+                                                <td className="border px-4 py-2">{ tag }</td>
                                                 <td className="border px-4 py-2">
 
                                                     <Link
                                                         tabIndex="1"
                                                         className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                                                        href={route("posts.edit", user_id)}
+                                                        href={route("posts.edit", id)}
                                                     >
                                                         Edit
                                                     </Link>
 
                                                     <button
                                                         onclick={destroy}
-                                                        user_id={user_id}
+                                                        id={id}
                                                         tabIndex="-1"
                                                         type="button"
                                                         className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"

@@ -4,11 +4,11 @@ import { Head, useForm, usePage, Link } from "@inertiajs/inertia-react";
 
 export default function Dashboard(props) {
     const {post} = usePage().props;
+    console.log(props.post);
 
     const {data, setData, put, errors} = useForm({
         title: post.title || "",
-        slug: post.slug || "",
-        url: post.url || "",
+        tag: post.tag || "",
         content: post.content || "",
     });
 

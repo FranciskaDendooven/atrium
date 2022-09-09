@@ -6,7 +6,6 @@ use App\Models\Post;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -30,16 +29,18 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $newPost = Post::create([
+        $request->validate([
+            'title' => 'required|max:255|min:1',
+            'content' => 'required|max:10000|min:1',
+            'tag' => 'required',
+        ]);
+
+        Post::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
             'content' => $request->content,
             'tag' => $request->tag,
-        ])->validate();
-
-        // if($newPost){
-        // return response()->json(["status" => 200]);
-        // }
+        ]);
 
         return redirect()->route('posts.index');
         
@@ -48,32 +49,37 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        $posts = Post::find($id);
+        $post = Post::find($id);
 
         // if($posts -> save()){
         // return response()->json(["status" => 200]);
         // }
 
         return Inertia::render('Posts/Edit', [
-            'posts'=> $posts
+            'post'=> $post
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        $posts = Post::find($id)->validate();
-        $posts->title =$request->title;
-        $posts->content =$request->content;
-        $posts->tag =$request->tag;
+        $request->validate([
+            'title' => 'required|max:255|min:1',
+            'content' => 'required|max:10000|min:1',
+            'tag' => 'required',
+        ]);
 
-        // if($posts -> save()){
-        // return response()->json(["status" => 200]);
-        // }
+        $post = Post::find($id);
+        $post->title =$request->title;
+        $post->content =$request->content;
+        $post->tag =$request->tag;
+        $post->save();
+
         return redirect()->route('posts.index');
     }
 
     public function destroy($id)
     {
+        // confirmation!
         Post::find($id)->delete();
 
         // if($posts -> delete()){

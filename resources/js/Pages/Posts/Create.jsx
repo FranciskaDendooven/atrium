@@ -5,9 +5,8 @@ import { Head, useForm, Link } from "@inertiajs/inertia-react";
 export default function Dashboard(props) {
     const {data, setData, errors, post} = useForm({
         title:"",
-        slug:"",
-        url:"",
         content:"",
+        tag:"",
     });
 
     const handleSubmit = (e) => {
