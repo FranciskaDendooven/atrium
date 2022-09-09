@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 
@@ -15,7 +15,15 @@ export default function UserSettings(props) {
         >
             <Head title="User Settings" />
 
-            <div className="py-12">test User Settings!</div>
+            <div className="relative flex flex-col items-top justify-center min-h-screen sm:items-center sm:pt-0">
+                <div className="py-12">test User Settings!</div>
+                <h1>
+                    here goes some text with this user name:{" "}
+                    {props.auth.user.name}{" "}
+                    and this user email:{" "}
+                    {props.auth.user.email}
+                </h1>
+            </div>
         </Authenticated>
     );
 }
