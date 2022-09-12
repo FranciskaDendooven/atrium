@@ -60,8 +60,4 @@ Route::get('/userSettings', function () {
 })->middleware(['auth', 'verified'])->name('userSettings');
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> de0bd5e2f4372c1bb690ab90a844d40c01b1a431
 require __DIR__.'/auth.php';

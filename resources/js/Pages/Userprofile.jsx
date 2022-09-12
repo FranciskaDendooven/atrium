@@ -18,7 +18,7 @@ export default function Profile(props, auth) {
         >
             <Head title="Profile" />
 
-            <div className="flex flex-col items-center sm:items-center sm:pt-0">
+            <div className="static flex flex-col items-center mt-32">
                 <div>
                     <DarkBlueBlockHeader>
                         <section className="flex flex-row ">
@@ -34,7 +34,7 @@ export default function Profile(props, auth) {
                     </DarkBlueBlockHeader>
                 </div>
 
-                <div className="absolute inset-96 min-h-7xl flex flex-col items-center sm:items-center sm:pt-10">
+                <div className="absolute w-full min-h-7xl flex flex-col items-center sm:items-center sm:pt-10">
                     <section>
                         <h3>Search bar</h3>
                     </section>
