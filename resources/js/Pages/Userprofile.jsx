@@ -87,4 +87,6 @@ export default function Profile(props, auth) {
             </div>
         </Authenticated>
     );
-}
+
+} 
+
