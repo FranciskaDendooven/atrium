@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
+import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
+import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
+import SearchBar from "@/Components/SearchBar";
 
 
 export default function Welcome(props) {
@@ -65,6 +68,14 @@ export default function Welcome(props) {
                     <ApplicationLogo className="w-6/12" />
                 </div>
             </DarkBlueBlockHeader>
+            <div className="flex flex-col items-center sm:items-center sm:pt-10">
+                <section className="absolute right-0 mr-32">
+                        <SearchBar />
+                </section>                        
+                <section className="items-center justify-center font-bold">    
+                            <h1 className="text-3xl">This is a centered Title...Yes or No!?</h1>
+                </section>
+                </div>
 
             <div className="flex flex-col items-center min-h-screen sm:items-center sm:pt-10"></div>
             <div className="h-64">
