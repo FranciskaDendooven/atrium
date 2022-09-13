@@ -141,7 +141,8 @@ export default function Profile(props, auth) {
                 </div>
             </Authenticated>
             <div className="h-64">
-                <Footer></Footer>
+                <Footer>
+                </Footer>
             </div>
         </>
     );

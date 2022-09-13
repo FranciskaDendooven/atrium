@@ -5,13 +5,18 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function Footer() {
     return (
+        <div className="relative">
             <DarkBlueBlockHeader>
-                <div className="absolute w-full flex flex-row justify-center items-center">
+                <div className=" w-full flex flex-row justify-center items-center">
                     <Link href="/">
-                        <ApplicationLogo/>
+                        <ApplicationLogo />
                     </Link>
-                    <h3 className="font-bold text-redOrange text-xl"> {new Date().getFullYear()} - Atrium  </h3>
+                    <h3 className="font-bold text-redOrange text-xl">
+                        {" "}
+                        {new Date().getFullYear()} - Atrium{" "}
+                    </h3>
                 </div>
             </DarkBlueBlockHeader>
+        </div>
     );
 }
