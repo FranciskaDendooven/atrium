@@ -2,11 +2,11 @@ import React from "react";
 
 export default function CentralLogo(props) {
     return (
-        <div className="max-w-100px p-6 rounded-full bg-white flex items-center justify-center">
+        <div className="max-w-100px p-10 rounded-full bg-white flex items-center justify-center">
             <img
                 src={props.src}
-                width="100px"
-                alt="User Avatar picture"
+                width={props.width}
+                alt={props.alt}
             />
         </div>
     );

@@ -28,7 +28,7 @@ export default function Profile(props, auth) {
                                 Hello {props.auth.user.name}
                             </h1>
                         </section>
-                        <CentralLogo src="images/icon/waldo.png" />
+                        <CentralLogo width="100px" alt="user avater image" src="images/icon/waldo.png" />
 
                         <h1 className="text-gray-400 text-2xl m-4 p-2">
                             This is a subtitle
@@ -46,7 +46,7 @@ export default function Profile(props, auth) {
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
 
                         <PostCard className="">
-                            <h1 className="m-4 mb-8">
+                            <h1 className="m-4 mb-8 font-bold text-gray-700">
                                 This is a very long Post that talks about giberish code
                             </h1>
                             <p>
@@ -109,7 +109,7 @@ export default function Profile(props, auth) {
                         <h1 className=" font-bold text-2xl">Code Share</h1>
 
                         <PostCard className="">
-                            <h1 className="m-4 mb-8">
+                            <h1 className="m-4 mb-8 font-bold text-gray-700">
                                 this is just a short...
                             </h1>
                             <p>
@@ -126,7 +126,7 @@ export default function Profile(props, auth) {
                         <h1 className="font-bold text-2xl">PIF</h1>
 
                         <PostCard className="">
-                            <h1 className="m-4 mb-8">
+                            <h1 className="m-4 mb-8 font-bold text-gray-700">
                                 title this is a very long and extenuating title that keeps on going and going and going and going ... ad eternum
                             </h1>
                             <p>

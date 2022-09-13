@@ -26,7 +26,7 @@ export default function UserSettings(props) {
                                 Hello {props.auth.user.name}
                             </h1>
                         </section>
-                        <CentralLogo src="images/icon/waldo.png" />
+                        <CentralLogo src="images/icon/waldo.png" width="100px" alt="user avatar image" />
 
                         <h1 className="text-gray-400 text-2xl m-4 p-2">
                             This is a subtitle
