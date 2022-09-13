@@ -11,7 +11,7 @@ export default function Authenticated({ auth, header, children }) {
         useState(false);
 
     return (
-        <div className="w-full h-screen bg-gray-100">
+        <div className="static w-full min-h-screen bg-gray-100">
             <nav className="static bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -244,7 +244,7 @@ export default function Authenticated({ auth, header, children }) {
                     </div>
                 </header>
             )}
-            <main className="relative my-0 mx-auto flex flex-col justify-center items-center">
+            <main className="relative flex flex-col justify-center items-center">
                 {children}
             </main>
         </div>

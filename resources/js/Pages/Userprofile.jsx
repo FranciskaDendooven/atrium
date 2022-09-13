@@ -5,6 +5,7 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
+import SearchBar from "@/Components/SearchBar";
 
 export default function Profile(props, auth) {
     return (
@@ -20,60 +21,114 @@ export default function Profile(props, auth) {
             >
                 <Head title="Profile" />
 
-                <div className="absolute inset-0 h-64 flex flex-col flex-grow overflow-auto items-center">
-                    <DarkBlueBlockHeader className="absolute top-0 left-0 right-0 mb-4">
-                        <section className="flex flex-row ">
-                            <h1 className="font-bold text-gray-100 text-6xl m-4 p-2">
+                <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+                    <DarkBlueBlockHeader className="">
+                        <section className="flex-row">
+                            <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
                                 Hello {props.auth.user.name}
                             </h1>
                         </section>
                         <CentralLogo src="images/icon/waldo.png" />
 
-                        <h1 className="text-gray-400 text-4xl m-4 p-2">
+                        <h1 className="text-gray-400 text-2xl m-4 p-2">
                             This is a subtitle
                         </h1>
                     </DarkBlueBlockHeader>
                 </div>
 
-                <div className=" flex flex-col items-center sm:items-center sm:pt-10">
-                    <section>
-                        <h3>Search bar</h3>
+                <div className="flex flex-col items-center sm:items-center sm:pt-10">
+                    <section className="absolute right-0 mr-32">
+                        <SearchBar />
                     </section>
-                    <h1 className="text-3xl">Your Posts</h1>
+                    <h1 className="font-bold text-3xl">Your Posts</h1>
 
                     <section>
-                        <h1 className="text-3xl">Code Q&A</h1>
+                        <h1 className="font-bold text-2xl">Code Q&A</h1>
 
-                        <PostCard className="py-12 px-12">
-                            <h1>title</h1>
+                        <PostCard className="">
+                            <h1 className="m-4 mb-8">
+                                This is a very long Post that talks about giberish code
+                            </h1>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Animi assumenda rem dolore
                                 placeat ut adipisci magni earum sit officiis
                                 ipsa! Quidem ipsum quaerat dolor. Pariatur nulla
-                                voluptatem dolor et obcaecati.
+                                voluptatem dolor et obcaecati. Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Mollitia
+                                ex nostrum tenetur aspernatur officia
+                                consequuntur libero tempora, molestiae earum
+                                odit, dicta velit vitae praesentium cumque iste
+                                quaerat ipsum nemo. Voluptate. Lorem ipsum dolor
+                                sit amet consectetur adipisicing elit. Dolorum,
+                                mollitia eius alias voluptatum ad similique
+                                ipsam. Nulla natus enim placeat repellendus at,
+                                iusto eaque aut repellat fugit illo quidem
+                                obcaecati! Lorem ipsum dolor sit amet
+                                consectetur, adipisicing elit. Asperiores beatae
+                                ea magni accusantium cum maiores minus aut.
+                                Delectus, soluta ab! Possimus maiores
+                                reprehenderit veritatis et! Molestiae
+                                dignissimos distinctio similique iste. Lorem
+                                ipsum dolor sit amet consectetur adipisicing
+                                elit. Aliquam itaque exercitationem repellat
+                                neque aspernatur! Vitae eos aut commodi
+                                accusamus dicta cupiditate repellat aspernatur
+                                quis, temporibus et, maxime, nostrum ut
+                                molestias. Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Animi assumenda
+                                rem dolore placeat ut adipisci magni earum sit
+                                officiis ipsa! Quidem ipsum quaerat dolor.
+                                Pariatur nulla voluptatem dolor et obcaecati.
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Mollitia ex nostrum tenetur
+                                aspernatur officia consequuntur libero tempora,
+                                molestiae earum odit, dicta velit vitae
+                                praesentium cumque iste quaerat ipsum nemo.
+                                Voluptate. Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Dolorum, mollitia
+                                eius alias voluptatum ad similique ipsam. Nulla
+                                natus enim placeat repellendus at, iusto eaque
+                                aut repellat fugit illo quidem obcaecati! Lorem
+                                ipsum dolor sit amet consectetur, adipisicing
+                                elit. Asperiores beatae ea magni accusantium cum
+                                maiores minus aut. Delectus, soluta ab! Possimus
+                                maiores reprehenderit veritatis et! Molestiae
+                                dignissimos distinctio similique iste. Lorem
+                                ipsum dolor sit amet consectetur adipisicing
+                                elit. Aliquam itaque exercitationem repellat
+                                neque aspernatur! Vitae eos aut commodi
+                                accusamus dicta cupiditate repellat aspernatur
+                                quis, temporibus et, maxime, nostrum ut
+                                molestias.
                             </p>
                         </PostCard>
                     </section>
 
                     <section>
-                        <h1 className="text-3xl">Code Share</h1>
+                        <h1 className=" font-bold text-2xl">Code Share</h1>
 
-                        <PostCard className="py-12 px-12">
+                        <PostCard className="">
+                            <h1 className="m-4 mb-8">
+                                this is just a short...
+                            </h1>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Animi assumenda rem dolore
                                 placeat ut adipisci magni earum sit officiis
                                 ipsa! Quidem ipsum quaerat dolor. Pariatur nulla
-                                voluptatem dolor et obcaecati.
+                                voluptatem dolor et obcaecati. testing short post
                             </p>
                         </PostCard>
                     </section>
 
                     <section>
-                        <h1 className="text-3xl">PIF</h1>
+                        <h1 className="font-bold text-2xl">PIF</h1>
 
-                        <PostCard className="py-12 px-12">
+                        <PostCard className="">
+                            <h1 className="m-4 mb-8">
+                                title this is a very long and extenuating title that keeps on going and going and going and going ... ad eternum
+                            </h1>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Animi assumenda rem dolore
@@ -85,7 +140,9 @@ export default function Profile(props, auth) {
                     </section>
                 </div>
             </Authenticated>
-            <Footer></Footer>
+            <div className="h-64">
+                <Footer></Footer>
+            </div>
         </>
     );
 }
