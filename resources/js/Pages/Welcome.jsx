@@ -3,7 +3,7 @@ import { Link, Head } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
-import Button from "@/Components/Button";
+
 
 export default function Welcome(props) {
     return (
