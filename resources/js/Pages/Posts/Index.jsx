@@ -84,7 +84,7 @@ export default function Posts(props) {
                             alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                         />
 
-                        <h1 className="text-gray-400 text-2xl m-4 p-2">
+                        <h1 className="text-gray-400 text-3xl m-4 p-2">
                             This is a subtitle
                         </h1>
                     </DarkBlueBlockHeader>
@@ -102,7 +102,7 @@ export default function Posts(props) {
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <div className="flex items-center justify-between mb-6">
                                     <Link
-                                        className="px-6 py2 text-white bg-green-500 rounded-md focus:outline-none"
+                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
                                         href={route("showCreatePost")}
                                     >
                                         Create Post
@@ -111,7 +111,7 @@ export default function Posts(props) {
 
                                 <table className="table-fixed w-full">
                                     <thead>
-                                        <tr className="bg-gray-100">
+                                        <tr className="bg-darkblue text-white text-xl">
                                             {/* <th className="px-4 py-2 w-20">No.</th> */}
                                             <th className="px-4 py-2">Title</th>
                                             <th className="px-4 py-2">Body</th>
@@ -138,7 +138,7 @@ export default function Posts(props) {
                                                     <td className="border px-4 py-2">
                                                         <Link
                                                             tabIndex="1"
-                                                            className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
+                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
                                                             href={route(
                                                                 "showUpdatedPost",
                                                                 id
@@ -152,7 +152,7 @@ export default function Posts(props) {
                                                                 deleteMsg(e, id)
                                                             }
                                                             type="button"
-                                                            className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
                                                         >
                                                             Delete
                                                         </button>

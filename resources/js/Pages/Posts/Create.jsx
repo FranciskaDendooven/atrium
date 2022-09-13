@@ -23,13 +23,13 @@ export default function Dashboard(props) {
         >
             <Head title="Posts" />
 
-            <div className="py-12">
+            <div className="py-12 min-w-full">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div className="bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
                             <div className="flex items-center justify-between mb-6">
                                 <Link 
-                                    className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
+                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange focus:outline-none"
                                     href={route("showPosts")}
                                 >
                                     Back
@@ -42,7 +42,7 @@ export default function Dashboard(props) {
                                         <label className="">Title</label>
                                         <input 
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-4 py-2 rounded"
                                             label="Title"
                                             name="title"
                                             value={data.title}
@@ -55,12 +55,12 @@ export default function Dashboard(props) {
                                         </span>
                                     </div>
 
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col mt-4">
                                     <div className="mb-0">
                                         <label className="">Content</label>
                                         <input 
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-4 py-2 rounded"
                                             label="content"
                                             name="content"
                                             value={data.content}
@@ -74,12 +74,12 @@ export default function Dashboard(props) {
                                     </div>
                                     </div>
 
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col mt-4">
                                     <div className="mb-0">
                                         <label className="">Tag</label>
                                         <input 
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-4 py-2 rounded"
                                             label="tag"
                                             name="tag"
                                             value={data.tag}
@@ -96,7 +96,7 @@ export default function Dashboard(props) {
                                     <div className="mt-4">
                                         <button
                                             type="submit"
-                                            className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue focus:outline-none"
                                         >
                                             Save
                                         </button>
