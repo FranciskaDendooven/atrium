@@ -92,8 +92,34 @@ export default function Posts(props) {
                                                         Delete
                                                     </button>
                                                 </td>
+                                                <td>
+                                                <section>
+                                                    <article className="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4">
+                                                        <div className="flex-shrink-0">
+                                                        <img src="images/icon/waldo.png" alt="" className="w-10 rounded-xl"/>
+                                                        </div>
+
+                                                        <div>
+                                                            <header className="mb-4">
+                                                                <h3 className="font-bold">TestCommentator</h3>
+                                                                <p className="text-xs">Posted
+                                                                <time>3 days ago</time>
+                                                                </p>
+                                                            </header>
+
+                                                            <p>
+                                                            Scuttle rigging scurvy cog lee nipper Letter of
+                                                            Marque transom Buccaneer Privateer. Chain Shot ho Letter
+                                                            of Marque hornswaggle booty fathom jack bounty maroon Barbary Coast.
+                                                            </p>
+                                                        </div>
+                                                    </article>
+                                                </section>
+                                                </td>
                                             </tr>
                                         ))}
+
+
 
                                         {posts.length === 0 && (
                                             <tr>

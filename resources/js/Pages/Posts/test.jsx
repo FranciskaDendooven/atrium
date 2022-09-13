@@ -23,7 +23,7 @@ export default function Dashboard(props) {
         >
             <Head title="Posts" />
 
-            <div className="py-12">
+            <div className="py-12"> 
                 WORK G DAMNIT
             </div>
 

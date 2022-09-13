@@ -41,6 +41,7 @@ Route::post('/Posts/create', [PostController::class, 'store'])->name('submitNewP
 Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->name('showUpdatedPost');
 Route::put('/Posts/update/{id}', [PostController::class, 'update'])->name('submitUpdatedPost');
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
