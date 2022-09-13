@@ -16,7 +16,11 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::resource('posts', PostController::class);
+
+
+
+// Route::resource('posts', PostController::class);
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -26,6 +30,16 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
+
+Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->name('deleteAction');
+
+Route::get('/Posts/create', [PostController::class, 'create'])->name('showCreatePost');
+Route::post('/Posts/create', [PostController::class, 'store'])->name('submitNewPost');
+
+Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->name('showUpdatedPost');
+Route::put('/Posts/update/{id}', [PostController::class, 'update'])->name('submitUpdatedPost');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -58,6 +72,10 @@ Route::get('/userProfile', function () {
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->middleware(['auth', 'verified'])->name('userSettings');
+
+
+
+
 
 
 require __DIR__.'/auth.php';

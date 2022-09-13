@@ -15,7 +15,7 @@ export default function Dashboard(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        put(route('posts.update', post.id));
+        put(route('submitUpdatedPost', post.id));
     };
 
     return (
@@ -34,7 +34,7 @@ export default function Dashboard(props) {
                             <div className="flex items-center justify-between mb-6">
                                 <Link
                                     className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
-                                    href={route("posts.index")}
+                                    href={route("showPosts")}
                                 >
                                     Back
                                 </Link>

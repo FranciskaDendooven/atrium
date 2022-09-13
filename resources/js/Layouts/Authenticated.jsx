@@ -50,8 +50,8 @@ export default function Authenticated({ auth, header, children }) {
 
                                         <Dropdown.Content>
                                             <Dropdown.Link
-                                                href={route("posts.index")}
-                                                // active={route().current("posts.index")}
+                                                href={route("showPosts")}
+                                                // active={route().current("showPosts")}
                                                 method="get"
                                                 as="button"
                                             >
