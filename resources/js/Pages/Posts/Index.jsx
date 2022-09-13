@@ -60,16 +60,17 @@ export default function Posts(props) {
                             <table className="table-fixed w-full">
                                 <thead>
                                         <tr className="bg-gray-100">
-                                            <th className="px-4 py-2 w-20">No.</th>
+                                            {/* <th className="px-4 py-2 w-20">No.</th> */}
                                             <th className="px-4 py-2">Title</th>
                                             <th className="px-4 py-2">Body</th>
+                                            <th className="px-4 py-2">Tag</th>
                                             <th className="px-4 py-2">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {posts.map(({id, title, content, tag})=> (
                                             <tr key={id}>
-                                                <td className="border px-4 py-2">{ id }</td>
+                                                {/* <td className="border px-4 py-2">{ id }</td> */}
                                                 <td className="border px-4 py-2">{ title }</td>
                                                 <td className="border px-4 py-2">{ content }</td>
                                                 <td className="border px-4 py-2">{ tag }</td>
@@ -85,8 +86,6 @@ export default function Posts(props) {
 
                                                     <button
                                                         onClick={(e) => deleteMsg(e, id)}
-                                                        // id={id}
-                                                        // tabIndex="-1"
                                                         type="button"
                                                         className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
                                                     >
