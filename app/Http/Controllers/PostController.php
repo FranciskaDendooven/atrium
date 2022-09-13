@@ -9,17 +9,10 @@ use Illuminate\Foundation\Auth\User;
 
 class PostController extends Controller
 {
-    public function index()
+    public function show()
     {
         $posts = Post::orderBy('updated_at', 'DESC')->get();
         return Inertia::render('Posts/Index', ['posts' => $posts]);
-    }
-
-    public function showUser($id)
-    {
-        $user = User::find($id);
-        $posts = $user->posts;
-        return view('posts.user')->with("user", $user)->with('title', $posts);
     }
 
     public function create()
@@ -42,7 +35,7 @@ class PostController extends Controller
             'tag' => $request->tag,
         ]);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('showPosts');
         
     }
 
@@ -55,6 +48,7 @@ class PostController extends Controller
             'post'=> $post
         ]);
     }
+
 
     public function update(Request $request, $id)
     {
@@ -70,15 +64,15 @@ class PostController extends Controller
         $post->tag =$request->tag;
         $post->save();
 
-        return redirect()->route('posts.index')->with('Success', 'Post udated!');
+        return redirect()->route('showPosts');
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-        dd($request);
         Post::find($id)->delete();
 
-        return redirect()->route('posts.index')->with('Success', 'Post deleted!');
+
+        return redirect()->route('showPosts');
     }
 
 }
