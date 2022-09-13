@@ -4,23 +4,24 @@ import { Head } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
+import Footer from "@/Layouts/Footer";
 
 export default function Profile(props, auth) {
     return (
-        <Authenticated
-            auth={props.auth}
-            errors={props.errors}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    {props.auth.user.name} Profile
-                </h2>
-            }
-        >
-            <Head title="Profile" />
+        <>
+            <Authenticated
+                auth={props.auth}
+                errors={props.errors}
+                header={
+                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                        {props.auth.user.name} Profile
+                    </h2>
+                }
+            >
+                <Head title="Profile" />
 
-            <div className="static flex flex-col items-center mt-32">
-                <div>
-                    <DarkBlueBlockHeader>
+                <div className="absolute inset-0 h-64 flex flex-col flex-grow overflow-auto items-center">
+                    <DarkBlueBlockHeader className="absolute top-0 left-0 right-0 mb-4">
                         <section className="flex flex-row ">
                             <h1 className="font-bold text-gray-100 text-6xl m-4 p-2">
                                 Hello {props.auth.user.name}
@@ -34,7 +35,7 @@ export default function Profile(props, auth) {
                     </DarkBlueBlockHeader>
                 </div>
 
-                <div className="absolute w-full min-h-7xl flex flex-col items-center sm:items-center sm:pt-10">
+                <div className=" flex flex-col items-center sm:items-center sm:pt-10">
                     <section>
                         <h3>Search bar</h3>
                     </section>
@@ -83,9 +84,8 @@ export default function Profile(props, auth) {
                         </PostCard>
                     </section>
                 </div>
-            </div>
-        </Authenticated>
+            </Authenticated>
+            <Footer></Footer>
+        </>
     );
-
-} 
-
+}

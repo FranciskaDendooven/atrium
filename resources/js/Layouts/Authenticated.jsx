@@ -244,7 +244,7 @@ export default function Authenticated({ auth, header, children }) {
                     </div>
                 </header>
             )}
-            <main className="relative w-full h-full flex flex-col justify-center items-center">
+            <main className="relative my-0 mx-auto flex flex-col justify-center items-center">
                 {children}
             </main>
         </div>
