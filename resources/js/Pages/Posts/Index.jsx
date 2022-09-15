@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head, usePage, Link } from "@inertiajs/inertia-react";
+import PostCommentCard from "@/Components/PostCommentCard";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -13,7 +14,7 @@ export default function Posts(props) {
     const [postId, setPostId] = useState(0);
 
     useEffect(() => {
-        console.log("state is " + display);
+        
     }, [display, postId]);
 
     const { posts } = usePage().props;
@@ -139,27 +140,26 @@ export default function Posts(props) {
                                                         <Link
                                                             tabIndex="1"
                                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                            href={route(
-                                                                "showUpdatedPost",
-                                                                id
-                                                            )}
+                                                            href={route("showUpdatedPost", id)}
                                                         >
                                                             Edit
                                                         </Link>
 
-                                                        <button
-                                                            onClick={(e) =>
-                                                                deleteMsg(e, id)
-                                                            }
-                                                            type="button"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        )}
+                                                    <button
+                                                        onClick={(e) => deleteMsg(e, id)}
+                                                        type="button"
+                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </td>
+                                                <td>
+
+                                                <PostCommentCard/>
+
+                                                </td>
+                                            </tr>
+                                        ))}
 
                                         {posts.length === 0 && (
                                             <tr>
