@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
-export default function ApplicationLogo() {
+export default function ApplicationLogo({ className }) {
     return (
-
-<img src="images/logo/atrium-icon-darkblue.png" alt="atrium logo no lettering" width="150px"/>        
+        <img
+            className={className}
+            src="images/logo/atrium-icon-darkblue.png"
+            alt="atrium logo no lettering"
+            width="200px"
+        />
     );
 }
