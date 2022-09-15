@@ -17,4 +17,12 @@ class Post extends Model
         'soft_delete',
     ];
 
+
+    public function user(){
+
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
