@@ -14,7 +14,7 @@ export default function Posts(props) {
     const [postId, setPostId] = useState(0);
 
     useEffect(() => {
-        console.log("state is " + display);
+        
     }, [display, postId]);
 
     const { posts } = usePage().props;
