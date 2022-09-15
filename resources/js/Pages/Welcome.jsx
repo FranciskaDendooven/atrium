@@ -65,7 +65,7 @@ export default function Welcome(props) {
                             </Link>
                         </section>
                     </section>
-                    <ApplicationLogo className="w-6/12" />
+                    <ApplicationLogo className="w-4/12" />
                 </div>
             </DarkBlueBlockHeader>
             <div className="flex flex-col items-center sm:items-center sm:pt-10">
