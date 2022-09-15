@@ -3,6 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Post;
+use App\Models\Comment;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -46,24 +50,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password); //to encrypt the password so its not visible in the Database
-    }
-
-    public function posts()
-    {
+    public function post(){
         return $this->hasMany(Post::class);
     }
 
-    public function comments()
-    {
+    public function comments(){
         return $this->hasMany(Comment::class);
     }
-
-    public function votes()
-    {
-        return $this->hasMany(Vote::class);
-    }
-
 }
