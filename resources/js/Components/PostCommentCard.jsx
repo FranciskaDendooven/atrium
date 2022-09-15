@@ -1,24 +1,21 @@
 import { useForm } from "@inertiajs/inertia-react";
 import React from "react";
 
-export default function CommentCard({children}) {
-    // const props = defineProps({
-    //     post: Object,
-    // });
-
-    // const form = useForm({
-    //     content: "",
-    // });
-
-    // const submit = () => {
-    //     form.post(
-    //         route("Posts.comments", [props.post.data.content])
-    //     );
-    // };
+export default function CommentCard(props) {
+        const {data, setData, errors, post} = useForm({
+            content:"",
+        });
+    
+        const handleSubmit = (e) => {
+            e.preventDefault();
+    
+            post(route('showPostsComments'));
+        };
+    
 
     return (
         <>
-        <form className="m-2 p-2 max-w-md">
+        <form onSubmit={handleSubmit} className="m-2 p-2 max-w-md">
             <div className="mt-2">
                 <label
                     for="comment"
@@ -27,16 +24,32 @@ export default function CommentCard({children}) {
                 </label>
                 <textarea
                     id="comment"
+                    type="text"
+                    name="content"
                     rows="4"
-                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg" value="Your comment...">
+                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg"
+                    value={data.content}
+                    onChange={(e)=>
+                    setData("content", e.target.value)}
+                >
+                    
+                    <span className="text-red-600">
+                        {errors.content}
+                    </span>
+
                 </textarea>
             </div>
             <div className="mt-2">
-                <button className="px-4 bg-blue-700 text-white rounded-md">Comment</button>
+                <button
+                    type="submit" 
+                    className="px-4 bg-blue-700 text-white rounded-md"
+                >
+                    Comment
+                </button>
             </div>
         </form>
 
-        <section>
+        {/* <section>
             <article className="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4">
                 <div className="flex-shrink-0">
                 <img src="images/icon/waldo.png" alt="" className="w-10 rounded-xl"/>
@@ -57,7 +70,7 @@ export default function CommentCard({children}) {
                     </p>
                 </div>
             </article>
-        </section>
-        </>
+        </section> */}
+     </>
     );
-}
+    }

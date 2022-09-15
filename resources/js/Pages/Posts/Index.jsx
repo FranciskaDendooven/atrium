@@ -140,50 +140,26 @@ export default function Posts(props) {
                                                         <Link
                                                             tabIndex="1"
                                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                            href={route(
-                                                                "showUpdatedPost",
-                                                                id
-                                                            )}
+                                                            href={route("showUpdatedPost", id)}
                                                         >
                                                             Edit
                                                         </Link>
 
-                                                    <Link
-                                                        tabIndex="1"
-                                                        className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                                                        href={route("showUpdatedPost", id)}
-                                                    >
-                                                        Edit
-                                                    </Link>
-
                                                     <button
                                                         onClick={(e) => deleteMsg(e, id)}
                                                         type="button"
-                                                        className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
                                                     >
                                                         Delete
                                                     </button>
                                                 </td>
                                                 <td>
+
                                                 <PostCommentCard/>
+
                                                 </td>
                                             </tr>
                                         ))}
-                                                        <button
-                                                            onClick={(e) =>
-                                                                deleteMsg(e, id)
-                                                            }
-                                                            type="button"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        )}
-
-
 
                                         {posts.length === 0 && (
                                             <tr>
