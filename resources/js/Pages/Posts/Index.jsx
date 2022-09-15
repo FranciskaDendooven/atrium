@@ -148,7 +148,6 @@ export default function Posts(props) {
                                                             Edit
                                                         </Link>
 
-<<<<<<< HEAD
                                                     <Link
                                                         tabIndex="1"
                                                         className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
@@ -170,7 +169,6 @@ export default function Posts(props) {
                                                 </td>
                                             </tr>
                                         ))}
-=======
                                                         <button
                                                             onClick={(e) =>
                                                                 deleteMsg(e, id)
@@ -184,7 +182,6 @@ export default function Posts(props) {
                                                 </tr>
                                             )
                                         )}
->>>>>>> 88b94af8a8431d229dd10acd8c3ce8d7e57c062c
 
 
 
