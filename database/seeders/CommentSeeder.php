@@ -15,14 +15,12 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        Comment::create([
-            [
-                'user_id' => "151",        
-                'post_id' => "251",
-                'content' => "well you know the writer is too looney! You can tell he his a bit wacko, who writes these things?!",
-        
-             
-            ]
-            ]);
+        // Comment::create([
+        //     [
+        //         'user_id' => "151",        
+        //         'post_id' => "251",
+        //         'content' => "well you know the writer is too looney! You can tell he his a bit wacko, who writes these things?!",
+        //     ]
+        //     ]);
     }
 }
