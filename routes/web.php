@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/', function () {
 });
 
 Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
+Route::post('/Posts/comment', [PostCommentController::class, 'store'])->name('showPostsComments');
 
 Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->name('deleteAction');
 
@@ -40,6 +42,7 @@ Route::post('/Posts/create', [PostController::class, 'store'])->name('submitNewP
 
 Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->name('showUpdatedPost');
 Route::put('/Posts/update/{id}', [PostController::class, 'update'])->name('submitUpdatedPost');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

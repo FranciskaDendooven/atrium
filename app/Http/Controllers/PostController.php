@@ -59,9 +59,9 @@ class PostController extends Controller
         ]);
 
         $post = Post::find($id);
-        $post->title =$request->title;
-        $post->content =$request->content;
-        $post->tag =$request->tag;
+        $post->title   = $request->title;
+        $post->content = $request->content;
+        $post->tag     = $request->tag;
         $post->save();
 
         return redirect()->route('showPosts');
