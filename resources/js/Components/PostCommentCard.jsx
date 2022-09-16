@@ -9,7 +9,7 @@ export default function CommentCard(props) {
         const handleSubmit = (e) => {
             e.preventDefault();
     
-            post(route('showPostsComments'));
+            post(route('submitPostsComments'));
         };
     
 
