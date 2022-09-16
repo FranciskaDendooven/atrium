@@ -33,7 +33,9 @@ Route::get('/', function () {
 });
 
 Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
-Route::post('/Posts/comment', [PostCommentController::class, 'store'])->name('showPostsComments');
+
+Route::get('/Posts/comment', [PostCommentController::class, 'show'])->name('showPostsComments');
+Route::post('/Posts/comment', [PostCommentController::class, 'store'])->name('submitPostsComments');
 
 Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->name('deleteAction');
 
