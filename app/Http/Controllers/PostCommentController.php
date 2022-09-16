@@ -25,7 +25,7 @@ class PostCommentController extends Controller
 
         Comment::create([
             'user_id' => auth()->id(),
-            'post_id' => auth()->id(),
+            'post_id' => $request->id,
             'content' => $request->content,
         ])->save();
 

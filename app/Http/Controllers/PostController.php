@@ -26,13 +26,16 @@ class PostController extends Controller
             'title' => 'required|max:255|min:1',
             'content' => 'required|max:10000|min:1',
             'tag' => 'required',
+            'page' => 'required',
         ]);
+       
 
         Post::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
             'content' => $request->content,
             'tag' => $request->tag,
+            'page' => $request->page,
         ]);
 
         return redirect()->route('showPosts');

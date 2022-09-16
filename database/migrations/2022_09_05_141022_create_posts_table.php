@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content')->nullable();
             $table->string('tag')->nullable();
+            $table->string('page')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

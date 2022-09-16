@@ -4,6 +4,7 @@ import React from "react";
 export default function CommentCard(props) {
         const {data, setData, errors, post} = useForm({
             content:"",
+            id:props.postId,
         });
     
         const handleSubmit = (e) => {
