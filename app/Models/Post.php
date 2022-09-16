@@ -16,6 +16,7 @@ class Post extends Model
         'title',
         'content',
         'tag',
+        'page',
         'soft_delete',
     ];
 
