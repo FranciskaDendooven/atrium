@@ -153,7 +153,7 @@ export default function Posts(props) {
                                                 </td>
                                                 <td>
 
-                                                <PostCommentCard/>
+                                                <PostCommentCard postId={id}/>
 
                                                 </td>
                                             </tr>
