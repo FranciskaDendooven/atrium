@@ -44,6 +44,7 @@ Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->name('showUpd
 Route::put('/Posts/update/{id}', [PostController::class, 'update'])->name('submitUpdatedPost');
 
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

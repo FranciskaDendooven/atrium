@@ -4,7 +4,6 @@ import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
-import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 
@@ -123,8 +122,7 @@ export default function Posts(props) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {posts.map(
-                                            ({ id, title, content, tag }) => (
+                                        {posts.map(({ id, title, content, tag }) => (
                                                 <tr key={id}>
                                                     {/* <td className="border px-4 py-2">{ id }</td> */}
                                                     <td className="border px-4 py-2">
