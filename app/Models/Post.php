@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Comment;
+use App\Models\User;
 
 class Post extends Model
 {
@@ -17,12 +19,14 @@ class Post extends Model
         'soft_delete',
     ];
 
-
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function users()
+    {
+        return $this->belongsTo(User::class); 
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany(Comment::class);
     }
+
 }
