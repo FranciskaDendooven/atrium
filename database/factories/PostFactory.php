@@ -20,7 +20,7 @@ class PostFactory extends Factory
             'user_id' => fake()->numberBetween(1, 150),
             'title' => fake()->unique()->realText($maxNBChars = 30),
             'content' => fake()->realText($maxNBChars = 300),
-            'tag' =>fake()->realText($maxNBChars = 20),
+            'tag' => fake()->realText($maxNBChars = 20),
         ];
     }
 }
