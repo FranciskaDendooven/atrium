@@ -16,12 +16,12 @@ class PostSeeder extends Seeder
     public function run()
     {
         Post::create([   
-            // 'user_id' =>'151',
-            // 'title' => "Just your regular random Post here ",
-            // 'content' => "Lorem ipsum dolor sit amet consectetur
-            // adipisicing elit. Animi assumenda rem dolore
-            // placeat ut adipisci magni earum sit officiis
-            // ipsa! Quidem ipsum quaerat dolor. Pariatur nulla",
+            'user_id' =>'151',
+            'title' => "Just your regular random Post here ",
+            'content' => "Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Animi assumenda rem dolore
+            placeat ut adipisci magni earum sit officiis
+            ipsa! Quidem ipsum quaerat dolor. Pariatur nulla",
         ]);
     }
 }
