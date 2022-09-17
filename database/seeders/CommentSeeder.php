@@ -16,8 +16,8 @@ class CommentSeeder extends Seeder
     public function run()
     {
         Comment::create([
-                'user_id' => "151",        
-                'post_id' => "251",
+                'user_id' => "51",        
+                'post_id' => "101",
                 'content' => "Well you know this becodian is too looney! You can tell he/she his a bit of a wacko, who writes code this way ?!",
             ]);
     }
