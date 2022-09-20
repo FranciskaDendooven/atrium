@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
+import PostCommentText from "@/Components/PostCommentText";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
-import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 
@@ -117,6 +117,7 @@ export default function Posts(props) {
                                             <th className="px-4 py-2">Title</th>
                                             <th className="px-4 py-2">Body</th>
                                             <th className="px-4 py-2">Tag</th>
+                                            <th className="px-4 py-2">comment</th>
                                             <th className="px-4 py-2">
                                                 Action
                                             </th>
@@ -124,7 +125,7 @@ export default function Posts(props) {
                                     </thead>
                                     <tbody>
                                         {posts.map(
-                                            ({ id, title, content, tag, comments }) => {
+                                            ({ title, content, tag, comments }, id) => {
                                                 console.log(comments)
                                                 return (
                                                 
@@ -141,8 +142,9 @@ export default function Posts(props) {
                                                             {tag}
                                                         </td>
                                                         <td className="border px-4 py-2">
-                                                            {comments}
+                                                            <PostCommentText comments={comments}/>
                                                         </td>
+
                                                         <td className="border px-4 py-2">
                                                             <Link
                                                                 tabIndex="1"
