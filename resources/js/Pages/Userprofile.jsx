@@ -95,14 +95,90 @@ export default function Profile(props) {
                     </DarkBlueBlockHeader>
                 </div>
 
-                <div className="flex flex-col items-center sm:items-center sm:pt-10">
+                <div className="flex flex-col sm:pt-10">
                     <section className="absolute right-0 mr-32">
                         <SearchBar />
                     </section>
-                    <h1 className="font-bold text-3xl">Your Posts</h1>
-
-                    <section>
+                    <section className="flex justify-center items-center sm:items-center sm:pt-10">
+                        <h1 className="font-bold text-3xl">Your Posts</h1>
+                    </section>
+                    
+                    <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
+
+                        {posts.map(({ title, content, page, tag, id }) => {
+                            if (page === "CodeQA") {
+                                return (
+                                    <PostCard key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p>{content}</p>
+                                        <p>{tag}</p>
+                                        <p>{page}</p>
+
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+                                    </PostCard>
+                                );
+                            }
+                        })}
+
+                        {/* <Pagination class="mt-6" links={posts} /> */}
+                    </section>
+
+                    <section className="mb-6">
+                        <h1 className="font-bold text-2xl">Code Share</h1>
+
+                        {posts.map(({ title, content, page, tag, id }) => {
+                            if (page === "Code Share") {
+                                return (
+                                    <PostCard className="" key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p>{content}</p>
+                                        <p>{tag}</p>
+                                        <p>{page}</p>
+
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+                                    </PostCard>
+                                );
+                            }
+                        })}
+
+                        {/* <Pagination class="mt-6" links={posts} /> */}
+                    </section>
+
+                    <section className="mb-6">
+                        <h1 className="font-bold text-2xl">PIF</h1>
 
                         {posts.map(({ title, content, page, tag, id }) => {
                             if (page === "CodeQA") {
@@ -137,42 +213,77 @@ export default function Profile(props) {
 
                         {/* <Pagination class="mt-6" links={posts} /> */}
                     </section>
+                    <section className="justify-start mb-6">
+                        <h1 className="font-bold text-2xl">Brain Farts</h1>
 
-                    <section>
-                        <h1 className=" font-bold text-2xl">Code Share</h1>
+                        {posts.map(({ title, content, page, tag, id }) => {
+                            if (page === "BrainFarts") {
+                                return (
+                                    <PostCard key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p>{content}</p>
+                                        <p>{tag}</p>
+                                        <p>{page}</p>
 
-                        <PostCard className="">
-                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                this is just a short...
-                            </h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Animi assumenda rem dolore
-                                placeat ut adipisci magni earum sit officiis
-                                ipsa! Quidem ipsum quaerat dolor. Pariatur nulla
-                                voluptatem dolor et obcaecati. testing short
-                                post
-                            </p>
-                        </PostCard>
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+                                    </PostCard>
+                                );
+                            }
+                        })}
+
+                        {/* <Pagination class="mt-6" links={posts} /> */}
                     </section>
+                    <section className="mb-6">
+                        <h1 className="font-bold text-2xl">Tech News</h1>
 
-                    <section>
-                        <h1 className="font-bold text-2xl">PIF</h1>
+                        {posts.map(({ title, content, page, tag, id }) => {
+                            if (page === "TechNews") {
+                                return (
+                                    <PostCard className="" key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p>{content}</p>
+                                        <p>{tag}</p>
+                                        <p>{page}</p>
 
-                        <PostCard className="">
-                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                title this is a very long and extenuating title
-                                that keeps on going and going and going and
-                                going ... ad eternum
-                            </h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Animi assumenda rem dolore
-                                placeat ut adipisci magni earum sit officiis
-                                ipsa! Quidem ipsum quaerat dolor. Pariatur nulla
-                                voluptatem dolor et obcaecati.
-                            </p>
-                        </PostCard>
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+                                    </PostCard>
+                                );
+                            }
+                        })}
+
+                        {/* <Pagination class="mt-6" links={posts} /> */}
                     </section>
                 </div>
             </Authenticated>

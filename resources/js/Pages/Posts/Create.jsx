@@ -107,28 +107,99 @@ export default function Dashboard(props) {
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            id="CodeQA"
-                                            name="page"
-                                            value="CodeQA"
-                                            onChange={(e) =>
-                                                setData("page", e.target.value)
-                                            }
-                                        />
-                                        <label for="CodeQA">CodeQA</label>
+                                    <div className="flex flex-row">
+                                        
+                                        <section className="m-2">
+                                            <input
+                                                type="radio"
+                                                id="CodeQA"
+                                                name="page"
+                                                value="CodeQA"
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "page",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="m-2"
+                                            />
+                                            <label for="CodeQA">CodeQA</label>
+                                        </section>
 
-                                        <input
-                                            type="radio"
-                                            id="CodeShare"
-                                            name="page"
-                                            value="Code Share"
-                                            onChange={(e) =>
-                                                setData("page", e.target.value)
-                                            }
-                                        />
-                                        <label for="CodeShare">CodeShare</label>
+                                        <section className="m-2">
+                                            <input
+                                                type="radio"
+                                                id="CodeShare"
+                                                name="page"
+                                                value="Code Share"
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "page",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="m-2"
+                                            />
+                                            <label for="CodeShare">
+                                                Code Share
+                                            </label>
+                                        </section>
+
+                                        <section className="m-2">
+                                            <input
+                                                type="radio"
+                                                id="TechNews"
+                                                name="page"
+                                                value="TechNews"
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "page",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="m-2"
+                                            />
+                                            <label for="TechNews">
+                                                Tech News
+                                            </label>
+                                        </section>
+
+                                        <section className="m-2">
+                                            <input
+                                                type="radio"
+                                                id="PIF"
+                                                name="page"
+                                                value="PIF"
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "page",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="m-2"
+                                            />
+                                            <label for="PIF">PIF</label>
+                                        </section>
+
+                                        <section className="m-2">
+                                            <input
+                                                type="radio"
+                                                id="BrainFarts"
+                                                name="page"
+                                                value="BrainFarts"
+                                                onChange={(e) =>
+                                                    setData(
+                                                        "page",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className="m-2"
+                                            />
+                                            <label for="BrainFarts">
+                                                Brain Farts
+                                            </label>
+                                        </section>
+
                                     </div>
 
                                     <div className="mt-4">
