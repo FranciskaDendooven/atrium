@@ -141,6 +141,9 @@ export default function Posts(props) {
                                                             {tag}
                                                         </td>
                                                         <td className="border px-4 py-2">
+                                                            {comments}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
                                                             <Link
                                                                 tabIndex="1"
                                                                 className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
