@@ -11,25 +11,27 @@ use Illuminate\Http\Request;
 class PostCommentController extends Controller
 {
 
-      public function show()
-      {
-          $posts = Post::with('comments')->get();
-          return Inertia::render('Posts/Index', ['posts' => $posts]);
-      }
+    public function showComment()
+    {
+        $comments = Comment::orderBy('updated_at', 'DESC')->get();
+        return Inertia::render('Posts/Index', ['comments' => $comments]);
+    }
 
     public function store(Request $request){
 
         $request->validate([
+            'username' => 'required|min:1',
             'content' => 'required|max:10000|min:1',
         ]);
 
         Comment::create([
             'user_id' => auth()->id(),
             'post_id' => $request->id,
+            'username' => $request->username,
             'content' => $request->content,
         ])->save();
 
-        return back();
+        return redirect()->back();
     }
 
     // public function toArray(Request $request)

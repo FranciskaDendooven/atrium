@@ -32,7 +32,7 @@ export default function Posts(props) {
                 errors={props.errors}
                 header={
                     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        Posts
+                        Code Q&A
                     </h2>
                 }
             >
@@ -124,42 +124,47 @@ export default function Posts(props) {
                                     </thead>
                                     <tbody>
                                         {posts.map(
-                                            ({ id, title, content, tag }) => (
-                                                <tr key={id}>
-                                                    {/* <td className="border px-4 py-2">{ id }</td> */}
-                                                    <td className="border px-4 py-2">
-                                                        {title}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {content}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {tag}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        <Link
-                                                            tabIndex="1"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                            href={route("showUpdatedPost", id)}
+                                            ({ id, title, content, tag, comments }) => {
+                                                console.log(comments)
+                                                return (
+                                                
+                                                    <tr key={id}>
+                                                        
+                                                        {/* <td className="border px-4 py-2">{ id }</td> */}
+                                                        <td className="border px-4 py-2">
+                                                            {title}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            {content}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            {tag}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            <Link
+                                                                tabIndex="1"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                href={route("showUpdatedPost", id)}
+                                                            >
+                                                                Edit
+                                                            </Link>
+    
+                                                        <button
+                                                            onClick={(e) => deleteMsg(e, id)}
+                                                            type="button"
+                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
                                                         >
-                                                            Edit
-                                                        </Link>
-
-                                                    <button
-                                                        onClick={(e) => deleteMsg(e, id)}
-                                                        type="button"
-                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                    >
-                                                        Delete
-                                                    </button>
-                                                </td>
-                                                <td>
-
-                                                <PostCommentCard postId={id}/>
-
-                                                </td>
-                                            </tr>
-                                        ))}
+                                                            Delete
+                                                        </button>
+                                                    </td>
+                                                    <td>
+    
+                                                    <PostCommentCard postId={id}/>
+                                                    
+                                                    </td>
+                                                </tr>
+                                            )
+                                            })}
 
                                         {posts.length === 0 && (
                                             <tr>
@@ -173,6 +178,7 @@ export default function Posts(props) {
                                         )}
                                     </tbody>
                                 </table>
+                                 
                             </div>
                         </div>
                     </div>
