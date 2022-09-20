@@ -7,14 +7,11 @@ import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 
-
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {
-        
-    }, [display, postId]);
+    useEffect(() => {}, [display, postId]);
 
     const { posts } = usePage().props;
 
@@ -90,92 +87,110 @@ export default function Posts(props) {
                     </DarkBlueBlockHeader>
                 </div>
                 <div className="flex flex-col items-center sm:items-center sm:pt-10">
-                <section className="absolute right-0 mr-32">
+                    <section className="absolute right-0 mr-32">
                         <SearchBar />
-                </section>                        
-                <section className="items-center justify-center font-bold">    
-                            <h1 className="text-3xl">This is a centered Title...Yes or No!?</h1>
-                </section>
-                <div className="py-12 m-8">
-                    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                            <div className="p-6 bg-white border-b border-gray-200">
-                                <div className="flex items-center justify-between mb-6">
-                                    <Link
-                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
-                                        href={route("showCreatePost")}
-                                    >
-                                        Create Post
-                                    </Link>
-                                </div>
+                    </section>
+                    <section className="items-center justify-center font-bold">
+                        <h1 className="text-3xl">
+                            This is a centered Title...Yes or No!?
+                        </h1>
+                    </section>
+                    <div className="py-12 m-8">
+                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                            <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                                <div className="p-6 bg-white border-b border-gray-200">
+                                    <div className="flex items-center justify-between mb-6">
+                                        <Link
+                                            className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                                            href={route("showCreatePost")}
+                                        >
+                                            Create Post
+                                        </Link>
+                                    </div>
 
-                                <table className="table-fixed w-full">
-                                    <thead>
-                                        <tr className="bg-darkblue text-white text-xl">
-                                            {/* <th className="px-4 py-2 w-20">No.</th> */}
-                                            <th className="px-4 py-2">Title</th>
-                                            <th className="px-4 py-2">Body</th>
-                                            <th className="px-4 py-2">Tag</th>
-                                            <th className="px-4 py-2">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {posts.map(({ id, title, content, tag }) => (
-                                                <tr key={id}>
-                                                    {/* <td className="border px-4 py-2">{ id }</td> */}
-                                                    <td className="border px-4 py-2">
-                                                        {title}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {content}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {tag}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        <Link
-                                                            tabIndex="1"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                            href={route("showUpdatedPost", id)}
-                                                        >
-                                                            Edit
-                                                        </Link>
+                                    <table className="table-fixed w-full">
+                                        <thead>
+                                            <tr className="bg-darkblue text-white text-xl">
+                                                {/* <th className="px-4 py-2 w-20">No.</th> */}
+                                                <th className="px-4 py-2">
+                                                    Title
+                                                </th>
+                                                <th className="px-4 py-2">
+                                                    Body
+                                                </th>
+                                                <th className="px-4 py-2">
+                                                    Tag
+                                                </th>
+                                                <th className="px-4 py-2">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {posts.map(
+                                                ({
+                                                    id,
+                                                    title,
+                                                    content,
+                                                    tag,
+                                                }) => (
+                                                    <tr key={id}>
+                                                        {/* <td className="border px-4 py-2">{ id }</td> */}
+                                                        <td className="border px-4 py-2">
+                                                            {title}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            {content}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            {tag}
+                                                        </td>
+                                                        <td className="border px-4 py-2">
+                                                            <Link
+                                                                tabIndex="1"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                href={route(
+                                                                    "showUpdatedPost",
+                                                                    id
+                                                                )}
+                                                            >
+                                                                Edit
+                                                            </Link>
 
-                                                    <button
-                                                        onClick={(e) => deleteMsg(e, id)}
-                                                        type="button"
-                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                            <button
+                                                                onClick={(e) => deleteMsg(e,id)}
+                                                                type="button"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                            >
+                                                                Delete
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            )}
+
+                                            {posts.length === 0 && (
+                                                <tr>
+                                                    <td
+                                                        className="px-6 py-4 border-t"
+                                                        colSpan={4}
                                                     >
-                                                        Delete
-                                                    </button>
-                                                </td>
-                                                <td>
-
-                                                <PostCommentCard postId={id}/>
-
-                                                </td>
-                                            </tr>
-                                        ))}
-
-                                        {posts.length === 0 && (
-                                            <tr>
-                                                <td
-                                                    className="px-6 py-4 border-t"
-                                                    colSpan={4}
-                                                >
-                                                    Be the first to post!
-                                                </td>
-                                            </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                                        Be the first to post!
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </Authenticated>
 
             <div className="h-64">

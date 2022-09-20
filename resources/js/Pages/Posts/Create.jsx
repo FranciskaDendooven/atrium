@@ -3,17 +3,17 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Head, useForm, Link } from "@inertiajs/inertia-react";
 
 export default function Dashboard(props) {
-    const {data, setData, errors, post} = useForm({
-        title:"",
-        content:"",
-        tag:"",
-        page:"",
+    const { data, setData, errors, post } = useForm({
+        title: "",
+        content: "",
+        tag: "",
+        page: "",
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        post(route('submitNewPost'));
+        post(route("submitNewPost"));
     };
 
     return (
@@ -112,7 +112,7 @@ export default function Dashboard(props) {
                                             type="radio"
                                             id="CodeQA"
                                             name="page"
-                                            value="Code QA"
+                                            value="CodeQA"
                                             onChange={(e) =>
                                                 setData("page", e.target.value)
                                             }
