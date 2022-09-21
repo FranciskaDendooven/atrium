@@ -181,7 +181,7 @@ export default function Profile(props) {
                         <h1 className="font-bold text-2xl">PIF</h1>
 
                         {posts.map(({ title, content, page, tag, id }) => {
-                            if (page === "CodeQA") {
+                            if (page === "PIF") {
                                 return (
                                     <PostCard className="" key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
