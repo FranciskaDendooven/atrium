@@ -35,7 +35,7 @@ export default function Posts(props) {
                 id="deleteMsg"
                 className={
                     display +
-                    " bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z=40"
+                    " bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z=50"
                 }
             >
                 <div className="bg-white px-16 py-14 rounded-md text-center">
@@ -69,7 +69,7 @@ export default function Posts(props) {
             </div>
 
             <Head title="Posts" />
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="w-full h-96 flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
