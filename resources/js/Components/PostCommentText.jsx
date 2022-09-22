@@ -5,11 +5,14 @@ export default function PostCommentText({comments}) {
 
         return (
             <>
-            <td>
-                {comments.map((comment, id) =>
-                <p key={id}>{comment.username}{comment.content}</p>
-                )}
-            </td>
+            <section>
+                {comments.map((comment, id) => {
+                 console.log(comment);
+                 return (
+                    <p key={id}>{comment.content}{comment.user.name}</p>
+                 )
+                 })}
+            </section>
             </>
             );
         }

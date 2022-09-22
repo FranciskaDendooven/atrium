@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
+import PostCard from "@/Components/PostCard";
 import PostCommentText from "@/Components/PostCommentText";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import { comment } from "postcss";
 
 
 export default function Posts(props) {
@@ -110,10 +112,55 @@ export default function Posts(props) {
                                     </Link>
                                 </div>
 
-                                <table className="table-fixed w-full">
+                                {/* test */}
+
+                                <section className="mb-6">
+                        <h1 className="font-bold text-2xl">Code Q&A</h1>
+
+                        {posts.map(
+                            ({id, title, content, tag, comments}) => {
+                                console.log(comments);
+                                return (
+                                    <PostCard key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
+                                        <p>{tag}</p>
+
+                                        <p>
+                                        <PostCommentText comments={comments}/>
+                                        </p>
+
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+
+                                        <PostCommentCard postId={id}/>
+
+                                    </PostCard>
+                                );
+                            }
+                        )}
+                    </section>
+
+                                {/* end of test */}
+
+                                {/* <table className="table-fixed w-full">
                                     <thead>
                                         <tr className="bg-darkblue text-white text-xl">
-                                            {/* <th className="px-4 py-2 w-20">No.</th> */}
                                             <th className="px-4 py-2">Title</th>
                                             <th className="px-4 py-2">Body</th>
                                             <th className="px-4 py-2">Tag</th>
@@ -125,13 +172,12 @@ export default function Posts(props) {
                                     </thead>
                                     <tbody>
                                         {posts.map(
-                                            ({ title, content, tag, comments }, id) => {
+                                            ({title, content, tag, comments }, id) => {
                                                 console.log(comments)
                                                 return (
                                                 
                                                     <tr key={id}>
                                                         
-                                                        {/* <td className="border px-4 py-2">{ id }</td> */}
                                                         <td className="border px-4 py-2">
                                                             {title}
                                                         </td>
@@ -169,7 +215,7 @@ export default function Posts(props) {
                                                     </td>
                                                 </tr>
                                             )
-                                            })}
+                                            })} */}
 
                                         {posts.length === 0 && (
                                             <tr>
@@ -181,8 +227,8 @@ export default function Posts(props) {
                                                 </td>
                                             </tr>
                                         )}
-                                    </tbody>
-                                </table>
+                                    {/* </tbody>
+                                </table> */}
                                  
                             </div>
                         </div>

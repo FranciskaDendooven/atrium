@@ -6,8 +6,7 @@ import React from "react";
 
 export default function CommentCard(props) {
 
-        const {data, setData, errors, comments, post} = useForm({
-            username:"",
+        const {data, setData, errors, post} = useForm({
             content:"",
             id:props.postId,
         });
@@ -22,29 +21,7 @@ export default function CommentCard(props) {
     return (
         <>
             <form onSubmit={handleSubmit} className="m-2 p-2 max-w-md">
-                <div className="mt-2">
-                    <div>
-                        <label
-                        htmlFor="username"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                        >
-                            Username:
-                        </label>
-                        <input
-                            type="text"
-                            className="w-full px-4 py-2 rounded"
-                            label="username"
-                            name="username"
-                            value={data.username}
-                            onChange={(e) =>
-                                setData("username", e.target.value)
-                            }
-                        />
-
-                        <span className="text-red-600">
-                            {errors.title}
-                        </span>
-                    </div>
+                
                     <label
                         htmlFor="comment"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -66,7 +43,7 @@ export default function CommentCard(props) {
                         </span>
 
                     </textarea>
-                </div>
+
                 <div className="mt-2">
                     <button
                         type="submit" 

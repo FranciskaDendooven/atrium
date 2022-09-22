@@ -13,7 +13,7 @@ class PostController extends Controller
     public function show()
     {
         $posts = Post::orderBy('updated_at', 'DESC')->get();
-        $posts = Post::with(['comments'])->get();
+        $posts = Post::with(['comments'])->with('comments.user')->get();
         return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
 
