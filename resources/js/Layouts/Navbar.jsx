@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, Head } from "@inertiajs/inertia-react";
-import Authenticated from "@/Layouts/Authenticated";
+import { Link } from "@inertiajs/inertia-react";
 import WaldoIcon from "@/Components/WaldoIcon";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
