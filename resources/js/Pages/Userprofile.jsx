@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Authenticated from "@/Layouts/Authenticated";
+import Navbar from "@/Layouts/Navbar";
 import { Head, usePage } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
@@ -16,17 +16,8 @@ export default function Profile(props, auth) {
     return (
 
         <>
-            <Authenticated
-                auth={props.auth}
-                errors={props.errors}
-                header={
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        {props.auth.user.name} Profile
-                    </h2>
-                }
-            >
-                   
-                <Head title="Profile" />
+            <Navbar auth={props.auth} errors={props.errors}></Navbar>
+            <Head title="Profile" />
 
                 <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
                     <DarkBlueBlockHeader className="">
@@ -147,7 +138,6 @@ export default function Profile(props, auth) {
                         </PostCard>
                     </section>
                 </div>
-            </Authenticated>
             <div className="h-64">
                 <Footer></Footer>
             </div>

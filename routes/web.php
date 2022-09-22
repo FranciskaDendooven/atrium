@@ -6,20 +6,6 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCommentController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-
-
 // Route::resource('posts', PostController::class);
 
 
@@ -31,19 +17,20 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
 
-Route::get('/Posts/comment', [PostCommentController::class, 'show'])->name('showPostsComments');
-Route::post('/Posts/comment', [PostCommentController::class, 'store'])->name('submitPostsComments');
+Route::get('/Posts/comment', [PostCommentController::class, 'show'])->middleware(['auth', 'verified'])->name('showPostsComments');
+Route::post('/Posts/comment', [PostCommentController::class, 'store'])->middleware(['auth', 'verified'])->name('submitPostsComments');
 
-Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->name('deleteAction');
+Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->middleware(['auth', 'verified'])->name('deleteAction');
 
-Route::get('/Posts/create', [PostController::class, 'create'])->name('showCreatePost');
-Route::post('/Posts/create', [PostController::class, 'store'])->name('submitNewPost');
+Route::get('/Posts/create', [PostController::class, 'create'])->middleware(['auth', 'verified'])->name('showCreatePost');
+Route::post('/Posts/create', [PostController::class, 'store'])->middleware(['auth', 'verified'])->name('submitNewPost');
 
-Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->name('showUpdatedPost');
-Route::put('/Posts/update/{id}', [PostController::class, 'update'])->name('submitUpdatedPost');
+Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->middleware(['auth', 'verified'])->name('showUpdatedPost');
+Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(['auth', 'verified'])->name('submitUpdatedPost');
+
+
 
 
 Route::get('/dashboard', function () {
@@ -52,32 +39,31 @@ Route::get('/dashboard', function () {
 
 Route::get('/codeQA', function () {
     return Inertia::render('CodeQA');
-})->middleware(['auth', 'verified'])->name('codeQA');
+})->name('codeQA');
 
 Route::get('/codeShare', function () {
     return Inertia::render('CodeShare');
-})->middleware(['auth', 'verified'])->name('codeShare');
+})->name('codeShare');
 
 Route::get('/brainFarts', function () {
     return Inertia::render('BrainFarts');
-})->middleware(['auth', 'verified'])->name('brainFarts');
+})->name('brainFarts');
 
 Route::get('/pif', function () {
     return Inertia::render('Pif');
-})->middleware(['auth', 'verified'])->name('pif');
+})->name('pif');
 
 Route::get('/techNews', function () {
     return Inertia::render('TechNews');
-})->middleware(['auth', 'verified'])->name('techNews');
+})->name('techNews');
 
 Route::get('/userprofile', function () {
     return Inertia::render('Userprofile');
-})->middleware(['auth', 'verified'])->name('userProfile');
+})->name('userProfile');
 
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
-})->middleware(['auth', 'verified'])->name('userSettings');
-
+})->name('userSettings');
 
 
 
