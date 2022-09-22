@@ -131,7 +131,7 @@ export default function Authenticated({ auth, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
-                                            href={route("userProfile")}
+                                            href={route("showUserProfile")}
                                             method="get"
                                             as="button"
                                         >
@@ -216,7 +216,7 @@ export default function Authenticated({ auth, header, children }) {
                         </ResponsiveNavLink>
                     </div>
 
-                    <div className="pt-4 pb-1 border-t border-gray-200">
+                    {/* <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
                             <div className="font-medium text-base text-gray-800">
                                 {auth.user.name}
@@ -235,7 +235,7 @@ export default function Authenticated({ auth, header, children }) {
                                 Log Out
                             </ResponsiveNavLink>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
 

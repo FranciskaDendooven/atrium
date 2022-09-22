@@ -10,7 +10,9 @@ import SearchBar from "@/Components/SearchBar";
 export default function TechNews(props) {
     return (
         <>
-            <Navbar auth={props.auth} errors={props.errors}></Navbar>
+            <Navbar auth={props.auth} errors={props.errors}>
+                
+            </Navbar>
 
             <div className="h-64">
                 <Footer></Footer>

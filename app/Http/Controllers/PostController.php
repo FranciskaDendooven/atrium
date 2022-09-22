@@ -17,6 +17,15 @@ class PostController extends Controller
         return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
 
+    public function showAllUserPosts()
+    
+    {
+        $id = auth()->user()->id;
+        $posts = Post::where('user_id', $id)->with('user')->get();
+        //dd($posts);
+        return Inertia::render('Userprofile', ['posts' => $posts]);
+    }
+
     public function create()
     {
         return Inertia::render('Posts/Create');

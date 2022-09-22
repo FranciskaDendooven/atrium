@@ -11,8 +11,14 @@ export default function Pif(props) {
     return (
        <>
    
-          <Navbar auth={props.auth} errors={props.errors}></Navbar>
+          <Navbar 
+          auth={props.auth} 
+          errors={props.errors}
+          >
+          </Navbar>
+
             <Head title="PIF" />
+
             <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
