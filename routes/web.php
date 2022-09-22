@@ -17,10 +17,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
+Route::get('/CodeQA', [PostController::class, 'show'])->name('showPosts');
 
 Route::get('/Posts/comment', [PostCommentController::class, 'show'])->middleware(['auth', 'verified'])->name('showPostsComments');
-Route::post('/Posts/comment', [PostCommentController::class, 'store'])->middleware(['auth', 'verified'])->name('submitPostsComments');
+Route::post('/Posts/comment', [PostCommentController::class, 'store'])->middleware(['auth', 'verified'])->name('submitNewComment');
 
 Route::post('/Posts/remove/{id}', [PostController::class, 'destroy'])->middleware(['auth', 'verified'])->name('deleteAction');
 
@@ -68,9 +68,6 @@ Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->middlew
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->name('userSettings');
-
-
-
 
 
 require __DIR__.'/auth.php';

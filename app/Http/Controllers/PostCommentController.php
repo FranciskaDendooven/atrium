@@ -11,11 +11,11 @@ use Illuminate\Http\Request;
 class PostCommentController extends Controller
 {
 
-      public function show()
-      {
-          $posts = Post::with('comments')->get();
-          return Inertia::render('Posts/Index', ['posts' => $posts]);
-      }
+    public function showComment()
+    {
+        $comments = Comment::orderBy('updated_at', 'DESC')->with('user')->get();
+        return Inertia::render('Posts/Index', ['comments' => $comments]);
+    }
 
     public function store(Request $request){
 
@@ -29,17 +29,8 @@ class PostCommentController extends Controller
             'content' => $request->content,
         ])->save();
 
-        return back();
+        return redirect()->back();
     }
 
-    // public function toArray(Request $request)
-    // { 
-    //   return [
-    //     'id' => $this->id,
-    //     'username' => $this->user_id,
-    //     'content' => $this->content,
-    //     'created_at' => (string) $this->created_at,
-    //   ];
-    // }
 
 }

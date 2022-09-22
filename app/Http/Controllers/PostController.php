@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Inertia\Inertia;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 
@@ -12,6 +13,7 @@ class PostController extends Controller
     public function show()
     {
         $posts = Post::orderBy('updated_at', 'DESC')->get();
+        $posts = Post::with(['comments'])->with('comments.user')->get();
         return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
 
@@ -47,7 +49,8 @@ class PostController extends Controller
             'page' => $request->page,
         ]);
 
-        return redirect()->route('showPosts');
+        // return redirect()->back();
+        return redirect()->route('dashboard');
         
     }
 

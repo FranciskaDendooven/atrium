@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/Layouts/Navbar";
 import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
+import PostCommentText from "@/Components/PostCommentText";
+import PostCard from "@/Components/PostCard";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
-import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import { comment } from "postcss";
+import Authenticated from "@/Layouts/Authenticated";
 
 
 export default function Posts(props) {
@@ -91,6 +94,7 @@ export default function Posts(props) {
                         This is a centered Title...Yes or No!?
                     </h1>
                 </section>
+
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -104,79 +108,58 @@ export default function Posts(props) {
                                     </Link>
                                 </div>
 
-                                <table className="table-fixed w-full">
-                                    <thead>
-                                        <tr className="bg-darkblue text-white text-xl">
-                                            {/* <th className="px-4 py-2 w-20">No.</th> */}
-                                            <th className="px-4 py-2">Title</th>
-                                            <th className="px-4 py-2">Body</th>
-                                            <th className="px-4 py-2">Tag</th>
-                                            <th className="px-4 py-2">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {posts.map(
-                                            ({ id, title, content, tag }) => (
-                                                <tr key={id}>
-                                                    {/* <td className="border px-4 py-2">{ id }</td> */}
-                                                    <td className="border px-4 py-2">
-                                                        {title}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {content}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        {tag}
-                                                    </td>
-                                                    <td className="border px-4 py-2">
-                                                        <Link
-                                                            tabIndex="1"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                            href={route(
-                                                                "showUpdatedPost",
-                                                                id
-                                                            )}
-                                                        >
-                                                            Edit
-                                                        </Link>
+                                {/* test */}
 
-                                                        <button
-                                                            onClick={(e) =>
-                                                                deleteMsg(e, id)
-                                                            }
-                                                            type="button"
-                                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </td>
-                                                    <td>
-                                                        <PostCommentCard
-                                                            postId={id}
-                                                        />
-                                                    </td>
-                                                </tr>
-                                            )
-                                        )}
+                                <section className="mb-6">
+                        <h1 className="font-bold text-2xl">Code Q&A</h1>
 
-                                        {posts.length === 0 && (
-                                            <tr>
-                                                <td
-                                                    className="px-6 py-4 border-t"
-                                                    colSpan={4}
-                                                >
-                                                    Be the first to post!
-                                                </td>
-                                            </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                        {posts.map(
+                            ({id, title, content, tag, comments}) => {
+                                console.log(comments);
+                                return (
+                                    <PostCard key={id}>
+                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                            {title}
+                                        </h1>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
+                                        <p>{tag}</p>
+
+                                        <p>
+                                        <PostCommentText comments={comments}/>
+                                        </p>
+
+                                        <Link
+                                            tabIndex="1"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                            href={route("showUpdatedPost", id)}
+                                        >
+                                            Edit
+                                        </Link>
+
+                                        <button
+                                           onClick={(e) => deleteMsg(e, id)}
+                                            type="submit"
+                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                        >
+                                            Delete
+                                        </button>
+
+                                        <PostCommentCard postId={id}/>
+
+                                    </PostCard>
+                                );
+                            }
+                        )}
+                    </section>
+
+                    
+                                {/* end of test */}
+                                 
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div className="h-64">

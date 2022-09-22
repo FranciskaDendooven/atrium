@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@/Components/Button";
-import { Link } from "@inertiajs/inertia-react";
 
 export default function PostCard({ children }) {
     return (
