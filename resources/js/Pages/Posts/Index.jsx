@@ -35,7 +35,7 @@ export default function Posts(props) {
                 id="deleteMsg"
                 className={
                     display +
-                    " bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z=50"
+                    " bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z=40"
                 }
             >
                 <div className="bg-white px-16 py-14 rounded-md text-center">
@@ -52,7 +52,6 @@ export default function Posts(props) {
                     </button>
                     <button
                         className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                        // onClick={route("posts.destroy", "postId")}>
                     >
                         <Link
                             href={route("deleteAction", postId)}
@@ -108,8 +107,6 @@ export default function Posts(props) {
                                     </Link>
                                 </div>
 
-                                {/* test */}
-
                                 <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
 
@@ -151,9 +148,6 @@ export default function Posts(props) {
                             }
                         )}
                     </section>
-
-                    
-                                {/* end of test */}
                                  
                             </div>
                         </div>
