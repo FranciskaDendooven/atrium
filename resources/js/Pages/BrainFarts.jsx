@@ -1,24 +1,18 @@
 import React from "react";
-import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import Navbar from "@/Layouts/Navbar";
 
 export default function BrainFarts(props) {
     return (
         <>
-            <Authenticated
-                auth={props.auth}
-                errors={props.errors}
-                header={
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        Dashboard
-                    </h2>
-                }
-            >
+            <Navbar auth={props.auth}
+                errors={props.errors}></Navbar>
+           
                 <Head title="BrainFarts" />
                 <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
                     <DarkBlueBlockHeader className="">
@@ -46,7 +40,6 @@ export default function BrainFarts(props) {
 
 
                 </div>
-            </Authenticated>
             <div className="h-64">
                 <Footer></Footer>
             </div>
