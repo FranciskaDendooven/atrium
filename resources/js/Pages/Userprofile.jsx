@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/Layouts/Navbar";
-import { Head, usePage } from "@inertiajs/inertia-react";
+import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -24,7 +24,7 @@ export default function Profile(props) {
 
     return (
         <>
-            <Authenticated
+            <Navbar
                 auth={props.auth}
                 errors={props.errors}
                 header={
@@ -69,36 +69,38 @@ export default function Profile(props) {
                         </button>
                     </div>
                 </div>
+            </Navbar>
 
-                <Navbar auth={props.auth} errors={props.errors}></Navbar>
-                <Head title="Profile" />
+            <Head title="Profile" />
 
-                <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
-                    <DarkBlueBlockHeader className="">
-                        <section className="flex-row">
-                            <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
-                                Hello {props.auth.user.name}
-                            </h1>
-                        </section>
-                        <CentralLogo
-                            width="100px"
-                            src="images/icon/waldo.png"
-                            alt="user avater image"
-                        />
-
-                        <h1 className="text-gray-400 text-2xl m-4 p-2">
-                            This is a subtitle
+            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+                <DarkBlueBlockHeader className="">
+                    <section className="flex-row">
+                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
+                            Hello {props.auth.user.name}
                         </h1>
-                    </DarkBlueBlockHeader>
-                </div>
+                    </section>
+                    <CentralLogo
+                        width="100px"
+                        src="images/icon/waldo.png"
+                        alt="user avater image"
+                    />
 
-                <div className="flex flex-col sm:pt-10">
-                    <section className="absolute right-0 mr-32">
-                        <SearchBar />
-                    </section>
-                    <section className="flex justify-center items-center sm:items-center sm:pt-10">
-                        <h1 className="font-bold text-3xl">Your Posts</h1>
-                    </section>
+                    <h1 className="text-gray-400 text-2xl m-4 p-2">
+                        This is a subtitle
+                    </h1>
+                </DarkBlueBlockHeader>
+            </div>
+
+            <div className="flex flex-col max-w-full sm:pt-10">
+                <section className="absolute right-0 mr-32">
+                    <SearchBar />
+                </section>
+                <section className="flex justify-center items-center sm:items-center sm:pt-10">
+                    <h1 className="font-bold text-3xl">Your Posts</h1>
+                </section>
+
+                <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
 
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
@@ -333,8 +335,8 @@ export default function Profile(props) {
                         {/* <Pagination class="mt-6" links={posts} /> */}
                     </section>
                 </div>
-            </Authenticated>
-            
+            </div>
+
             <div className="h-64">
                 <Footer></Footer>
             </div>

@@ -57,7 +57,11 @@ Route::get('/techNews', function () {
     return Inertia::render('TechNews');
 })->name('techNews');
 
-Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->name('showUserProfile');
+Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->middleware(['auth', 'verified'])->name('userProfile');
+
+// Route::get('/userprofile', function () {
+//     return Inertia::render('Userprofile');
+// })->name('userProfile');
 
 
 
