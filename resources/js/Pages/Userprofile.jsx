@@ -26,6 +26,8 @@ export default function Profile(props) {
         setPostId(id);
     };
 
+
+
     return (
         <>
             <Authenticated
@@ -41,7 +43,7 @@ export default function Profile(props) {
                     id="deleteMsg"
                     className={
                         display +
-                        " bg-slate-800 bg-opacity-50 flex justify-center items-center absolute top-0 right-0 bottom-0 left-0 z=40"
+                        " bg-slate-800 bg-opacity-50 flex justify-center items-center overflow-y-auto overflow-x-hidden absolute top-0 right-0 bottom-0 left-0 z=1"
                     }
                 >
                     <div className="bg-white px-16 py-14 rounded-md text-center">
@@ -106,17 +108,18 @@ export default function Profile(props) {
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
 
-                        {posts.map(({ title, content, page, tag, id }) => {
+                        {posts.map(({ title, content, page, tag, id, user }) => {
                             if (page === "CodeQA") {
                                 return (
                                     <PostCard key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
                                             {title}
-                                        </h1>
-                                        <p>{content}</p>
+                                        </h1> 
+                                        <p>{user.name}</p>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
                                         <p>{tag}</p>
                                         <p>{page}</p>
-
+                                       
                                         <Link
                                             tabIndex="1"
                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
@@ -132,6 +135,7 @@ export default function Profile(props) {
                                         >
                                             Delete
                                         </button>
+
                                     </PostCard>
                                 );
                             }
@@ -143,16 +147,18 @@ export default function Profile(props) {
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Share</h1>
 
-                        {posts.map(({ title, content, page, tag, id }) => {
+                        {posts.map(({ title, content, page, tag, id, user }) => {
                             if (page === "Code Share") {
                                 return (
                                     <PostCard className="" key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
                                             {title}
-                                        </h1>
-                                        <p>{content}</p>
+                                        </h1>     
+                                        <p>{user.name}</p>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
                                         <p>{tag}</p>
                                         <p>{page}</p>
+                                  
 
                                         <Link
                                             tabIndex="1"
@@ -180,17 +186,18 @@ export default function Profile(props) {
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">PIF</h1>
 
-                        {posts.map(({ title, content, page, tag, id }) => {
+                        {posts.map(({ title, content, page, tag, id, user }) => {
                             if (page === "PIF") {
                                 return (
                                     <PostCard className="" key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
                                             {title}
                                         </h1>
-                                        <p>{content}</p>
+                                        <p>{user.name}</p>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
                                         <p>{tag}</p>
                                         <p>{page}</p>
-
+                                        
                                         <Link
                                             tabIndex="1"
                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
@@ -213,20 +220,21 @@ export default function Profile(props) {
 
                         {/* <Pagination class="mt-6" links={posts} /> */}
                     </section>
-                    <section className="justify-start mb-6">
+                    <section className=" mb-6">
                         <h1 className="font-bold text-2xl">Brain Farts</h1>
 
-                        {posts.map(({ title, content, page, tag, id }) => {
+                        {posts.map(({ title, content, page, tag, id, user }) => {
                             if (page === "BrainFarts") {
                                 return (
                                     <PostCard key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
                                             {title}
                                         </h1>
-                                        <p>{content}</p>
+                                        <p>{user.name}</p>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
                                         <p>{tag}</p>
                                         <p>{page}</p>
-
+                                    
                                         <Link
                                             tabIndex="1"
                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
@@ -252,17 +260,18 @@ export default function Profile(props) {
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Tech News</h1>
 
-                        {posts.map(({ title, content, page, tag, id }) => {
+                        {posts.map(({ title, content, page, tag, id, user }) => {
                             if (page === "TechNews") {
                                 return (
                                     <PostCard className="" key={id}>
                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
                                             {title}
-                                        </h1>
-                                        <p>{content}</p>
+                                        </h1> 
+                                        <p>{user.name}</p>
+                                        <p className="text-ellipsis overflow-hidden">{content}</p>
                                         <p>{tag}</p>
                                         <p>{page}</p>
-
+                                    
                                         <Link
                                             tabIndex="1"
                                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
