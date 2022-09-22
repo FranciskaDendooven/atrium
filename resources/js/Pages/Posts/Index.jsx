@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/Layouts/Navbar";
 import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
-import PostCard from "@/Components/PostCard";
 import PostCommentText from "@/Components/PostCommentText";
+import PostCard from "@/Components/PostCard";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import { comment } from "postcss";
+import Authenticated from "@/Layouts/Authenticated";
 
 
 export default function Posts(props) {
@@ -93,6 +94,7 @@ export default function Posts(props) {
                         This is a centered Title...Yes or No!?
                     </h1>
                 </section>
+
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -150,12 +152,14 @@ export default function Posts(props) {
                         )}
                     </section>
 
+                    
                                 {/* end of test */}
                                  
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div className="h-64">

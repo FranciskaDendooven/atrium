@@ -13,6 +13,9 @@ export default function CommentCard(props) {
     
         const handleSubmit = (e) => {
             e.preventDefault();
+            setData({
+                content: "",
+            });
     
             post(route('submitNewComment'));
         };

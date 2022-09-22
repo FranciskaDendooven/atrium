@@ -20,7 +20,7 @@ class Post extends Model
         'soft_delete',
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class); 
     }
