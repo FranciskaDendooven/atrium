@@ -73,7 +73,7 @@ export default function Profile(props) {
 
             <Head title="Profile" />
 
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="w-full h-96 flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">

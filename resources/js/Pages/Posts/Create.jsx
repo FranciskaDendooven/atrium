@@ -116,7 +116,7 @@ export default function Dashboard(props) {
                                                 }
                                                 className="m-2"
                                             />
-                                            <label for="CodeQA">CodeQA</label>
+                                            <label for="CodeQA">Code QA</label>
                                         </section>
 
                                         <section className="m-2">
