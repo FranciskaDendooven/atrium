@@ -4,7 +4,6 @@ import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
 import PostCommentText from "@/Components/PostCommentText";
 import PostCard from "@/Components/PostCard";
-import ShowButtons from "@/Components/ShowButtons";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
@@ -157,9 +156,7 @@ console.log(props.auth);
 
                                                             <button
                                                                 onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
+                                                                    deleteMsg(e, id
                                                                     )
                                                                 }
                                                                 type="submit"
@@ -181,8 +178,6 @@ console.log(props.auth);
                                     
                                     )}
                                 </section>
-
-                                {/* end of test */}
                             </div>
                         </div>
                     </div>
