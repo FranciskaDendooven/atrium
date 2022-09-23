@@ -4,7 +4,6 @@ import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
 import PostCommentText from "@/Components/PostCommentText";
 import PostCard from "@/Components/PostCard";
-import ShowButtons from "@/Components/ShowButtons";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
@@ -17,7 +16,9 @@ export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {}, [display, postId]);
+    useEffect(() => {
+
+    }, [display, postId]);
 
     const { posts } = usePage().props;
 
@@ -186,8 +187,6 @@ console.log(props.auth);
                                     
                                     )}
                                 </section>
-
-                                {/* end of test */}
                             </div>
                         </div>
                     </div>
