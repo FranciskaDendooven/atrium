@@ -4,13 +4,12 @@ import { Head, usePage, Link } from "@inertiajs/inertia-react";
 import PostCommentCard from "@/Components/PostCommentCard";
 import PostCommentText from "@/Components/PostCommentText";
 import PostCard from "@/Components/PostCard";
-import ShowButtons from "@/Components/ShowButtons";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import { comment } from "postcss";
-import Authenticated from "@/Layouts/Authenticated";
+
 
 
 export default function Posts(props) {
