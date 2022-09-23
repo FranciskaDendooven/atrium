@@ -9,14 +9,16 @@ import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import { comment } from "postcss";
-import Authenticated from "@/Layouts/Authenticated";
+
 
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {}, [display, postId]);
+    useEffect(() => {
+
+    }, [display, postId]);
 
     const { posts } = usePage().props;
 
