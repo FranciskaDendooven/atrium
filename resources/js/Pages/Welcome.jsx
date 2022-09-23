@@ -13,7 +13,7 @@ export default function Welcome({auth, errors}) {
      const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     return (
         <>
-            <Navbar auth={auth} errors={errors}></Navbar>;
+            <Navbar auth={auth} errors={errors}></Navbar>
             <Head title="Welcome" />
             <DarkBlueBlockHeader>
                 <div className="flex flex-row justify-center items-center">
