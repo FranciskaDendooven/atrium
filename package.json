@@ -22,7 +22,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
-        "react-js-pagination": "^3.0.2",
+
         "react-paginate": "^8.1.3"
     }
 }
