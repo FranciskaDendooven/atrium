@@ -11,14 +11,11 @@ import SearchBar from "@/Components/SearchBar";
 import { comment } from "postcss";
 import Authenticated from "@/Layouts/Authenticated";
 
-
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {
-        
-    }, [display, postId]);
+    useEffect(() => {}, [display, postId]);
 
     const { posts } = usePage().props;
 
@@ -111,55 +108,70 @@ export default function Posts(props) {
                                 {/* test */}
 
                                 <section className="mb-6">
-                        <h1 className="font-bold text-2xl">Code Q&A</h1>
+                                    <h1 className="font-bold text-2xl">
+                                        Code Q&A
+                                    </h1>
 
-                        {posts.map(
-                            ({id, title, content, tag, comments}) => {
-                                console.log(comments);
-                                return (
-                                    <PostCard key={id}>
-                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                            {title}
-                                        </h1>
-                                        <p className="text-ellipsis overflow-hidden">{content}</p>
-                                        <p>{tag}</p>
+                                    {posts.map(
+                                        ({
+                                            id,
+                                            title,
+                                            content,
+                                            tag,
+                                            comments,
+                                        }) => {
+                                            console.log(comments);
+                                            return (
+                                                <PostCard key={id}>
+                                                    <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                        {title}
+                                                    </h1>
+                                                    <p className="text-ellipsis overflow-hidden">
+                                                        {content}
+                                                    </p>
+                                                    <p>{tag}</p>
 
-                                        <p>
-                                        <PostCommentText comments={comments}/>
-                                        </p>
+                                                    <p>
+                                                        {/* <PostCommentText
+                                                            comments={comments}
+                                                        /> */}
+                                                    </p>
 
-                                        <Link
-                                            tabIndex="1"
-                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                            href={route("showUpdatedPost", id)}
-                                        >
-                                            Edit
-                                        </Link>
+                                                    <Link
+                                                        tabIndex="1"
+                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                        href={route(
+                                                            "showUpdatedPost",
+                                                            id
+                                                        )}
+                                                    >
+                                                        Edit
+                                                    </Link>
 
-                                        <button
-                                           onClick={(e) => deleteMsg(e, id)}
-                                            type="submit"
-                                            className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                        >
-                                            Delete
-                                        </button>
+                                                    <button
+                                                        onClick={(e) =>
+                                                            deleteMsg(e, id)
+                                                        }
+                                                        type="submit"
+                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                    >
+                                                        Delete
+                                                    </button>
 
-                                        <PostCommentCard postId={id}/>
+                                                    <PostCommentCard
+                                                        postId={id}
+                                                    />
+                                                </PostCard>
+                                            );
+                                        }
+                                    )}
+                                </section>
 
-                                    </PostCard>
-                                );
-                            }
-                        )}
-                    </section>
-
-                    
                                 {/* end of test */}
-                                 
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div className="h-64">
