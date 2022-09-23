@@ -9,7 +9,7 @@ import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import { comment } from "postcss";
-import Authenticated from "@/Layouts/Authenticated";
+
 
 
 export default function Posts(props) {
