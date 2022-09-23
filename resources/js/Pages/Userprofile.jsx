@@ -6,7 +6,7 @@ import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
-import Pagination from "@/Components/Pagination";
+import ReactPaginate from "react-paginate";
 
 export default function Profile(props) {
     const [display, setDisplay] = useState("hidden");
@@ -14,13 +14,27 @@ export default function Profile(props) {
 
     useEffect(() => {}, [display, postId]);
 
-    const posts = props.posts;
+   
+
+/// the useState atributed to the posts array is being used for the pagination functionality ////
+    const [posts, setposts] = useState(props.posts);
+    
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
         setDisplay("block");
         setPostId(id);
     };
+
+//// pagination ////
+    const [page, setPage] = useState(0);
+    const postsPerPage = 3;
+    const numberOfPostsVisited = page * postsPerPage;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const changePage = ({ selected }) => {
+        setPage(selected);
+      };
+//// pagination ////
 
     return (
         <>
@@ -52,10 +66,7 @@ export default function Profile(props) {
                         >
                             Cancel
                         </button>
-                        <button
-                            className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                            //onClick={route("posts.destroy", "postId")}
-                        >
+                        <button className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">
                             <Link
                                 href={route("deleteAction", postId)}
                                 method="post"
@@ -101,12 +112,15 @@ export default function Profile(props) {
                 </section>
 
                 <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
-
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Q&A</h1>
 
-                        {posts.map(
-                            ({ title, content, page, tag, id, user }) => {
+                        {posts
+                            .slice(
+                                numberOfPostsVisited,
+                                numberOfPostsVisited + postsPerPage
+                            )
+                            .map(({ title, content, page, tag, id, user }) => {
                                 if (page === "CodeQA") {
                                     return (
                                         <PostCard key={id}>
@@ -143,10 +157,18 @@ export default function Profile(props) {
                                         </PostCard>
                                     );
                                 }
-                            }
-                        )}
-
-                        {/* <Pagination class="mt-6" links={posts} /> */}
+                            })}
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={totalPages}
+                            onPageChange={changePage}
+                            containerClassName={"navigationButtons"}
+                            previousLinkClassName={"previousButton"}
+                            nextLinkClassName={"nextButton"}
+                            disabledClassName={"navigationDisabled"}
+                            activeClassName={"navigationActive"}
+                        />
                     </section>
 
                     <section className="mb-6">
