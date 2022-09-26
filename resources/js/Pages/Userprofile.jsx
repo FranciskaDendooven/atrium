@@ -14,8 +14,6 @@ export default function Profile(props) {
 
     useEffect(() => {}, [display, postId]);
 
-   
-
 /// the useState atributed to the posts array is being used for the pagination functionality ////
     const [posts, setposts] = useState(props.posts);
     
