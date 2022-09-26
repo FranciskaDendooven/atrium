@@ -12,8 +12,11 @@ class PostController extends Controller
 {
     public function show()
     {
-        $posts = Post::orderBy('updated_at', 'DESC')->get();
-        $posts = Post::with(['comments'])->with('comments.user')->get();
+        $posts = Post::orderBy('updated_at', 'DESC')
+            ->with(['comments'])
+            ->with('comments.user')
+            ->with('user')
+            ->get();
         return Inertia::render('Posts/Index', ['posts' => $posts]);
     }
 
@@ -22,7 +25,6 @@ class PostController extends Controller
     {
         $id = auth()->user()->id;
         $posts = Post::where('user_id', $id)->with('user')->get();
-        //dd($posts);
         return Inertia::render('Userprofile', ['posts' => $posts]);
     }
 

@@ -9,8 +9,6 @@ import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 
-
-
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
@@ -26,8 +24,7 @@ export default function Posts(props) {
            setDisplay("block");
            setPostId(id);
     };
-  
-console.log(props.auth);
+
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
@@ -113,7 +110,7 @@ console.log(props.auth);
                                     </h1>
 
                                     {posts.map(
-                                        ({id, user_id, title, content, tag, comments}) => {
+                                        ({id, user_id, title, content, tag, comments, user}) => {
                                             let visible=false;
                                            
                                             if (props.auth.user && user_id == props.auth.user.id )
@@ -124,7 +121,7 @@ console.log(props.auth);
                                                     <h1 className="m-4 mb-8 font-bold text-gray-700">
                                                         {title}
                                                     </h1>
-                                                    <p><b>by {props.auth.user.name}</b></p>
+                                                    <p><b>by { user.name}</b></p>
                                                     <p className="text-ellipsis overflow-hidden">
                                                         {content}
                                                     </p>
