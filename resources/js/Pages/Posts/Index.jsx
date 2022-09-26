@@ -8,9 +8,6 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
-import { comment } from "postcss";
-
-
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
@@ -27,8 +24,7 @@ export default function Posts(props) {
            setDisplay("block");
            setPostId(id);
     };
-  
-console.log(props.auth);
+
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
@@ -53,7 +49,6 @@ console.log(props.auth);
                     </button>
                     <button
                         className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                        // onClick={route("posts.destroy", "postId")}>
                     >
                         <Link
                             href={route("deleteAction", postId)}
@@ -70,7 +65,7 @@ console.log(props.auth);
             </div>
 
             <Head title="Posts" />
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="w-full h-96 flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
@@ -109,34 +104,24 @@ console.log(props.auth);
                                     </Link>
                                 </div>
 
-                                {/* test */}
-
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
                                         Code Q&A
                                     </h1>
 
                                     {posts.map(
-                                        ({
-                                            id,
-                                            user_id,
-                                            title,
-                                            content,
-                                            tag,
-                                            comments,
-                                        }) => {
+                                        ({id, user_id, title, content, tag, comments, user}) => {
                                             let visible=false;
                                            
                                             if (props.auth.user && user_id == props.auth.user.id )
-                                                {visible=true}
-                                            
-                                 
+                                                {visible=true}                           
 
                                             return (
                                                 <PostCard key={id}>
                                                     <h1 className="m-4 mb-8 font-bold text-gray-700">
                                                         {title}
                                                     </h1>
+                                                    <p><b>by { user.name}</b></p>
                                                     <p className="text-ellipsis overflow-hidden">
                                                         {content}
                                                     </p>
@@ -163,9 +148,7 @@ console.log(props.auth);
 
                                                             <button
                                                                 onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
+                                                                    deleteMsg(e, id
                                                                     )
                                                                 }
                                                                 type="submit"
