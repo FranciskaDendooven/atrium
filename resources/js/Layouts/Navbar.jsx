@@ -6,112 +6,36 @@ import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import ApplicationLogoFont from "@/Components/ApplicationLogoFont";
 
-export default function Navbar({ auth, children }) {
-    //    console.log(auth);
+export default function Navbar({ auth, children, active }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
     return (
         <>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto my-2 px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex">
                         <div className="shrink-0 flex items-center">
                             <Link href="/">
-                                <ApplicationLogoFont className="block h-9 w-auto text-gray-500" />
+                                <ApplicationLogoFont className="block h-14 w-auto text-gray-500" />
                             </Link>
                         </div>
 
-                        <div className="hidden sm:flex sm:items-center sm:ml-6">
-                            <div className="ml-3 relative">
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
-                                            <button
-                                                type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                            >
-                                                Code
-                                                <svg
-                                                    className="ml-2 -mr-0.5 h-4 w-4"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                >
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clipRule="evenodd"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </Dropdown.Trigger>
-
-                                    <Dropdown.Content>
-                                        <Dropdown.Link
-                                            href={route("showPosts")}
-                                            method="get"
-                                            as="button"
-                                        >
-                                            Code QA
-                                        </Dropdown.Link>
-
-                                        <Dropdown.Link
-                                            href={route("codeShare")}
-                                            method="get"
-                                            as="button"
-                                        >
-                                            Code Share
-                                        </Dropdown.Link>
-                                    </Dropdown.Content>
-                                </Dropdown>
-                            </div>
-                        </div>
-
-                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <NavLink
-                                href={route("brainFarts")}
-                                active={route().current("brainFarts")}
-                            >
-                                BrainFarts
-                            </NavLink>
-
-                            <NavLink
-                                href={route("pif")}
-                                active={route().current("pif")}
-                            >
-                                PIF
-                            </NavLink>
-
-                            <NavLink
-                                href={route("techNews")}
-                                active={route().current("techNews")}
-                            >
-                                Tech News
-                            </NavLink>
-
-                            <NavLink
-                                href={route("techNews")}
-                                active={route().current("techNews")}
-                            >
-                                Bots
-                            </NavLink>
-                        </div>
-                    </div>
-
-                    {auth.user ? (
-                        <div className="hidden sm:flex sm:items-center sm:ml-6">
-                            <div className="ml-3 relative">
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
-                                            <div className="shrink-0 flex items-center">
+                        <div className=" flex justify-between ... ">
+                            <div className="hidden space-x-40 sm:-my-px ml-10 sm:flex sm:items-center ">
+                                <div className="ml-20 relative">
+                                    <Dropdown>
+                                        <Dropdown.Trigger>
+                                            <span className="inline-flex rounded-md">
                                                 <button
                                                     type="button"
-                                                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                    className={
+                                                        active
+                                                            ? "inline-flex items-center px-1 pt-1 border-b-2  text-lg font-semibold leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out"
+                                                            : "inline-flex items-center px-1 pt-1 border-b-2  text-lg font-extrabold"
+                                                    }
                                                 >
-                                                    <WaldoIcon className="block h-9 w-auto text-gray-500" />
+                                                    Code
                                                     <svg
                                                         className="ml-2 -mr-0.5 h-4 w-4"
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -125,6 +49,87 @@ export default function Navbar({ auth, children }) {
                                                         />
                                                     </svg>
                                                 </button>
+                                            </span>
+                                        </Dropdown.Trigger>
+
+                                        <Dropdown.Content>
+                                            <Dropdown.Link
+                                                href={route("showPosts")}
+                                                method="get"
+                                                as="button"
+                                            >
+                                                Code QA
+                                            </Dropdown.Link>
+
+                                            <Dropdown.Link
+                                                href={route("codeShare")}
+                                                method="get"
+                                                as="button"
+                                            >
+                                                Code Share
+                                            </Dropdown.Link>
+                                        </Dropdown.Content>
+                                    </Dropdown>
+                                </div>
+                            </div>
+
+                            <div className="hidden space-x-20 sm:-my-px ml-20 sm:flex">
+                                <NavLink
+                                    href={route("brainFarts")}
+                                    active={route().current("brainFarts")}
+                                >
+                                    BrainFarts
+                                </NavLink>
+
+                                <NavLink
+                                    href={route("pif")}
+                                    active={route().current("pif")}
+                                >
+                                    PIF
+                                </NavLink>
+
+                                <NavLink
+                                    href={route("techNews")}
+                                    active={route().current("techNews")}
+                                >
+                                    Tech News
+                                </NavLink>
+
+                                <NavLink
+                                    href={route("Bots")}
+                                    active={route().current("Bots")}
+                                >
+                                    Bots
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
+
+                    {auth.user ? (
+                        <div className="hidden sm:flex sm:items-center sm:ml-6">
+                            <div className="ml-3 relative">
+                                <Dropdown>
+                                    <Dropdown.Trigger>
+                                        <span className="inline-flex rounded-md">
+                                            <div className="shrink-0 flex items-center">
+                                                <button
+                                                    type="button"
+                                                    className="inline-flex items-center px-3 py-2 border-4 border-darkblue leading-4 rounded-full bg-white"
+                                                >
+                                                    <WaldoIcon className="block h-10 w-auto text-gray-500" />
+                                                </button>
+                                                <svg
+                                                    className="ml-2 -mr-0.5 h-4 w-4"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                >
+                                                    <path
+                                                        fillRule="evenodd"
+                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                        clipRule="evenodd"
+                                                    />
+                                                </svg>
                                             </div>
                                         </span>
                                     </Dropdown.Trigger>
@@ -159,12 +164,13 @@ export default function Navbar({ auth, children }) {
                         <>
                             <div className="hidden sm:flex sm:items-center sm:ml-6">
                                 <div className="ml-3 relative">
-                                    <NavLink
+                                    <Link
                                         href={route("login")}
-                                        className="text-sm text-gray-700 dark:text-gray-500 underline"
+                                        className="py-4 px-6 m-4 rounded-full font-bold text-white text-xl bg-darkblue
+                                        hover:text-darkblue hover:bg-white border-4 border-darkblue focus:outline-none transition duration-150 ease-in-ou"
                                     >
                                         Log in
-                                    </NavLink>
+                                    </Link>
                                 </div>
                             </div>
                         </>
