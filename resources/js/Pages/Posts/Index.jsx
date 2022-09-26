@@ -118,17 +118,17 @@ export default function Posts(props) {
 
                                             return (
                                                 <PostCard key={id}>
-                                                    <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                    <h1 className="m-2 mb-2 font-bold text-gray-700">
                                                         {title}
                                                     </h1>
-                                                    <p><b>by { user.name}</b></p>
-                                                    <p className="text-ellipsis overflow-hidden">
+                                                    <p className="ml-2 mb-4 text-gray-700"><b>by { user.name}</b></p>
+                                                    <p className="ml-2 mb-4 text-ellipsis overflow-hidden">
                                                         {content}
                                                     </p>
-                                                    <p>{tag}</p>
+                                                    <p className="ml-2 mb-4 font-medium text-gray-600"><b>tags: {tag}</b></p>
 
                                                     <p>
-                                                        <PostCommentText
+                                                        <PostCommentText 
                                                             comments={comments}
                                                         />
                                                     </p>
@@ -137,7 +137,7 @@ export default function Posts(props) {
                                                         <>
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -152,7 +152,7 @@ export default function Posts(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-4 m-4 rounded-full text-white text-xl bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>
