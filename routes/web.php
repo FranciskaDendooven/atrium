@@ -17,7 +17,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::get('/CodeQA', [PostController::class, 'show'])->name('showPosts');
+Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
 
 Route::get('/Posts/comment', [PostCommentController::class, 'show'])->middleware(['auth', 'verified'])->name('showPostsComments');
 Route::post('/Posts/comment', [PostCommentController::class, 'store'])->middleware(['auth', 'verified'])->name('submitNewComment');

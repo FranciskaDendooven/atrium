@@ -8,22 +8,27 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import { comment } from "postcss";
+
 
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {}, [display, postId]);
+    useEffect(() => {
+
+    }, [display, postId]);
 
     const { posts } = usePage().props;
 
     const deleteMsg = (e, id) => {
-        e.preventDefault();
-        setDisplay("block");
-        setPostId(id);
+           e.preventDefault();
+           setDisplay("block");
+           setPostId(id);
     };
-
+  
+console.log(props.auth);
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
@@ -114,12 +119,19 @@ export default function Posts(props) {
                                     {posts.map(
                                         ({
                                             id,
+                                            user_id,
                                             title,
                                             content,
                                             tag,
                                             comments,
                                         }) => {
-                                            console.log(comments);
+                                            let visible=false;
+                                           
+                                            if (props.auth.user && user_id == props.auth.user.id )
+                                                {visible=true}
+                                            
+                                 
+
                                             return (
                                                 <PostCard key={id}>
                                                     <h1 className="m-4 mb-8 font-bold text-gray-700">
@@ -131,31 +143,40 @@ export default function Posts(props) {
                                                     <p>{tag}</p>
 
                                                     <p>
-                                                        {/* <PostCommentText
+                                                        <PostCommentText
                                                             comments={comments}
-                                                        /> */}
+                                                        />
                                                     </p>
 
-                                                    <Link
-                                                        tabIndex="1"
-                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                        href={route(
-                                                            "showUpdatedPost",
-                                                            id
-                                                        )}
-                                                    >
-                                                        Edit
-                                                    </Link>
+                                                    {visible ? (
+                                                        <>
+                                                            <Link
+                                                                tabIndex="1"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                href={route(
+                                                                    "showUpdatedPost",
+                                                                    id
+                                                                )}
+                                                            >
+                                                                Edit
+                                                            </Link>
 
-                                                    <button
-                                                        onClick={(e) =>
-                                                            deleteMsg(e, id)
-                                                        }
-                                                        type="submit"
-                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                    >
-                                                        Delete
-                                                    </button>
+                                                            <button
+                                                                onClick={(e) =>
+                                                                    deleteMsg(
+                                                                        e,
+                                                                        id
+                                                                    )
+                                                                }
+                                                                type="submit"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                            >
+                                                                Delete
+                                                            </button>
+                                                        </>
+                                                    ) : (
+                                                        " "
+                                                    )}
 
                                                     <PostCommentCard
                                                         postId={id}
@@ -163,10 +184,9 @@ export default function Posts(props) {
                                                 </PostCard>
                                             );
                                         }
+                                    
                                     )}
                                 </section>
-
-                                {/* end of test */}
                             </div>
                         </div>
                     </div>
