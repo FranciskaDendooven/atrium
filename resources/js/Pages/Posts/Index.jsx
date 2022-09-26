@@ -8,7 +8,6 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
-import { comment } from "postcss";
 
 
 
@@ -114,24 +113,18 @@ console.log(props.auth);
                                     </h1>
 
                                     {posts.map(
-                                        ({
-                                            id,
-                                            user_id,
-                                            title,
-                                            content,
-                                            tag,
-                                            comments,
-                                        }) => {
+                                        ({id, user_id, title, content, tag, comments}) => {
                                             let visible=false;
                                            
                                             if (props.auth.user && user_id == props.auth.user.id )
-                                                {visible=true}                                 
+                                                {visible=true}                           
 
                                             return (
                                                 <PostCard key={id}>
                                                     <h1 className="m-4 mb-8 font-bold text-gray-700">
                                                         {title}
                                                     </h1>
+                                                    <p><b>by {props.auth.user.name}</b></p>
                                                     <p className="text-ellipsis overflow-hidden">
                                                         {content}
                                                     </p>
