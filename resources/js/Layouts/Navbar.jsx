@@ -79,22 +79,24 @@ export default function Navbar({ auth, children, active }) {
                                 <NavLink
                                     href={route("showBrainFartsPosts")}
                                     active={route().current(
-                                        "bshowBrainFartsPosts"
+                                        "showBrainFartsPosts"
                                     )}
                                 >
                                     BrainFarts
                                 </NavLink>
 
                                 <NavLink
-                                    href={route("pif")}
-                                    active={route().current("pif")}
+                                    href={route("showPifPosts")}
+                                    active={route().current("showPifPosts")}
                                 >
                                     PIF
                                 </NavLink>
 
                                 <NavLink
-                                    href={route("techNews")}
-                                    active={route().current("techNews")}
+                                    href={route("showTechNewsPosts")}
+                                    active={route().current(
+                                        "showTechNewsPosts"
+                                    )}
                                 >
                                     Tech News
                                 </NavLink>

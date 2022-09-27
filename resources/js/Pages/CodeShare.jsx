@@ -109,7 +109,7 @@ export default function Posts(props) {
 
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
-                                        Code Share
+                                        PIF
                                     </h1>
 
                                     {posts.map(
@@ -132,7 +132,7 @@ export default function Posts(props) {
                                                 visible = true;
                                             }
 
-                                            if (page === "Code Share")
+                                            if (page === "PIF")
 
                                                 return (
                                                     <PostCard key={id}>

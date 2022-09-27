@@ -8,6 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CodeQaController;
 use App\Http\Controllers\CodeShareController;
 use App\Http\Controllers\BrainFartsController;
+use App\Http\Controllers\PifController;
+use App\Http\Controllers\TechNewsController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\UserController;
 
@@ -44,21 +46,23 @@ Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(
 Route::get('/codeQandA', [CodeQaController::class, 'show'])->name('showQAPosts');
 Route::get('/codeShare', [CodeShareController::class, 'show'])->name('showCodeSharePosts');
 Route::get('/BrainFarts', [BrainFartsController::class, 'show'])->name('showBrainFartsPosts');
+Route::get('/Pif', [PifController::class, 'show'])->name('showPifPosts');
+Route::get('/TechNews', [TechNewsController::class, 'show'])->name('showTechNewsPosts');
 // Route::get('/codeShare', function () {
 //     return Inertia::render('CodeShare');
 // })->name('codeShare');
 
-Route::get('/brainFarts', function () {
-    return Inertia::render('BrainFarts');
-})->name('brainFarts');
+// Route::get('/brainFarts', function () {
+//     return Inertia::render('BrainFarts');
+// })->name('brainFarts');
 
-Route::get('/pif', function () {
-    return Inertia::render('Pif');
-})->name('pif');
+// Route::get('/pif', function () {
+//     return Inertia::render('Pif');
+// })->name('pif');
 
-Route::get('/techNews', function () {
-    return Inertia::render('TechNews');
-})->name('techNews');
+// Route::get('/techNews', function () {
+//     return Inertia::render('TechNews');
+// })->name('techNews');
 
 Route::get('/bots', function () {
     return Inertia::render('Bots');

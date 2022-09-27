@@ -85,6 +85,11 @@ export default function Posts(props) {
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
                 </section>
+                <section className="items-center justify-center font-bold">
+                    <h1 className="text-3xl">
+                        This is the BrainFarts page 🧠💨
+                    </h1>
+                </section>
 
                 <div className="py-12">test Brain Farts!</div>
                 <div className="py-12 m-8">
@@ -102,7 +107,7 @@ export default function Posts(props) {
 
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
-                                       BrainFarts
+                                        BrainFarts
                                     </h1>
 
                                     {posts.map(
