@@ -62,7 +62,6 @@ export default function UserSettings(props) {
                     </Link>
                 </section>
 
-
             </div>
 
             <div className="h-64">

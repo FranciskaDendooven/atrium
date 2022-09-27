@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 
 // Route::resource('posts', PostController::class);
 
@@ -70,7 +71,5 @@ Route::post('/ChangePassword', [UserController::class, 'updatePassword'])->middl
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->name('userSettings');
-
-
 
 require __DIR__.'/auth.php';
