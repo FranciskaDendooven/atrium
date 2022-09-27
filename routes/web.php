@@ -67,10 +67,12 @@ Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->middlew
 Route::get('/editUserSettings/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified'])->name('showEditUserSettings');
 Route::post('/editUserSettings/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified'])->name('submitNewUserSettings');
 
-
+Route::get('/ChangePassword', [UserController::class, 'changePassword'])->middleware(['auth', 'verified'])->name('changePassword');
+Route::post('/ChangePassword', [UserController::class, 'updatePassword'])->middleware(['auth', 'verified'])->name('updatePassword');
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->name('userSettings');
+
 
 
 require __DIR__.'/auth.php';

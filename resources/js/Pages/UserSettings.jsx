@@ -33,26 +33,36 @@ export default function UserSettings(props) {
                 </DarkBlueBlockHeader>
             </div>
 
-            <div className="flex flex-col items-center sm:items-center sm:pt-10">
-                <section className="flex flex-col items-justify-center mx-5 my-5 p-5 w-96 rounded-xl border-2 border-darkblue shadow-md">
-                    <h1>Account Settings</h1>
+            <div className="flex flex-col place-items-center">
+                <section className="flex flex-col justify-start mx-10 my-10 px-20 py-10 rounded-xl border-2 border-darkblue shadow-md">
+                    <h1 className="m-5">Account Settings</h1>
+                    <section>
                     <h3>Name: {props.auth.user.name}</h3>
                     <h3>Email: {props.auth.user.email}</h3>
                     <h3>User Name: {props.auth.user.username}</h3>
-                    <h3>Password: # </h3>
-                </section>
-
-                <section className="flex flex-col w-96 mb-20">
-                    <div className="mt-4">
+                    </section>
+                    
+                    <section className="mt-4">
                         <Link
                             tabIndex="1"
                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
                             href={route("showEditUserSettings", props.auth.user.id)}
                         >
-                            Edit
+                            Edit Settings
                         </Link>
-                    </div>
+                    </section>  
+                    <hr className="border-2 border-darkblue m-10"/>
+                    <h3>Password:</h3>
+                    <Link
+                            tabIndex="1"
+                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                            href={route("changePassword")}
+                        >
+                            Change Password
+                    </Link>
                 </section>
+
+
             </div>
 
             <div className="h-64">
