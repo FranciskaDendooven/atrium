@@ -188,7 +188,10 @@ export default function Posts(props) {
                                                                 by {user.name}
                                                             </b>
                                                         </p>
-                                                        <p className="ml-2 mb-5 text-ellipsis  overflow-y-hidden">
+                                                        <p
+                                                         type="textfield"
+                                                        className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                        >
                                                             {content}
                                                         </p>
                                                         <p className="ml-2 mb-4 font-medium text-gray-600">
