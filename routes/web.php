@@ -3,12 +3,12 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CodeQaController;
 use App\Http\Controllers\CodeShareController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomeController;
 
 
 // Route::resource('posts', PostController::class);
@@ -69,10 +69,10 @@ Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->middlew
 Route::get('/editUserSettings/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified'])->name('showEditUserSettings');
 Route::post('/editUserSettings/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified'])->name('submitNewUserSettings');
 
-
+Route::get('/ChangePassword', [UserController::class, 'changePassword'])->middleware(['auth', 'verified'])->name('changePassword');
+Route::post('/ChangePassword', [UserController::class, 'updatePassword'])->middleware(['auth', 'verified'])->name('updatePassword');
 Route::get('/userSettings', function () {
     return Inertia::render('UserSettings');
 })->name('userSettings');
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
