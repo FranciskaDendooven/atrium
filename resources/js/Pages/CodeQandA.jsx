@@ -26,12 +26,11 @@ export default function Posts(props) {
            setDisplay("block");
            setPostId(id);
     };
-    
+
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
-
-                    <div
+            <div
                 id="deleteMsg"
                 className={
                     display +
@@ -67,19 +66,19 @@ export default function Posts(props) {
                 </div>
             </div>
 
-            <Head title="Code Share" />
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <Head title="Posts" />
+            <div className="w-full h-96 flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
                     </section>
                     <CentralLogo
-                        src="images/icon/atriumIcons-12.png"
+                        src="images/icon/atriumIcons-19.png"
                         width="200px"
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
+                    <h1 className="text-gray-400 text-3xl m-4 p-2">
                         This is a subtitle
                     </h1>
                 </DarkBlueBlockHeader>
@@ -109,59 +108,42 @@ export default function Posts(props) {
 
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
-                                        Code Share
+                                        Code Q&A
                                     </h1>
 
-                                    {posts.map(
-                                        ({
-                                            id,
-                                            user_id,
-                                            title,
-                                            content,
-                                            tag,
-                                            page,
-                                            comments,
-                                            user,
-                                        }) => {
-                                            let visible = false;
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                id,
+                                                user_id,
+                                                title,
+                                                content,
+                                                tag,
+                                                comments,
+                                                user,
+                                            }) => {
+                                                let visible = false;
 
-                                            if (
-                                                props.auth.user &&
-                                                user_id == props.auth.user.id
-                                            ) {
-                                                visible = true;
-                                            }
-
-                                            if (page === "Code Share")
+                                                if (
+                                                    props.auth.user &&
+                                                    user_id ==
+                                                        props.auth.user.id
+                                                ) {
+                                                    visible = true;
+                                                }
 
                                                 return (
                                                     <PostCard key={id}>
-                                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                            {title}
-                                                        </h1>
-                                                        <p>
-                                                            <b>
-                                                                by {user.name}
-                                                            </b>
-                                                        </p>
-                                                        <p className="text-ellipsis overflow-hidden">
-                                                            {content}
-                                                        </p>
-                                                        <p>{tag}</p>
-
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={
-                                                                    comments
-                                                                }
-                                                            />
-                                                        </p>
-
+                                                        <div className="ml-[610px]">
                                                         {visible ? (
                                                             <>
                                                                 <Link
                                                                     tabIndex="1"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                    className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                     href={route(
                                                                         "showUpdatedPost",
                                                                         id
@@ -180,7 +162,7 @@ export default function Posts(props) {
                                                                         )
                                                                     }
                                                                     type="submit"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                    className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                                 >
                                                                     Delete
                                                                 </button>
@@ -188,20 +170,69 @@ export default function Posts(props) {
                                                         ) : (
                                                             " "
                                                         )}
+                                                        </div>
+
+                                                        <h1 className=" font-bold text-gray-700">
+                                                            {title}
+                                                        </h1>
+                                                        <p className="ml-2 mb-4 text-gray-700">
+                                                            <b>
+                                                                by {user.name}
+                                                            </b>
+                                                        </p>
+                                                        <div
+                                                         type="textfield"
+                                                        className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis"
+                                                        >
+                                                            {content}
+                                                        </div>
+                                                        <p className="ml-2 mb-4 font-medium text-gray-600">
+                                                            <b className="text-lightBlue">tags: {tag}</b>
+                                                        </p>
+
+                                                        <p>
+                                                            <PostCommentText
+                                                                comments={
+                                                                    comments
+                                                                }
+                                                            />
+                                                        </p>
+
+
 
                                                         <PostCommentCard
                                                             postId={id}
                                                         />
                                                     </PostCard>
                                                 );
-                                        }
-                                    )}
+                                            }
+                                        )}
+                                    <section className="mx-4 my-4">
+                                        <ReactPaginate
+                                            previousLabel={"Previous"}
+                                            nextLabel={"Next"}
+                                            pageCount={totalPages}
+                                            onPageChange={changePage}
+                                            containerClassName={
+                                                "navigationButtons"
+                                            }
+                                            previousLinkClassName={
+                                                "previousButton"
+                                            }
+                                            nextLinkClassName={"nextButton"}
+                                            disabledClassName={
+                                                "navigationDisabled"
+                                            }
+                                            activeClassName={"navigationActive"}
+                                        />
+                                    </section>
                                 </section>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div className="h-64">
                 <Footer></Footer>
             </div>
