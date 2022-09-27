@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCommentController;
+use App\Http\Controllers\UserController;
 
 // Route::resource('posts', PostController::class);
 
@@ -63,10 +64,8 @@ Route::get('/bots', function () {
 
 Route::get('/userprofile', [PostController::class, 'showAllUserPosts'])->middleware(['auth', 'verified'])->name('userProfile');
 
-// Route::get('/userprofile', function () {
-//     return Inertia::render('Userprofile');
-// })->name('userProfile');
-
+Route::get('/editUserSettings/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified'])->name('showEditUserSettings');
+Route::post('/editUserSettings/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified'])->name('submitNewUserSettings');
 
 
 Route::get('/userSettings', function () {
