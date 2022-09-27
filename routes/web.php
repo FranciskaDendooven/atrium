@@ -36,11 +36,6 @@ Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(
 
 
 
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/codeQA', function () {
     return Inertia::render('CodeQA');
 })->name('codeQA');
