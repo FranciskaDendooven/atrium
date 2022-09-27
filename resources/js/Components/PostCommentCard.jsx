@@ -1,6 +1,4 @@
 import { useForm } from "@inertiajs/inertia-react";
-import Authenticated from "@/Layouts/Authenticated";
-import PostCard from "@/Components/PostCard";
 
 import React from "react";
 
@@ -23,19 +21,19 @@ export default function CommentCard(props) {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="m-2 p-2 max-w-md">
+            <form onSubmit={handleSubmit} className="ml-6 mt-2 p-2 max-w-md">
                 
                     <label
                         htmlFor="comment"
-                        className="font-medium text-gray-600">
-                            <b>Comment:</b>
+                        className="font-medium text-lightBlue">
+                            <b className="">Comment:</b>
                     </label>
                     <textarea
                         id="comment"
                         type="text"
                         name="content"
-                        rows="4"
-                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg"
+                        rows="3"
+                        className="block p-2.5 w-[675px] h-14 text-sm text-gray-900 bg-gray-50 rounded-lg"
                         value={data.content}
                         onChange={(e)=>
                         setData("content", e.target.value)}
@@ -47,10 +45,10 @@ export default function CommentCard(props) {
 
                     </textarea>
 
-                <div className="mt-2">
+                <div className="ml-">
                     <button
                         type="submit" 
-                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                        className="py-2 px-3 mt-2 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                     >
                         Comment
                     </button>

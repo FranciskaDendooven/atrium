@@ -146,34 +146,12 @@ export default function Posts(props) {
 
                                                 return (
                                                     <PostCard key={id}>
-                                                        <h1 className="m-2 mb-2 font-bold text-gray-700">
-                                                            {title}
-                                                        </h1>
-                                                        <p className="ml-2 mb-4 text-gray-700">
-                                                            <b>
-                                                                by {user.name}
-                                                            </b>
-                                                        </p>
-                                                        <p className="ml-2 mb-4 text-ellipsis overflow-hidden">
-                                                            {content}
-                                                        </p>
-                                                        <p className="ml-2 mb-4 font-medium text-gray-600">
-                                                            <b>tags: {tag}</b>
-                                                        </p>
-
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={
-                                                                    comments
-                                                                }
-                                                            />
-                                                        </p>
-
+                                                        <div className="ml-[610px]">
                                                         {visible ? (
                                                             <>
                                                                 <Link
                                                                     tabIndex="1"
-                                                                    className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                                                                    className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                     href={route(
                                                                         "showUpdatedPost",
                                                                         id
@@ -192,7 +170,7 @@ export default function Posts(props) {
                                                                         )
                                                                     }
                                                                     type="submit"
-                                                                    className="py-2 px-4 m-4 rounded-full text-white text-xl bg-redOrange focus:outline-none"
+                                                                    className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                                 >
                                                                     Delete
                                                                 </button>
@@ -200,6 +178,32 @@ export default function Posts(props) {
                                                         ) : (
                                                             " "
                                                         )}
+                                                        </div>
+
+                                                        <h1 className=" font-bold text-gray-700">
+                                                            {title}
+                                                        </h1>
+                                                        <p className="ml-2 mb-4 text-gray-700">
+                                                            <b>
+                                                                by {user.name}
+                                                            </b>
+                                                        </p>
+                                                        <p className="ml-2 mb-5 text-ellipsis  overflow-y-hidden">
+                                                            {content}
+                                                        </p>
+                                                        <p className="ml-2 mb-4 font-medium text-gray-600">
+                                                            <b className="text-lightBlue">tags: {tag}</b>
+                                                        </p>
+
+                                                        <p>
+                                                            <PostCommentText
+                                                                comments={
+                                                                    comments
+                                                                }
+                                                            />
+                                                        </p>
+
+
 
                                                         <PostCommentCard
                                                             postId={id}
