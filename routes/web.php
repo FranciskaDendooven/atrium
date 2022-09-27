@@ -3,20 +3,24 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostCommentController;
 
 // Route::resource('posts', PostController::class);
 
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
+Route::get('/', [WelcomeController::class, 'load'])->name('loadWelcome');
+
 Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
 
 Route::get('/Posts/comment', [PostCommentController::class, 'show'])->middleware(['auth', 'verified'])->name('showPostsComments');
@@ -74,4 +78,4 @@ Route::get('/userSettings', function () {
 })->name('userSettings');
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
