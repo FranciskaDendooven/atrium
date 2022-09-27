@@ -31,8 +31,8 @@ export default function Navbar({ auth, children, active }) {
                                                     type="button"
                                                     className={
                                                         active
-                                                            ? "inline-flex items-center px-1 pt-1 border-b-2  text-lg font-semibold leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out"
-                                                            : "inline-flex items-center px-1 pt-1 border-b-2  text-lg font-extrabold"
+                                                            ? "inline-flex items-center px-1 pt-1 font-extrabold text-gray-900 hover "
+                                                            : "inline-flex items-center px-1 pt-1 text-lg font-semibold text-gray-500 hover:text-gray-900 hover"
                                                     }
                                                 >
                                                     Code
@@ -114,7 +114,7 @@ export default function Navbar({ auth, children, active }) {
                                             <div className="shrink-0 flex items-center">
                                                 <button
                                                     type="button"
-                                                    className="inline-flex items-center px-3 py-2 border-4 border-darkblue leading-4 rounded-full bg-white"
+                                                    className="inline-flex items-center px-3 py-3 border-4 border-darkblue leading-4 rounded-full bg-white"
                                                 >
                                                     <WaldoIcon className="block h-10 w-auto text-gray-500" />
                                                 </button>
@@ -166,7 +166,7 @@ export default function Navbar({ auth, children, active }) {
                                 <div className="ml-3 relative">
                                     <Link
                                         href={route("login")}
-                                        className="py-4 px-6 m-4 rounded-full font-bold text-white text-xl bg-darkblue
+                                        className="py-2 px-6 m-4 rounded-full font-bold text-white text-xl bg-darkblue
                                         hover:text-darkblue hover:bg-white border-4 border-darkblue focus:outline-none transition duration-150 ease-in-ou"
                                     >
                                         Log in
