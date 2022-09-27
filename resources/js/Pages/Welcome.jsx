@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { Link, Head } from "@inertiajs/inertia-react";
+import React, { useEffect, useState } from "react";
+import { Link, Head, usePage } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
-import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
@@ -9,11 +8,25 @@ import SearchBar from "@/Components/SearchBar";
 import Navbar from "@/Layouts/Navbar";
 
 
-export default function Welcome({auth, errors}) {
-     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+export default function Welcome(props) {
+    const [showingNavigationDropdown, setShowingNavigationDropdown] =
+        useState(false);
+    const [display, setDisplay] = useState("hidden");
+    const [postId, setPostId] = useState(0);
+    useEffect(() => {}, [display, postId]);
+
+    const { posts } = usePage().props;
+
+    const deleteMsg = (e, id) => {
+        e.preventDefault();
+        setDisplay("block");
+        setPostId(id);
+    };
+
     return (
         <>
-            <Navbar auth={auth} errors={errors}></Navbar>
+            <Navbar auth={props.auth} errors={props.errors}></Navbar>
+
             <Head title="Welcome" />
             <DarkBlueBlockHeader>
                 <div className="flex flex-row justify-center items-center">
@@ -42,17 +55,61 @@ export default function Welcome({auth, errors}) {
                     <ApplicationLogo className="w-4/12" />
                 </div>
             </DarkBlueBlockHeader>
+
             <div className="flex flex-col items-center sm:items-center sm:pt-10">
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
                 </section>
                 <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">
-                        This is a centered Title...Yes or No!?
-                    </h1>
+                    <h1 className="text-3xl">Whats' new?</h1>
                 </section>
+                <div className="py-12 m-8">
+                    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                            <div className="p-6 bg-white border-b border-gray-200">
+                                <section className="mb-6">
+                                    {posts.map(
+                                        ({
+                                            id,
+                                            user_id,
+                                            title,
+                                            content,
+                                            tag,
+                                            comments,
+                                            user,
+                                        }) => {
+                                            let visible = false;
+
+                                            if (
+                                                props.auth.user &&
+                                                user_id == props.auth.user.id
+                                            ) {
+                                                visible = true;
+                                            }
+
+                                            return (
+                                                <PostCard key={id}>
+                                                    <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                        {title}
+                                                    </h1>
+                                                    <p>
+                                                        <b>by {user.name}</b>
+                                                    </p>
+                                                    <p className="text-ellipsis overflow-hidden">
+                                                        {content}
+                                                    </p>
+                                                    <p>{tag}</p>
+                                                </PostCard>
+                                            );
+                                        }
+                                    )}
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="flex flex-col items-center min-h-screen sm:items-center sm:pt-10"></div>
+
             <div className="h-64">
                 <Footer></Footer>
             </div>
