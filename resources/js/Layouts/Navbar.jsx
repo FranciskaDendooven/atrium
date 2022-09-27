@@ -77,8 +77,10 @@ export default function Navbar({ auth, children, active }) {
 
                             <div className="hidden space-x-20 sm:-my-px ml-20 sm:flex">
                                 <NavLink
-                                    href={route("brainFarts")}
-                                    active={route().current("brainFarts")}
+                                    href={route("showBrainFartsPosts")}
+                                    active={route().current(
+                                        "bshowBrainFartsPosts"
+                                    )}
                                 >
                                     BrainFarts
                                 </NavLink>

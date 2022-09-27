@@ -31,7 +31,7 @@ export default function Posts(props) {
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
 
-                    <div
+            <div
                 id="deleteMsg"
                 className={
                     display +

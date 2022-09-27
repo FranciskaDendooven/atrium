@@ -7,6 +7,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CodeQaController;
 use App\Http\Controllers\CodeShareController;
+use App\Http\Controllers\BrainFartsController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\UserController;
 
@@ -41,9 +42,8 @@ Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(
 
 
 Route::get('/codeQandA', [CodeQaController::class, 'show'])->name('showQAPosts');
-
 Route::get('/codeShare', [CodeShareController::class, 'show'])->name('showCodeSharePosts');
-
+Route::get('/BrainFarts', [BrainFartsController::class, 'show'])->name('showBrainFartsPosts');
 // Route::get('/codeShare', function () {
 //     return Inertia::render('CodeShare');
 // })->name('codeShare');
