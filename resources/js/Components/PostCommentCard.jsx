@@ -27,8 +27,8 @@ export default function CommentCard(props) {
                 
                     <label
                         htmlFor="comment"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                            Comment:
+                        className="font-medium text-gray-600">
+                            <b>Comment:</b>
                     </label>
                     <textarea
                         id="comment"
@@ -50,7 +50,7 @@ export default function CommentCard(props) {
                 <div className="mt-2">
                     <button
                         type="submit" 
-                        className="px-4 bg-blue-700 text-white rounded-md"
+                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
                     >
                         Comment
                     </button>

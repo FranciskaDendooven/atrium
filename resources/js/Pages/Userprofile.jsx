@@ -14,11 +14,8 @@ export default function Profile(props) {
 
     useEffect(() => {}, [display, postId]);
 
-   
-
-/// the useState atributed to the posts array is being used for the pagination functionality ////
+    /// the useState atributed to the posts array is being used for the pagination functionality ////
     const [posts, setposts] = useState(props.posts);
-    
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
@@ -26,15 +23,15 @@ export default function Profile(props) {
         setPostId(id);
     };
 
-//// pagination ////
+    //// pagination ////
     const [page, setPage] = useState(0);
     const postsPerPage = 3;
     const numberOfPostsVisited = page * postsPerPage;
     const totalPages = Math.ceil(posts.length / postsPerPage);
     const changePage = ({ selected }) => {
         setPage(selected);
-      };
-//// pagination ////
+    };
+    //// pagination ////
 
     return (
         <>
@@ -158,24 +155,30 @@ export default function Profile(props) {
                                     );
                                 }
                             })}
-                        <ReactPaginate
-                            previousLabel={"Previous"}
-                            nextLabel={"Next"}
-                            pageCount={totalPages}
-                            onPageChange={changePage}
-                            containerClassName={"navigationButtons"}
-                            previousLinkClassName={"previousButton"}
-                            nextLinkClassName={"nextButton"}
-                            disabledClassName={"navigationDisabled"}
-                            activeClassName={"navigationActive"}
-                        />
+                        <section className="mx-4 my-4">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={totalPages}
+                                onPageChange={changePage}
+                                containerClassName={"navigationButtons"}
+                                previousLinkClassName={"previousButton"}
+                                nextLinkClassName={"nextButton"}
+                                disabledClassName={"navigationDisabled"}
+                                activeClassName={"navigationActive"}
+                            />
+                        </section>
                     </section>
 
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Code Share</h1>
 
-                        {posts.map(
-                            ({ title, content, page, tag, id, user }) => {
+                        {posts
+                            .slice(
+                                numberOfPostsVisited,
+                                numberOfPostsVisited + postsPerPage
+                            )
+                            .map(({ title, content, page, tag, id, user }) => {
                                 if (page === "Code Share") {
                                     return (
                                         <PostCard className="" key={id}>
@@ -212,17 +215,32 @@ export default function Profile(props) {
                                         </PostCard>
                                     );
                                 }
-                            }
-                        )}
+                            })}
 
-                        {/* <Pagination class="mt-6" links={posts} /> */}
+                        <section className="mx-4 my-4">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={totalPages}
+                                onPageChange={changePage}
+                                containerClassName={"navigationButtons"}
+                                previousLinkClassName={"previousButton"}
+                                nextLinkClassName={"nextButton"}
+                                disabledClassName={"navigationDisabled"}
+                                activeClassName={"navigationActive"}
+                            />
+                        </section>
                     </section>
 
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">PIF</h1>
 
-                        {posts.map(
-                            ({ title, content, page, tag, id, user }) => {
+                        {posts
+                            .slice(
+                                numberOfPostsVisited,
+                                numberOfPostsVisited + postsPerPage
+                            )
+                            .map(({ title, content, page, tag, id, user }) => {
                                 if (page === "PIF") {
                                     return (
                                         <PostCard className="" key={id}>
@@ -259,16 +277,30 @@ export default function Profile(props) {
                                         </PostCard>
                                     );
                                 }
-                            }
-                        )}
-
-                        {/* <Pagination class="mt-6" links={posts} /> */}
+                            })}
+                        <section className="mx-4 my-4">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={totalPages}
+                                onPageChange={changePage}
+                                containerClassName={"navigationButtons"}
+                                previousLinkClassName={"previousButton"}
+                                nextLinkClassName={"nextButton"}
+                                disabledClassName={"navigationDisabled"}
+                                activeClassName={"navigationActive"}
+                            />
+                        </section>
                     </section>
                     <section className=" mb-6">
                         <h1 className="font-bold text-2xl">Brain Farts</h1>
 
-                        {posts.map(
-                            ({ title, content, page, tag, id, user }) => {
+                        {posts
+                            .slice(
+                                numberOfPostsVisited,
+                                numberOfPostsVisited + postsPerPage
+                            )
+                            .map(({ title, content, page, tag, id, user }) => {
                                 if (page === "BrainFarts") {
                                     return (
                                         <PostCard key={id}>
@@ -305,16 +337,30 @@ export default function Profile(props) {
                                         </PostCard>
                                     );
                                 }
-                            }
-                        )}
-
-                        {/* <Pagination class="mt-6" links={posts} /> */}
+                            })}
+                        <section className="mx-4 my-4">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={totalPages}
+                                onPageChange={changePage}
+                                containerClassName={"navigationButtons"}
+                                previousLinkClassName={"previousButton"}
+                                nextLinkClassName={"nextButton"}
+                                disabledClassName={"navigationDisabled"}
+                                activeClassName={"navigationActive"}
+                            />
+                        </section>
                     </section>
                     <section className="mb-6">
                         <h1 className="font-bold text-2xl">Tech News</h1>
 
-                        {posts.map(
-                            ({ title, content, page, tag, id, user }) => {
+                        {posts
+                            .slice(
+                                numberOfPostsVisited,
+                                numberOfPostsVisited + postsPerPage
+                            )
+                            .map(({ title, content, page, tag, id, user }) => {
                                 if (page === "TechNews") {
                                     return (
                                         <PostCard className="" key={id}>
@@ -351,10 +397,21 @@ export default function Profile(props) {
                                         </PostCard>
                                     );
                                 }
-                            }
-                        )}
+                            })}
 
-                        {/* <Pagination class="mt-6" links={posts} /> */}
+                        <section className="mx-4 my-4">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={totalPages}
+                                onPageChange={changePage}
+                                containerClassName={"navigationButtons"}
+                                previousLinkClassName={"previousButton"}
+                                nextLinkClassName={"nextButton"}
+                                disabledClassName={"navigationDisabled"}
+                                activeClassName={"navigationActive"}
+                            />
+                        </section>
                     </section>
                 </div>
             </div>
