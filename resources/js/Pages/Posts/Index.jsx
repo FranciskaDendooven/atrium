@@ -188,12 +188,12 @@ export default function Posts(props) {
                                                                 by {user.name}
                                                             </b>
                                                         </p>
-                                                        <p
+                                                        <div
                                                          type="textfield"
-                                                        className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                        className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis"
                                                         >
                                                             {content}
-                                                        </p>
+                                                        </div>
                                                         <p className="ml-2 mb-4 font-medium text-gray-600">
                                                             <b className="text-lightBlue">tags: {tag}</b>
                                                         </p>
