@@ -52,7 +52,7 @@ class PostController extends Controller
         ]);
 
         // return redirect()->back();
-        return redirect()->route('dashboard');
+        return redirect()->route('loadWelcome');
         
     }
 

@@ -10,14 +10,17 @@ use App\Http\Controllers\UserController;
 // Route::resource('posts', PostController::class);
 
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
+Route::get('/', [WelcomeController::class, 'load'])->name('loadWelcome');
+
 Route::get('/Posts', [PostController::class, 'show'])->name('showPosts');
 
 Route::get('/Posts/comment', [PostCommentController::class, 'show'])->middleware(['auth', 'verified'])->name('showPostsComments');
@@ -32,11 +35,6 @@ Route::get('/Posts/update/{id}', [PostController::class, 'edit'])->middleware(['
 Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(['auth', 'verified'])->name('submitUpdatedPost');
 
 
-
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/codeQA', function () {
     return Inertia::render('CodeQA');
