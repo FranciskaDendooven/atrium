@@ -64,10 +64,12 @@ export default function Posts(props) {
 
             <Head title="TechNews" />
 
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
-                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
+                        <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
+                            TechNews
+                        </h1>
                     </section>
                     <CentralLogo
                         src="images/icon/atriumIcons-16.png"
@@ -76,7 +78,9 @@ export default function Posts(props) {
                     />
 
                     <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        This is a subtitle
+                        Testing <br />
+                        this <br />
+                        shit out <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>

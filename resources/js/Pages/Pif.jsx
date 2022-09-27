@@ -63,10 +63,12 @@ export default function Posts(props) {
 
             <Head title="PIF" />
 
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
-                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
+                        <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
+                            PIF
+                        </h1>
                     </section>
                     <CentralLogo
                         src="images/icon/atriumIcons-11.png"
@@ -75,7 +77,9 @@ export default function Posts(props) {
                     />
 
                     <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        This is a subtitle
+                        Testing <br />
+                        this <br />
+                        shit out <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -104,9 +108,7 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        PIF
-                                    </h1>
+                                    <h1 className="font-bold text-2xl">PIF</h1>
 
                                     {posts.map(
                                         ({

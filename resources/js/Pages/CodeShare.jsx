@@ -50,9 +50,7 @@ export default function Posts(props) {
                     >
                         Cancel
                     </button>
-                    <button
-                        className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                    >
+                    <button className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">
                         <Link
                             href={route("deleteAction", postId)}
                             method="post"
@@ -68,10 +66,12 @@ export default function Posts(props) {
             </div>
 
             <Head title="Code Share" />
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
-                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
+                        <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
+                            Code Share
+                        </h1>
                     </section>
                     <CentralLogo
                         src="images/icon/atriumIcons-12.png"
@@ -80,7 +80,9 @@ export default function Posts(props) {
                     />
 
                     <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        This is a subtitle
+                        Testing <br />
+                        this <br />
+                        shit out <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -108,9 +110,7 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        PIF
-                                    </h1>
+                                    <h1 className="font-bold text-2xl">PIF</h1>
 
                                     {posts.map(
                                         ({
@@ -133,7 +133,6 @@ export default function Posts(props) {
                                             }
 
                                             if (page === "PIF")
-
                                                 return (
                                                     <PostCard key={id}>
                                                         <h1 className="m-4 mb-8 font-bold text-gray-700">
