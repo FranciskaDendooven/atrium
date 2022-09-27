@@ -4,9 +4,12 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CodeQaController;
+use App\Http\Controllers\CodeShareController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+
 
 // Route::resource('posts', PostController::class);
 
@@ -37,13 +40,13 @@ Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(
 
 
 
-Route::get('/codeQA', function () {
-    return Inertia::render('CodeQA');
-})->name('codeQA');
+Route::get('/codeQandA', [CodeQaController::class, 'show'])->name('showQAPosts');
 
-Route::get('/codeShare', function () {
-    return Inertia::render('CodeShare');
-})->name('codeShare');
+Route::get('/codeShare', [CodeShareController::class, 'show'])->name('showCodeSharePosts');
+
+// Route::get('/codeShare', function () {
+//     return Inertia::render('CodeShare');
+// })->name('codeShare');
 
 Route::get('/brainFarts', function () {
     return Inertia::render('BrainFarts');
