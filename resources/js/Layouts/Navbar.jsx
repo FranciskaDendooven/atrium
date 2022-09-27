@@ -54,7 +54,7 @@ export default function Navbar({ auth, children, active }) {
 
                                         <Dropdown.Content>
                                             <Dropdown.Link
-                                                href={route("showPosts")}
+                                                href={route("showQAPosts")}
                                                 method="get"
                                                 as="button"
                                             >
@@ -62,7 +62,9 @@ export default function Navbar({ auth, children, active }) {
                                             </Dropdown.Link>
 
                                             <Dropdown.Link
-                                                href={route("codeShare")}
+                                                href={route(
+                                                    "showCodeSharePosts"
+                                                )}
                                                 method="get"
                                                 as="button"
                                             >
