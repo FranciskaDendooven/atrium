@@ -57,9 +57,12 @@ export default function UserSettings(props) {
                             tabIndex="1"
                             className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
                             href={route("changePassword")}
+                           
                         >
                             Change Password
+                            
                     </Link>
+                     message={}
                 </section>
 
             </div>
