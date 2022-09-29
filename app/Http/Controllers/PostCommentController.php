@@ -18,7 +18,6 @@ class PostCommentController extends Controller
     }
 
     public function store(Request $request){
-
         $request->validate([
             'content' => 'required|max:10000|min:1',
         ]);

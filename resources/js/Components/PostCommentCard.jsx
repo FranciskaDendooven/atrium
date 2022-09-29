@@ -13,6 +13,7 @@ export default function CommentCard(props) {
             e.preventDefault();
             setData({
                 content: "",
+                id:props.postId,
             });
     
             post(route('submitNewComment'));
