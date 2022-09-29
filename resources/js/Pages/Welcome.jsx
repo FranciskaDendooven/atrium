@@ -15,13 +15,22 @@ export default function Welcome(props) {
     const [postId, setPostId] = useState(0);
     useEffect(() => {}, [display, postId]);
 
-    const { posts } = usePage().props;
+    //const { posts } = usePage().props;
+    const [posts, setposts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
         setDisplay("block");
         setPostId(id);
     };
+
+     const [page, setPage] = useState(0);
+     const postsPerPage = 1;
+     const numberOfPostsVisited = page * postsPerPage;
+     const totalPages = Math.ceil(posts.length / postsPerPage);
+     const changePage = ({ selected }) => {
+         setPage(selected);
+     };
 
     return (
         <>
@@ -63,12 +72,139 @@ export default function Welcome(props) {
                 <section className="items-center justify-center font-bold">
                     <h1 className="text-3xl">Whats' new?</h1>
                 </section>
+
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <section className="mb-6">
-                                    {posts.map(
+                                    <h1 className="font-bold text-2xl">
+                                        Code Share
+                                    </h1>
+
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                title,
+                                                content,
+                                                page,
+                                                tag,
+                                                id,
+                                                user,
+                                            }) => {
+                                                if (page === "Code Share") {
+                                                    return (
+                                                        <PostCard
+                                                            className=""
+                                                            key={id}
+                                                        >
+                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            <p>{user.name}</p>
+                                                            <p className="text-ellipsis overflow-hidden">
+                                                                {content}
+                                                            </p>
+                                                            <p>{tag}</p>
+                                                            <p>{page}</p>
+
+                                                            <Link
+                                                                tabIndex="1"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                href={route(
+                                                                    "showUpdatedPost",
+                                                                    id
+                                                                )}
+                                                            >
+                                                                Edit
+                                                            </Link>
+
+                                                            <button
+                                                                onClick={(e) =>
+                                                                    deleteMsg(
+                                                                        e,
+                                                                        id
+                                                                    )
+                                                                }
+                                                                type="submit"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                            >
+                                                                Delete
+                                                            </button>
+                                                        </PostCard>
+                                                    );
+                                                }
+                                            }
+                                        )}
+                                </section>
+
+                                <section className="mb-6">
+                                    <h1 className="font-bold text-2xl">
+                                        BrainFarts
+                                    </h1>
+
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                title,
+                                                content,
+                                                page,
+                                                tag,
+                                                id,
+                                                user,
+                                            }) => {
+                                                if (page === "BrainFarts") {
+                                                    return (
+                                                        <PostCard key={id}>
+                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            <p>{user.name}</p>
+                                                            <p className="text-ellipsis overflow-hidden">
+                                                                {content}
+                                                            </p>
+                                                            <p>{tag}</p>
+                                                            <p>{page}</p>
+
+                                                            <Link
+                                                                tabIndex="1"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                href={route(
+                                                                    "showUpdatedPost",
+                                                                    id
+                                                                )}
+                                                            >
+                                                                Edit
+                                                            </Link>
+
+                                                            <button
+                                                                onClick={(e) =>
+                                                                    deleteMsg(
+                                                                        e,
+                                                                        id
+                                                                    )
+                                                                }
+                                                                type="submit"
+                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                            >
+                                                                Delete
+                                                            </button>
+                                                        </PostCard>
+                                                    );
+                                                }
+                                            }
+                                        )}
+                                </section>
+
+                                {/* {posts.map(
                                         ({
                                             id,
                                             user_id,
@@ -102,8 +238,7 @@ export default function Welcome(props) {
                                                 </PostCard>
                                             );
                                         }
-                                    )}
-                                </section>
+                                    )} */}
                             </div>
                         </div>
                     </div>

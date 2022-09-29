@@ -44,6 +44,10 @@ Route::put('/Posts/update/{id}', [PostController::class, 'update'])->middleware(
 
 
 Route::get('/codeQandA', [CodeQaController::class, 'show'])->name('showQAPosts');
+
+
+
+
 Route::get('/codeShare', [CodeShareController::class, 'show'])->name('showCodeSharePosts');
 Route::get('/BrainFarts', [BrainFartsController::class, 'show'])->name('showBrainFartsPosts');
 Route::get('/Pif', [PifController::class, 'show'])->name('showPifPosts');

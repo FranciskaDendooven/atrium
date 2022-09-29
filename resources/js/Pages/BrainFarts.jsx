@@ -91,7 +91,7 @@ export default function Posts(props) {
                 </section>
                 <section className="items-center justify-center font-bold">
                     <h1 className="text-3xl">
-                        This is the BrainFarts page 🧠💨
+                        Welcome to the BrainFarts page 🧠💨
                     </h1>
                 </section>
 
