@@ -5,7 +5,7 @@ export default function PostCommentText({comments}) {
 
         return (
             <>
-            <section className="ml-5 h-14 overflow-y-auto scrolling-touch">
+            <section className="ml-5 h-20 overflow-y-auto scrolling-touch">
                 {comments.map((comment, id) => {
                  console.log(comment);
                  return (

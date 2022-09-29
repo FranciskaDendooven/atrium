@@ -53,3 +53,35 @@
   color: rgb(247, 247, 247);
   background-color: rgb(207, 207, 207);
 }
+
+#postCard{
+    cursor: pointer;
+    height: auto;
+    min-height: 450px;
+    border-radius: 1.5rem;
+    transition: 0.3s;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+}
+        #postCard:hover{
+          transform: scale(1.1);
+          box-shadow: 0 8px 16px 0 rgba(149,176,181,2);
+        }
+
+#postContent{
+        color: #054E58;
+        width:90%;
+        height: auto;
+        margin-right: 2rem;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+        #postContent:hover{
+          overflow: initial;
+          white-space: normal;
+          overflow-wrap: break-word;
+        }

@@ -165,6 +165,7 @@ export default function Posts(props) {
                                                     </b>
                                                 </p>
                                                 <div
+                                                id="postContent"
                                                  type="textfield"
                                                 className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
                                                 >
