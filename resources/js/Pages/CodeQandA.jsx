@@ -101,7 +101,8 @@ export default function Posts(props) {
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <div className="flex items-center justify-between mb-6">
                                     <Link
-                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                                    name="button"
+                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue"
                                         href={route("showCreatePost")}
                                     >
                                         Create Post
@@ -166,14 +167,19 @@ export default function Posts(props) {
                                                         by {user.name}
                                                     </b>
                                                 </p>
+
                                                 <div
-                                                 type="textfield"
+                                                id="postContent"
+                                                type="textfield"
                                                 className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
                                                 >
                                                     {content}
                                                 </div>
-                                                <p className="ml-2 font-medium text-gray-600">
-                                                    <b className="text-lightBlue">tags: {tag}</b>
+
+                                                <p className="ml-2 mb-1 font-small text-gray-600">
+                                                    <b className="text-lightBlue"
+                                                    >tags: {tag}
+                                                    </b>
                                                 </p>
 
                                                 <p>
