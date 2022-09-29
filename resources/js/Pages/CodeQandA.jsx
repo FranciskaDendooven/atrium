@@ -182,9 +182,7 @@ export default function Posts(props) {
 
                                                 <p>
                                                     <PostCommentText
-                                                        comments={
-                                                            comments
-                                                        }
+                                                        comments={comments}
                                                     />
                                                 </p>
 
