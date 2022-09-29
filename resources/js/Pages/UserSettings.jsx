@@ -62,7 +62,7 @@ export default function UserSettings(props) {
                             Change Password
                             
                     </Link>
-                     message={}
+                   
                 </section>
 
             </div>

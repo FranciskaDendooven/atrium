@@ -8,23 +8,32 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import ReactPaginate from "react-paginate";
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {
+    useEffect(() => {}, [display, postId]);
 
-    }, [display, postId]);
-
-    const { posts } = usePage().props;
+    /// the useState atributed to the posts array is being used for the pagination functionality ////
+    const [posts, setposts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
-           e.preventDefault();
-           setDisplay("block");
-           setPostId(id);
+        e.preventDefault();
+        setDisplay("block");
+        setPostId(id);
     };
-    
+
+    //// pagination ////
+    const [page, setPage] = useState(0);
+    const postsPerPage = 3;
+    const numberOfPostsVisited = page * postsPerPage;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const changePage = ({ selected }) => {
+        setPage(selected);
+    };
+    //// pagination ////
 
     return (
         <>
@@ -70,7 +79,8 @@ export default function Posts(props) {
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
-                            BrainFarts</h1>
+                            BrainFarts
+                        </h1>
                     </section>
                     <CentralLogo
                         src="images/icon/atriumIcons-21.png"
@@ -94,8 +104,6 @@ export default function Posts(props) {
                         Welcome to the BrainFarts page 🧠💨
                     </h1>
                 </section>
-
-                <div className="py-12">test Brain Farts!</div>
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -114,89 +122,112 @@ export default function Posts(props) {
                                         BrainFarts
                                     </h1>
 
-                                    {posts.map(
-                                        ({
-                                            id,
-                                            user_id,
-                                            title,
-                                            content,
-                                            tag,
-                                            page,
-                                            comments,
-                                            user,
-                                        }) => {
-                                            let visible = false;
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                id,
+                                                user_id,
+                                                title,
+                                                content,
+                                                tag,
+                                                page,
+                                                comments,
+                                                user,
+                                            }) => {
+                                                let visible = false;
 
-                                            if (
-                                                props.auth.user &&
-                                                user_id == props.auth.user.id
-                                            ) {
-                                                visible = true;
-                                            }
+                                                if (
+                                                    props.auth.user &&
+                                                    user_id ==
+                                                        props.auth.user.id
+                                                ) { visible = true; }
+                                                if (page === "BrainFarts")
+                                                    return (
+                                                        <PostCard key={id}>
+                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            <p>
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+                                                            <p className="text-ellipsis overflow-hidden">
+                                                                {content}
+                                                            </p>
+                                                            <p>{tag}</p>
 
-                                            if (page === "BrainFarts")
-                                                return (
-                                                    <PostCard key={id}>
-                                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                            {title}
-                                                        </h1>
-                                                        <p>
-                                                            <b>
-                                                                by {user.name}
-                                                            </b>
-                                                        </p>
-                                                        <p className="text-ellipsis overflow-hidden">
-                                                            {content}
-                                                        </p>
-                                                        <p>{tag}</p>
-
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={
-                                                                    comments
-                                                                }
-                                                            />
-                                                        </p>
-
-                                                        {visible ? (
-                                                            <>
-                                                                <Link
-                                                                    tabIndex="1"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                    href={route(
-                                                                        "showUpdatedPost",
-                                                                        id
-                                                                    )}
-                                                                >
-                                                                    Edit
-                                                                </Link>
-
-                                                                <button
-                                                                    onClick={(
-                                                                        e
-                                                                    ) =>
-                                                                        deleteMsg(
-                                                                            e,
-                                                                            id
-                                                                        )
+                                                            <p>
+                                                                <PostCommentText
+                                                                    comments={
+                                                                        comments
                                                                     }
-                                                                    type="submit"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                                >
-                                                                    Delete
-                                                                </button>
-                                                            </>
-                                                        ) : (
-                                                            " "
-                                                        )}
+                                                                />
+                                                            </p>
 
-                                                        <PostCommentCard
-                                                            postId={id}
-                                                        />
-                                                    </PostCard>
-                                                );
-                                        }
-                                    )}
+                                                            {visible ? (
+                                                                <>
+                                                                    <Link
+                                                                        tabIndex="1"
+                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                        href={route(
+                                                                            "showUpdatedPost",
+                                                                            id
+                                                                        )}
+                                                                    >
+                                                                        Edit
+                                                                    </Link>
+
+                                                                    <button
+                                                                        onClick={(
+                                                                            e
+                                                                        ) =>
+                                                                            deleteMsg(
+                                                                                e,
+                                                                                id
+                                                                            )
+                                                                        }
+                                                                        type="submit"
+                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                    >
+                                                                        Delete
+                                                                    </button>
+                                                                </>
+                                                            ) : (
+                                                                " "
+                                                            )}
+
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
+                                                        </PostCard>
+                                                    );
+                                            }
+                                        )}
+                                    <section className="mx-4 my-4">
+                                        <ReactPaginate
+                                            previousLabel={"Previous"}
+                                            nextLabel={"Next"}
+                                            pageCount={totalPages}
+                                            onPageChange={changePage}
+                                            containerClassName={
+                                                "navigationButtons"
+                                            }
+                                            previousLinkClassName={
+                                                "previousButton"
+                                            }
+                                            nextLinkClassName={"nextButton"}
+                                            disabledClassName={
+                                                "navigationDisabled"
+                                            }
+                                            activeClassName={"navigationActive"}
+                                        />
+                                    </section>
                                 </section>
                             </div>
                         </div>
@@ -209,4 +240,3 @@ export default function Posts(props) {
         </>
     );
 }
-

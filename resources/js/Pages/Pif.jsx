@@ -8,6 +8,7 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import ReactPaginate from "react-paginate";
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
@@ -15,14 +16,23 @@ export default function Posts(props) {
 
     useEffect(() => {}, [display, postId]);
 
-    const { posts } = usePage().props;
+    /// the useState atributed to the posts array is being used for the pagination functionality ////
+    const [posts, setposts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
         setDisplay("block");
         setPostId(id);
     };
-
+    //// pagination ////
+    const [page, setPage] = useState(0);
+    const postsPerPage = 3;
+    const numberOfPostsVisited = page * postsPerPage;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const changePage = ({ selected }) => {
+        setPage(selected);
+    };
+    //// pagination ////
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
@@ -193,6 +203,25 @@ export default function Posts(props) {
                                                 );
                                         }
                                     )}
+                                     <section className="mx-4 my-4">
+                                        <ReactPaginate
+                                            previousLabel={"Previous"}
+                                            nextLabel={"Next"}
+                                            pageCount={totalPages}
+                                            onPageChange={changePage}
+                                            containerClassName={
+                                                "navigationButtons"
+                                            }
+                                            previousLinkClassName={
+                                                "previousButton"
+                                            }
+                                            nextLinkClassName={"nextButton"}
+                                            disabledClassName={
+                                                "navigationDisabled"
+                                            }
+                                            activeClassName={"navigationActive"}
+                                        />
+                                    </section>
                                 </section>
                             </div>
                         </div>
