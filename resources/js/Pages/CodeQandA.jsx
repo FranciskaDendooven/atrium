@@ -49,9 +49,7 @@ export default function Posts(props) {
                     >
                         Cancel
                     </button>
-                    <button
-                        className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                    >
+                    <button className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">
                         <Link
                             href={route("deleteAction", postId)}
                             method="post"
@@ -67,10 +65,12 @@ export default function Posts(props) {
             </div>
 
             <Head title="Posts" />
-            <div className="w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
-                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2"></h1>
+                        <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
+                            Code Q&A
+                        </h1>
                     </section>
                     <CentralLogo
                         src="images/icon/atriumIcons-19.png"
@@ -78,8 +78,10 @@ export default function Posts(props) {
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-3xl m-4 p-2">
-                        This is a subtitle
+                    <h1 className="text-gray-400 text-2xl m-4 p-2">
+                        Testing <br />
+                        this <br />
+                        shit out <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -112,66 +114,87 @@ export default function Posts(props) {
                                     </h1>
 
                                     {posts.map(
-                                        ({id, user_id, title, content, tag, page, comments, user}) => {
-                                            let visible=false;
-                                           
-                                            if (props.auth.user && user_id == props.auth.user.id )
-                                                {visible=true}
-                                            
-                                           if (page === "CodeQA")                            
+                                        ({
+                                            id,
+                                            user_id,
+                                            title,
+                                            content,
+                                            tag,
+                                            page,
+                                            comments,
+                                            user,
+                                        }) => {
+                                            let visible = false;
 
-                                            return (
-                                                <PostCard key={id}>
-                                                    <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                        {title}
-                                                    </h1>
-                                                    <p><b>by { user.name}</b></p>
-                                                    <p className="text-ellipsis overflow-hidden">
-                                                        {content}
-                                                    </p>
-                                                    <p>{tag}</p>
+                                            if (
+                                                props.auth.user &&
+                                                user_id == props.auth.user.id
+                                            ) {
+                                                visible = true;
+                                            }
 
-                                                    <p>
-                                                        <PostCommentText
-                                                            comments={comments}
-                                                        />
-                                                    </p>
+                                            if (page === "CodeQA")
+                                                return (
+                                                    <PostCard key={id}>
+                                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            {title}
+                                                        </h1>
+                                                        <p>
+                                                            <b>
+                                                                by {user.name}
+                                                            </b>
+                                                        </p>
+                                                        <p className="text-ellipsis overflow-hidden">
+                                                            {content}
+                                                        </p>
+                                                        <p>{tag}</p>
 
-                                                    {visible ? (
-                                                        <>
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(e, id
-                                                                    )
+                                                        <p>
+                                                            <PostCommentText
+                                                                comments={
+                                                                    comments
                                                                 }
-                                                                type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                            >
-                                                                Delete
-                                                            </button>
-                                                        </>
-                                                    ) : (
-                                                        " "
-                                                    )}
+                                                            />
+                                                        </p>
 
-                                                    <PostCommentCard
-                                                        postId={id}
-                                                    />
-                                                </PostCard>
-                                            );
+                                                        {visible ? (
+                                                            <>
+                                                                <Link
+                                                                    tabIndex="1"
+                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                    href={route(
+                                                                        "showUpdatedPost",
+                                                                        id
+                                                                    )}
+                                                                >
+                                                                    Edit
+                                                                </Link>
+
+                                                                <button
+                                                                    onClick={(
+                                                                        e
+                                                                    ) =>
+                                                                        deleteMsg(
+                                                                            e,
+                                                                            id
+                                                                        )
+                                                                    }
+                                                                    type="submit"
+                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                >
+                                                                    Delete
+                                                                </button>
+                                                            </>
+                                                        ) : (
+                                                            " "
+                                                        )}
+
+                                                        <PostCommentCard
+                                                            postId={id}
+                                                        />
+                                                    </PostCard>
+                                                );
                                         }
-                                    
                                     )}
                                 </section>
                             </div>

@@ -13,10 +13,10 @@ export default function Bots(props) {
 
             <Head title="Bots" />
 
-            <div className="relative w-full  flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
-                        <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
+                        <h1 className="font-bold text-gray-100 text-4xl m-4 p-2">
                             Bots
                         </h1>
                     </section>
@@ -27,15 +27,17 @@ export default function Bots(props) {
                     />
 
                     <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        At the bots page <br />
-                        Becodians can enter suggestions <br />
-                        for our Dicord server bots. <br />
+                        Becodians can enter
+                        <br />
+                        suggestions for our
+                        <br />
+                        Dicord server bots. <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
             <div className="flex flex-col items-center sm:items-center sm:pt-10">
                 <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">This is the Bots page 🤖</h1>
+                    <h1 className="text-3xl">Welcome to the Bots page 🤖</h1>
                 </section>
 
                 <div className="py-12">test Bots! --- UNDER CONSTRUCTION</div>
