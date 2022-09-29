@@ -53,16 +53,18 @@ class UserController extends Controller
             $request->validate([
                 'password' => 'required',
                 'password_confirmation' => 'required',
+                'current_password' => 'required',
             ]);
 
             //dd('does it get here');
 
             #Match The Old Password
             if(!Hash::check($request->current_password, auth()->user()->password)){
-                return back()->with("error", "Previous Password Doesn't match!");
+                dd($request);
+                return back()->with('errors' , 'Current Password does not match!');
             }
             
-            //dd('does it get here');
+           
 
             #Update the new Password
             User::whereId(auth()->user()->id)->update([
