@@ -108,7 +108,8 @@ export default function Posts(props) {
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <div className="flex items-center justify-between mb-6">
                                     <Link
-                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                                    name="button"
+                                        className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue"
                                         href={route("showCreatePost")}
                                     >
                                         Create Post
@@ -147,11 +148,28 @@ export default function Posts(props) {
                                                         </p>
                                                         <p>{tag}</p>
 
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={comments}
-                                                            />
-                                                        </p>
+                                                <h1 className="mt-1 font-bold text-gray-700">
+                                                    {title}
+                                                </h1>
+                                                <p className="ml-2 mb-4 text-gray-700">
+                                                    <b>
+                                                        by {user.name}
+                                                    </b>
+                                                </p>
+
+                                                <div
+                                                id="postContent"
+                                                type="textfield"
+                                                className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                >
+                                                    {content}
+                                                </div>
+
+                                                <p className="ml-2 mb-1 font-small text-gray-600">
+                                                    <b className="text-lightBlue"
+                                                    >tags: {tag}
+                                                    </b>
+                                                </p>
 
                                                         {visible ? (
                                                             <>
