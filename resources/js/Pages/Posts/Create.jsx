@@ -57,11 +57,12 @@ export default function Dashboard(props) {
                                     <div className="flex flex-col mt-4">
                                         <div className="mb-0">
                                             <label className="">Content</label>
-                                            <input
+                                            <textarea
                                                 type="text"
                                                 className="w-full px-4 py-2 rounded-md"
                                                 label="content"
                                                 name="content"
+                                                row="15"
                                                 value={data.content}
                                                 onChange={(e) =>
                                                     setData(
