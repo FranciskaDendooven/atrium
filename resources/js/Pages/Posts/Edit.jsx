@@ -30,7 +30,7 @@ export default function Dashboard(props) {
 
                             <div className="flex items-center justify-between mb-6">
                                 <Link
-                                    className="px-6 py-2 text-white bg-redOrange rounded-md focus:outline-none"
+                                    className="px-6 py-2 text-white bg-redOrange rounded-full focus:outline-none"
                                     href={route("showPosts")}
                                 >
                                     Back
