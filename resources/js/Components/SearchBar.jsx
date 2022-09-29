@@ -21,7 +21,7 @@ export default function SearchBar() {
                 <input
                     type="text"
                     placeholder="Search"
-                    className="w-full py-3 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
+                    className="w-60 py-2 pl-10 pr-4 text-gray-500 border rounded-full outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
                 />
             </div>
         </form>
