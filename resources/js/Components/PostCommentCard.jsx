@@ -21,7 +21,7 @@ export default function CommentCard(props) {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="ml-6 mt-2 p-2 max-w-md">
+            <form onSubmit={handleSubmit} className="ml-6 p-2 max-w-md">
                 
                     <label
                         htmlFor="comment"
