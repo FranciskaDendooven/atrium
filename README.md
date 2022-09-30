@@ -74,6 +74,11 @@ ADD link to our Mockup and maybe a img
 
 
 ## Bugs 
+pagination bug:
+We are using REACT-PAGINATE default component.
+When content is less than 5 posts per category it does not distribute posts per page properly.
+navigation between each pagination button works, but does not show 3 posts per page persistently.
+In some cases posts only show when after the 2 tab/button.
 
 ## Team
 

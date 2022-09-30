@@ -118,11 +118,8 @@ export default function Posts(props) {
                                     </h1>
 
                                     {posts
-                                        .slice(
-                                            numberOfPostsVisited,
-                                            numberOfPostsVisited + postsPerPage
-                                        )
-                                        .map(
+                                        .slice(numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage).map(
                                             ({
                                                 id,
                                                 user_id,
