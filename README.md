@@ -8,43 +8,92 @@ Atrium is build with Laravel-Breeze, ReactJS and is open-source based for BeCodi
 
 So, get in touch with your fellow BeCodians and push that button! For in BeCodians we trust!
 
-## Learning About Resources
 
-The resource() is a static function like get() method that gives access to multiple routes that we can use in a controller.
+## Table of Contents
+- [Features](#Features)
+- [Languages](#Languages)
+- [Technologies](#Technologies)
+- [Editor](#Editor)
+- [Learning](#learning)
+- [WIP](#WIP)
+- [bugs](#Bugs)
+- [Team](#Team)
+- [License](#license)
+
+
+
+
+## Features
+
+> Platform is viewable by everyone
+
+> interactions: comment, post, edit and delete are only possible when registered
+
+> Forum thread styled pages for code, pay-it-forwerd, technews, and memejokes called BrainFarts
+
+
+## Languages
+
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+still need to add PHP
+
+
+## Technologies
+
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+STILL NEED TO FIND AD BADGE FOR INERTIA AND BREEZE
+
+## Editor
+editor
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+## Learning
+ > About Resource
+![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+
 [documentation](https://laravel.com/docs)
 
-## Nice to Have
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+add laracast? or all documentation that we used and worked from trello???
 
-### Premium Partners
+## Design
+link to mockup
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+ADD link to our Mockup and maybe a img
 
-## Bugs?
+## WIP
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Bugs 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Team
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| <h4>Franciska Dendoven</h4> | <h4>Madalena Rio</h4> | <h4>Gladys Haelters</h4> |
+| :---: |:---:| :---:|
+|  [![Franciska](https://avatars.githubusercontent.com/u/104010563?v=4)](https://github.com/FranciskaDendooven)     |  [![Madalena](https://avatars.githubusercontent.com/u/104010119?v=4)](https://github.com/madalenaRio)     |  [![Gladys](https://avatars.githubusercontent.com/u/104009219?v=4)](https://github.com/Gladyshaelters)     |
+| <a href="https://github.com/FranciskaDendooven" target="_blank">`github.com/FranciskaDendooven`</a> | <a href="https://github.com/madalenaRio" target="_blank">`github.com/madalenaRio`</a> | <a href="https://github.com/Gladyshaelters" target="_blank">`github.com/Gladyshaelters`</a> |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## License
+- Copyright 2022 © Atrium - bygit a Team Deadpool
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
