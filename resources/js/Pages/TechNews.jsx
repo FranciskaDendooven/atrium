@@ -8,6 +8,7 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
+import ReactPaginate from "react-paginate";
 
 
 export default function Posts(props) {
@@ -16,14 +17,23 @@ export default function Posts(props) {
 
     useEffect(() => {}, [display, postId]);
 
-    const { posts } = usePage().props;
+    /// the useState atributed to the posts array is being used for the pagination functionality ////
+    const [posts, setposts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
         setDisplay("block");
         setPostId(id);
     };
-
+    //// pagination ////
+    const [page, setPage] = useState(0);
+    const postsPerPage = 3;
+    const numberOfPostsVisited = page * postsPerPage;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const changePage = ({ selected }) => {
+        setPage(selected);
+    };
+    //// pagination ////
     return (
         <>
             <Navbar auth={props.auth} errors={props.errors}></Navbar>
@@ -91,8 +101,6 @@ export default function Posts(props) {
                 <section className="items-center justify-center font-bold">
                     <h1 className="text-3xl">This is the TechNews page 💻</h1>
                 </section>
-
-                <div className="py-12">test Technews!</div>
             </div>
 
             <div className="py-12 m-8">
@@ -112,16 +120,7 @@ export default function Posts(props) {
                                 <h1 className="font-bold text-2xl">TechNews</h1>
 
                                 {posts.map(
-                                    ({
-                                        id,
-                                        user_id,
-                                        title,
-                                        content,
-                                        tag,
-                                        page,
-                                        comments,
-                                        user,
-                                    }) => {
+                                    ({ id, user_id, title, content, tag, page, comments, user, }) => {
                                         let visible = false;
 
                                         if (
@@ -156,21 +155,13 @@ export default function Posts(props) {
                                                             <Link
                                                                 tabIndex="1"
                                                                 className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
+                                                                href={route( "showUpdatedPost", id )}
                                                             >
                                                                 Edit
                                                             </Link>
 
                                                             <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
+                                                                onClick={ (e) => deleteMsg( e,id )}
                                                                 type="submit"
                                                                 className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
                                                             >
@@ -188,6 +179,19 @@ export default function Posts(props) {
                                             );
                                     }
                                 )}
+                                <section className="mx-4 my-4">
+                                    <ReactPaginate
+                                        previousLabel={"Previous"}
+                                        nextLabel={"Next"}
+                                        pageCount={totalPages}
+                                        onPageChange={changePage}
+                                        containerClassName={"navigationButtons"}
+                                        previousLinkClassName={"previousButton"}
+                                        nextLinkClassName={"nextButton"}
+                                        disabledClassName={"navigationDisabled"}
+                                        activeClassName={"navigationActive"}
+                                    />
+                                </section>
                             </section>
                         </div>
                     </div>
