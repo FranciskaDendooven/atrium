@@ -146,6 +146,10 @@ export default function Posts(props) {
                                                         props.auth.user.id
                                                 ) { visible = true; }
                                                 if (page === "BrainFarts")
+                                                // if (posts.length === 0 && page === "BrainFarts"){
+                                                //     <p>Be the first to post!</p>
+                                                //                                                     }
+                                             
                                                     return (
                                                         <PostCard key={id}>
                                                             <h1 className="m-4 mb-8 font-bold text-gray-700">
@@ -207,8 +211,14 @@ export default function Posts(props) {
                                                             />
                                                         </PostCard>
                                                     );
+                                                    if (posts.length === 0){
+                                                        <p>Be the first to post!</p>
+                                                                                                        }
+                        
                                             }
+                                            
                                         )}
+                                        
                                     <section className="mx-4 my-4">
                                         <ReactPaginate
                                             previousLabel={"Previous"}
