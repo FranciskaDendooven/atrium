@@ -36,14 +36,15 @@ export default function UserSettings(props) {
 
             <div className="flex flex-col place-items-center mt-4 mb-14">
                 <section id="userSettingsForm" className="w-[300px] h-[450px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg text-center">
-                    <h1 className="m-5">Account Settings</h1>
+                    <h1 className="m-5 mb-8 font-bold">Account Settings</h1>
                     <section>
                     <h3>Name: {props.auth.user.name}</h3>
                     <h3>Email: {props.auth.user.email}</h3>
                     <h3>User Name: {props.auth.user.username}</h3>
+                    <br/>
                     </section>
                     
-                    <section className="mt-4">
+                    <section>
                         <Link
                             tabIndex="1"
                             className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
@@ -52,7 +53,7 @@ export default function UserSettings(props) {
                             Edit Settings
                         </Link>
                     </section>  
-                    <hr className="border-darkblue m-10"/>
+                    <hr className="border-darkblue m-10 mt-12"/>
 
                     <h3>Password:</h3>
                     <br/>

@@ -19,11 +19,12 @@ export default function UserSettings(props) {
     return (
         <>
             <Head title="User Settings" />
-            <div className="flex flex-col justify-center place-items-center my-20">
-                <div className="flex flex-col justify-center items-center p-4 m-5 max-w-4xl min-w-3/4 bg-white rounded-xl border-2 border-darkblue shadow-md">
-                   <h1 className="my-4"> Change your settings</h1>
+            <div className="grid justify-center py-12">
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div  id="changeUserSettingspage" className="w-[700px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
+                   <h1 className="my-4 font-bold">Change your settings</h1>
     
-                         <section className="flex items-start my-4 mb-6">
+                         <section className="flex items-center justify-between mb-6">
                                 <Link
                                     className="px-6 py-2 text-white bg-redOrange rounded-full focus:outline-none"
                                     href={route("userSettings")}
@@ -83,6 +84,7 @@ export default function UserSettings(props) {
                         </form>
                     </section>
                 </div>
+            </div>
             </div>
         </>
     );
