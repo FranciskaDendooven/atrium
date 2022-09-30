@@ -14,7 +14,7 @@ export default function UserSettings(props) {
 
             <Head title="User Settings" />
 
-            <div className="relative w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
@@ -27,8 +27,9 @@ export default function UserSettings(props) {
                         alt="user avatar image"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        This is a subtitle
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Edit your account settings here!
+                        <br/>Changing your password every now and then is good practice.
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -53,7 +54,7 @@ export default function UserSettings(props) {
                     </section>  
                     <hr className="border-darkblue m-10"/>
 
-                    <h3 className="ml-6">Password:</h3>
+                    <h3>Password:</h3>
                     <br/>
                     <Link
                             tabIndex="1"
