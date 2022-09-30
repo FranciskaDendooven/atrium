@@ -172,8 +172,8 @@ export default function Navbar({ auth, children, active }) {
                                 <div className="ml-3 relative">
                                     <Link
                                         href={route("login")}
-                                        className="py-2 px-6 m-4 rounded-full font-bold text-white text-xl bg-darkblue
-                                        hover:text-darkblue hover:bg-white border-4 border-darkblue focus:outline-none transition duration-150 ease-in-ou"
+                                        className="py-1 px-5 m-4 rounded-full font-bold text-white text-xl bg-lightBlue
+                                        hover:text-lightBlue hover:bg-white border-4 border-lightBlue focus:outline-none transition duration-150 ease-in-ou"
                                     >
                                         Log in
                                     </Link>
