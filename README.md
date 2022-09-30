@@ -29,7 +29,7 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 
 > interactions: comment, post, edit and delete are only possible when registered
 
-> Forum thread styled pages for code, pay-it-forwerd, technews, and memejokes called BrainFarts
+> Forum styled pages for code, pay-it-forward, technews, and memejokes called BrainFarts
 
 
 ## Languages
@@ -56,7 +56,8 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 
 ## Learning
  > About Resource
-![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+
+ - ![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
 
 [documentation](https://laravel.com/docs)
 
@@ -77,24 +78,13 @@ ADD link to our Mockup and maybe a img
 ## Team
 
 
-| <h4>Franciska Dendoven</h4> | <h4>Madalena Rio</h4> | <h4>Gladys Haelters</h4> |
+| <h4>Franciska Dendooven</h4> | <h4>Madalena Rio</h4> | <h4>Gladys Haelters</h4> |
 | :---: |:---:| :---:|
 |  [![Franciska](https://avatars.githubusercontent.com/u/104010563?v=4)](https://github.com/FranciskaDendooven)     |  [![Madalena](https://avatars.githubusercontent.com/u/104010119?v=4)](https://github.com/madalenaRio)     |  [![Gladys](https://avatars.githubusercontent.com/u/104009219?v=4)](https://github.com/Gladyshaelters)     |
 | <a href="https://github.com/FranciskaDendooven" target="_blank">`github.com/FranciskaDendooven`</a> | <a href="https://github.com/madalenaRio" target="_blank">`github.com/madalenaRio`</a> | <a href="https://github.com/Gladyshaelters" target="_blank">`github.com/Gladyshaelters`</a> |
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## License
-- Copyright 2022 © Atrium - bygit a Team Deadpool
+- Copyright 2022 © Atrium - by Team Deadpool
 
