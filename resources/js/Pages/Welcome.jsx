@@ -6,6 +6,7 @@ import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import Navbar from "@/Layouts/Navbar";
+import '/resources/CSS/app.css';
 
 
 export default function Welcome(props) {
@@ -87,39 +88,35 @@ export default function Welcome(props) {
                                                 if (page === "CodeQA") {
                                                     return (
                                                         <PostCard key={id}>
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>{user.name}</p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+
+                                                            <div className="content">
+                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
-                                                            <p>{page}</p>
+                                                            </div>
+                                                
+                                                            
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
-                                                                type="submit"
-                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                            >
-                                                                Delete
-                                                            </button>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    from: {page}
+                                                                </b>
+                                                            </p>
                                                         </PostCard>
                                                     );
                                                 }
@@ -148,39 +145,34 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                           <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>{user.name}</p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+
+                                                            <div className="content">
+                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
-                                                            <p>{page}</p>
+                                                            </div>
+                                                            
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
-                                                                type="submit"
-                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                            >
-                                                                Delete
-                                                            </button>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    from: {page}
+                                                                </b>
+                                                            </p>
                                                         </PostCard>
                                                     );
                                                 }
@@ -206,39 +198,34 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>{user.name}</p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+
+                                                            <div className="content">
+                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
-                                                            <p>{page}</p>
+                                                            </div>
+                                                            
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
-                                                                type="submit"
-                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                            >
-                                                                Delete
-                                                            </button>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    from: {page}
+                                                                </b>
+                                                            </p>
                                                         </PostCard>
                                                     );
                                                 }
@@ -262,39 +249,34 @@ export default function Welcome(props) {
                                                 if (page === "BrainFarts") {
                                                     return (
                                                         <PostCard key={id}>
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>{user.name}</p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+
+                                                            <div className="content">
+                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
-                                                            <p>{page}</p>
+                                                            </div>
+                                                            
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
-                                                                type="submit"
-                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                            >
-                                                                Delete
-                                                            </button>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    from: {page}
+                                                                </b>
+                                                            </p>
                                                         </PostCard>
                                                     );
                                                 }
@@ -321,39 +303,34 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>{user.name}</p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+
+                                                            <div className="content">
+                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
-                                                            <p>{page}</p>
+                                                            </div>
+                                                            
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
-                                                            <Link
-                                                                tabIndex="1"
-                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                                href={route(
-                                                                    "showUpdatedPost",
-                                                                    id
-                                                                )}
-                                                            >
-                                                                Edit
-                                                            </Link>
-
-                                                            <button
-                                                                onClick={(e) =>
-                                                                    deleteMsg(
-                                                                        e,
-                                                                        id
-                                                                    )
-                                                                }
-                                                                type="submit"
-                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                            >
-                                                                Delete
-                                                            </button>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    from: {page}
+                                                                </b>
+                                                            </p>
                                                         </PostCard>
                                                     );
                                                 }
