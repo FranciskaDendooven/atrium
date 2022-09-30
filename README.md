@@ -8,10 +8,59 @@ Atrium is build with Laravel-Breeze, ReactJS and is open-source based for BeCodi
 
 So, get in touch with your fellow BeCodians and push that button! For in BeCodians we trust!
 
+
+
+## Technologies used ?
+<img src="https://img.shields.io/badge/REACT-blue?logo=react">
+<img src="https://img.shields.io/badge/Javascript-yellow?logo=javascript">
+<img src="https://img.shields.io/badge/NodeJS-green?logo=node.js">
+<img src="https://img.shields.io/badge/HTML5-orange?logo=HTML5">
+<img src="https://img.shields.io/badge/SASS-pink?logo=sass">
+
+
+
+
+technologies
+
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+
+
+![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+
+
+
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
+
+
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+
+
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+editor
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+language
+
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
 ## Learning About Resources
 
 The resource() is a static function like get() method that gives access to multiple routes that we can use in a controller.
 [documentation](https://laravel.com/docs)
+
+
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+
+
+
+badges still to add , breeze and inertia
 
 ## Nice to Have
 
