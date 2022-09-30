@@ -8,24 +8,32 @@ import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
-
-
+import ReactPaginate from "react-paginate";
 
 export default function Posts(props) {
     const [display, setDisplay] = useState("hidden");
     const [postId, setPostId] = useState(0);
 
-    useEffect(() => {
+    useEffect(() => {}, [display, postId]);
 
-    }, [display, postId]);
-
-    const { posts } = usePage().props;
+    /// the useState atributed to the posts array is being used for the pagination functionality ////
+    const [posts, setposts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
-           e.preventDefault();
-           setDisplay("block");
-           setPostId(id);
+        e.preventDefault();
+        setDisplay("block");
+        setPostId(id);
     };
+
+    //// pagination ////
+    const [page, setPage] = useState(0);
+    const postsPerPage = 3;
+    const numberOfPostsVisited = page * postsPerPage;
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const changePage = ({ selected }) => {
+        setPage(selected);
+    };
+    //// pagination ////
 
     return (
         <>
@@ -49,9 +57,7 @@ export default function Posts(props) {
                     >
                         Cancel
                     </button>
-                    <button
-                        className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold"
-                    >
+                    <button className="bg-indigo-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">
                         <Link
                             href={route("deleteAction", postId)}
                             method="post"
@@ -99,7 +105,7 @@ export default function Posts(props) {
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <div className="flex items-center justify-between mb-6">
                                     <Link
-                                    name="button"
+                                        name="button"
                                         className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue"
                                         href={route("showCreatePost")}
                                     >
@@ -112,90 +118,127 @@ export default function Posts(props) {
                                         Code Q&A
                                     </h1>
 
-                                    {posts.map(
-                                        ({id, user_id, title, content, tag, page, comments, user}) => {
-                                            let visible=false;
-                                           
-                                            if (props.auth.user && user_id == props.auth.user.id )
-                                                {visible=true}
-                                            
-                                           if (page === "CodeQA")                            
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                id,
+                                                user_id,
+                                                title,
+                                                content,
+                                                tag,
+                                                page,
+                                                comments,
+                                                user,
+                                            }) => {
+                                                let visible = false;
 
-                                           return (
-                                            <PostCard key={id}>
-                                                <div className="ml-[610px]">
-                                                {visible ? (
-                                                    <>
-                                                        <Link
-                                                            tabIndex="1"
-                                                            className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                            href={route(
-                                                                "showUpdatedPost",
-                                                                id
-                                                            )}
-                                                        >
-                                                            Edit
-                                                        </Link>
+                                                if (
+                                                    props.auth.user &&
+                                                    user_id ==
+                                                        props.auth.user.id
+                                                ) {
+                                                    visible = true;
+                                                }
 
-                                                        <button
-                                                            onClick={(
-                                                                e
-                                                            ) =>
-                                                                deleteMsg(
-                                                                    e,
-                                                                    id
-                                                                )
-                                                            }
-                                                            type="submit"
-                                                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </>
-                                                ) : (
-                                                    " "
-                                                )}
-                                                </div>
+                                                if (page === "CodeQA")
+                                                    return (
+                                                        <PostCard key={id}>
+                                                            <div className="ml-[610px]">
+                                                                {visible ? (
+                                                                    <>
+                                                                        <Link
+                                                                            tabIndex="1"
+                                                                            className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                                                                            href={route(
+                                                                                "showUpdatedPost",
+                                                                                id
+                                                                            )}
+                                                                        >
+                                                                            Edit
+                                                                        </Link>
 
-                                                <h1 className="mt-1 font-bold text-gray-700">
-                                                    {title}
-                                                </h1>
-                                                <p className="ml-2 mb-4 text-gray-700">
-                                                    <b>
-                                                        by {user.name}
-                                                    </b>
-                                                </p>
+                                                                        <button
+                                                                            onClick={(
+                                                                                e
+                                                                            ) =>
+                                                                                deleteMsg(
+                                                                                    e,
+                                                                                    id
+                                                                                )
+                                                                            }
+                                                                            type="submit"
+                                                                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
+                                                                        >
+                                                                            Delete
+                                                                        </button>
+                                                                    </>
+                                                                ) : (
+                                                                    " "
+                                                                )}
+                                                            </div>
 
-                                                <div
-                                                id="postContent"
-                                                type="textfield"
-                                                className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
-                                                >
-                                                    {content}
-                                                </div>
+                                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
 
-                                                <p className="ml-2 mb-1 font-small text-gray-600">
-                                                    <b className="text-lightBlue"
-                                                    >tags: {tag}
-                                                    </b>
-                                                </p>
+                                                            <div
+                                                                id="postContent"
+                                                                type="textfield"
+                                                                className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                            >
+                                                                {content}
+                                                            </div>
 
-                                                <p>
-                                                    <PostCommentText
-                                                        comments={comments}
-                                                    />
-                                                </p>
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
+                                                            <p>
+                                                                <PostCommentText
+                                                                    comments={
+                                                                        comments
+                                                                    }
+                                                                />
+                                                            </p>
 
-
-                                                <PostCommentCard
-                                                    postId={id}
-                                                />
-                                            </PostCard>
-                                        );
-                                        }
-                                    
-                                    )}
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
+                                                        </PostCard>
+                                                    );
+                                            }
+                                        )}
+                                    <section className="mx-4 my-4">
+                                        <ReactPaginate
+                                            previousLabel={"Previous"}
+                                            nextLabel={"Next"}
+                                            pageCount={totalPages}
+                                            onPageChange={changePage}
+                                            containerClassName={
+                                                "navigationButtons"
+                                            }
+                                            previousLinkClassName={
+                                                "previousButton"
+                                            }
+                                            nextLinkClassName={"nextButton"}
+                                            disabledClassName={
+                                                "navigationDisabled"
+                                            }
+                                            activeClassName={"navigationActive"}
+                                        />
+                                    </section>
                                 </section>
                             </div>
                         </div>
