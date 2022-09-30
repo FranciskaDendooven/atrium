@@ -97,11 +97,6 @@ export default function Posts(props) {
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
                 </section>
-                <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">
-                        This is a centered Title...Yes or No!?
-                    </h1>
-                </section>
 
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -188,6 +183,7 @@ export default function Posts(props) {
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
+                                                            
                                                             <p className="ml-2 mb-4 text-gray-700">
                                                                 <b>
                                                                     by{" "}

@@ -1,3 +1,4 @@
+@import-normalize;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -81,6 +82,22 @@
         white-space: nowrap;
 }
         #postContent:hover{
+          overflow: initial;
+          white-space: normal;
+          overflow-wrap: break-word;
+        }
+
+        .content{
+          color: #054E58;
+        width:90%;
+        height: auto;
+        margin-right: 2rem;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        }
+        .content:hover{
           overflow: initial;
           white-space: normal;
           overflow-wrap: break-word;
