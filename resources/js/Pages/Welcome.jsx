@@ -6,7 +6,6 @@ import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import Navbar from "@/Layouts/Navbar";
-import ReactPaginate from "react-paginate";
 
 
 export default function Welcome(props) {
@@ -143,7 +142,6 @@ export default function Welcome(props) {
                                                 id,
                                                 user,
                                             }) => {
-                                                
                                                 if (page === "Code Share") {
                                                     return (
                                                         <PostCard
@@ -188,7 +186,6 @@ export default function Welcome(props) {
                                                 }
                                             }
                                         )}
-                                         
                                 </section>
 
                                 <section className="mb-6">
@@ -303,7 +300,6 @@ export default function Welcome(props) {
                                                 }
                                             }
                                         )}
-                                        
                                 </section>
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
