@@ -21,7 +21,7 @@ export default function Welcome(props) {
                 <div className="flex flex-row h-[500px] justify-center items-center">
                     <section className="justify-center items-center">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
-                        Welcome to <u>Atrium!</u>
+                        Welcome to Atrium!
                         </h1>
                         <h1 className="text-gray-400 font-bold text-3xl m-4 p-2">
                             <br/>Your home of trust and connection.

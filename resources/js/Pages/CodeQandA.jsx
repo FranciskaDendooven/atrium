@@ -91,6 +91,9 @@ export default function Posts(props) {
                         Hi there!<br/>Only use this page if you're in coding-trouble!<br/>
                         Get ready to ask your question right below 😊
                     </h1>
+                    <p className="text-center text-gray-400 font-bold text-m mb-4 p-2"
+                        >Pssst! The Code Share page is the one you need to for your YES-code moment 😉
+                    </p>
                 </DarkBlueBlockHeader>
             </div>
             <div className="flex flex-col items-center sm:items-center sm:pt-10">

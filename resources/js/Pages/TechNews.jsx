@@ -86,10 +86,9 @@ export default function Posts(props) {
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        Testing <br />
-                        this <br />
-                        shit out <br />
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Hello TechWorld!
+                        <br/>What's up?! 💻
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -97,27 +96,26 @@ export default function Posts(props) {
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
                 </section>
-                <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">This is the TechNews page 💻</h1>
-                </section>
             </div>
 
             <div className="py-12 m-8">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
-                            <div className="flex items-center justify-between mb-6">
-                                <Link
-                                    className="py-2 px-4 m-4 rounded-full text-white text-xl bg-lightBlue focus:outline-none"
-                                    href={route("showCreatePost")}
-                                >
-                                    Create Post
-                                </Link>
-                            </div>
+                    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                            <div className="p-6 bg-white border-b border-gray-200">
+                                <div className="flex items-center justify-between mb-6">
+                                    <Link
+                                        className="py-2 px-4 m-4 ml-[40%] mr-[40%] rounded-full text-white text-xl bg-lightBlue focus:outline-none"
+                                        href={route("showCreatePost")}
+                                    >
+                                        Create Post
+                                    </Link>
+                                </div>
 
-                            <section className="mb-6">
-                                <h1 className="font-bold text-2xl">TechNews</h1>
-
+                                <section className="ml-[40%] mr-[40%]">
+                                    <h1 className="font-bold text-2xl">
+                                        TechNews
+                                    </h1>
+<br/>
                                 {posts
                                     .slice(
                                         numberOfPostsVisited,
@@ -146,62 +144,76 @@ export default function Posts(props) {
                                             if (page === "TechNews")
                                                 return (
                                                     <PostCard key={id}>
-                                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                            {title}
-                                                        </h1>
-                                                        <p>
-                                                            <b>
-                                                                by {user.name}
-                                                            </b>
-                                                        </p>
-                                                        <p className="text-ellipsis overflow-hidden">
-                                                            {content}
-                                                        </p>
-                                                        <p>{tag}</p>
+                                                        <div className="ml-[610px]">
+                                                                {visible ? (
+                                                                    <>
+                                                                        <Link
+                                                                            tabIndex="1"
+                                                                            className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                                                                            href={route(
+                                                                                "showUpdatedPost",
+                                                                                id
+                                                                            )}
+                                                                        >
+                                                                            Edit
+                                                                        </Link>
 
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={
-                                                                    comments
-                                                                }
-                                                            />
-                                                        </p>
+                                                                        <button
+                                                                            onClick={(
+                                                                                e
+                                                                            ) =>
+                                                                                deleteMsg(
+                                                                                    e,
+                                                                                    id
+                                                                                )
+                                                                            }
+                                                                            type="submit"
+                                                                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
+                                                                        >
+                                                                            Delete
+                                                                        </button>
+                                                                    </>
+                                                                ) : (
+                                                                    " "
+                                                                )}
+                                                            </div>
 
-                                                        {visible ? (
-                                                            <>
-                                                                <Link
-                                                                    tabIndex="1"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                    href={route(
-                                                                        "showUpdatedPost",
-                                                                        id
-                                                                    )}
-                                                                >
-                                                                    Edit
-                                                                </Link>
+                                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
 
-                                                                <button
-                                                                    onClick={(
-                                                                        e
-                                                                    ) =>
-                                                                        deleteMsg(
-                                                                            e,
-                                                                            id
-                                                                        )
+                                                            <div className="content">
+                                                            <p 
+                                                            type="textfield"
+                                                            className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                {content}
+                                                            </p>
+                                                            </div>
+
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
+
+                                                            <p>
+                                                                <PostCommentText
+                                                                    comments={
+                                                                        comments
                                                                     }
-                                                                    type="submit"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                                >
-                                                                    Delete
-                                                                </button>
-                                                            </>
-                                                        ) : (
-                                                            " "
-                                                        )}
+                                                                />
+                                                            </p>
 
-                                                        <PostCommentCard
-                                                            postId={id}
-                                                        />
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
                                                     </PostCard>
                                                 );
                                         }

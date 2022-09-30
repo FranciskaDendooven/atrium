@@ -150,19 +150,64 @@ export default function Posts(props) {
                                              
                                                     return (
                                                         <PostCard key={id}>
-                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                            <div className="ml-[610px]">
+                                                                {visible ? (
+                                                                    <>
+                                                                        <Link
+                                                                            tabIndex="1"
+                                                                            className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                                                                            href={route(
+                                                                                "showUpdatedPost",
+                                                                                id
+                                                                            )}
+                                                                        >
+                                                                            Edit
+                                                                        </Link>
+
+                                                                        <button
+                                                                            onClick={(
+                                                                                e
+                                                                            ) =>
+                                                                                deleteMsg(
+                                                                                    e,
+                                                                                    id
+                                                                                )
+                                                                            }
+                                                                            type="submit"
+                                                                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
+                                                                        >
+                                                                            Delete
+                                                                        </button>
+                                                                    </>
+                                                                ) : (
+                                                                    " "
+                                                                )}
+                                                            </div>
+
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            <p>
+                                                            
+                                                            <p className="ml-2 mb-4 text-gray-700">
                                                                 <b>
                                                                     by{" "}
                                                                     {user.name}
                                                                 </b>
                                                             </p>
-                                                            <p className="text-ellipsis overflow-hidden">
+
+                                                            <div className="content">
+                                                            <p 
+                                                            type="textfield"
+                                                            className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
                                                                 {content}
                                                             </p>
-                                                            <p>{tag}</p>
+                                                            </div>
+
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
 
                                                             <p>
                                                                 <PostCommentText
@@ -171,38 +216,6 @@ export default function Posts(props) {
                                                                     }
                                                                 />
                                                             </p>
-
-                                                            {visible ? (
-                                                                <>
-                                                                    <Link
-                                                                        tabIndex="1"
-                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                        href={route(
-                                                                            "showUpdatedPost",
-                                                                            id
-                                                                        )}
-                                                                    >
-                                                                        Edit
-                                                                    </Link>
-
-                                                                    <button
-                                                                        onClick={(
-                                                                            e
-                                                                        ) =>
-                                                                            deleteMsg(
-                                                                                e,
-                                                                                id
-                                                                            )
-                                                                        }
-                                                                        type="submit"
-                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                                    >
-                                                                        Delete
-                                                                    </button>
-                                                                </>
-                                                            ) : (
-                                                                " "
-                                                            )}
 
                                                             <PostCommentCard
                                                                 postId={id}
