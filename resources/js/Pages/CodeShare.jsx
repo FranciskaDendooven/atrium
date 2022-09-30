@@ -99,7 +99,7 @@ export default function Posts(props) {
                 </section>
                 <section className="items-center justify-center font-bold">
                     <h1 className="text-3xl">
-                        This is a centered Title...Yes or No!?
+                        Welcome to Code Share
                     </h1>
                 </section>
 
@@ -117,9 +117,7 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Code Share
-                                    </h1>
+                                    <h1 className="font-bold text-2xl">Code Share</h1>
 
                                     {posts
                                         .slice(

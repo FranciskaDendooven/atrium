@@ -21,14 +21,6 @@ class CodeShareController extends Controller
         return Inertia::render('CodeShare', ['posts' => $posts]);
     }
 
-    public function showAllUserPosts()
-
-    {
-        $id = auth()->user()->id;
-        $posts = Post::where('user_id', $id)->with('user')->get();
-        return Inertia::render('Userprofile', ['posts' => $posts]);
-    }
-
     public function create()
     {
         return Inertia::render('Posts/Create');
