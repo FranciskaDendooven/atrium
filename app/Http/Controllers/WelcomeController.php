@@ -12,7 +12,7 @@ class WelcomeController extends Controller
 {
     public function load()
     {
-        $posts = Post::orderBy('updated_at', 'DESC')
+        $posts = Post::latest('updated_at')->first()
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')
