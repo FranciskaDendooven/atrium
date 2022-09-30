@@ -9,34 +9,100 @@ Atrium is build with Laravel-Breeze, ReactJS and is open-source based for BeCodi
 So, get in touch with your fellow BeCodians and push that button! For in BeCodians we trust!
 
 
+## Table of Contents
+- [Functionalities and features](#Functionalitiesandfeatures)
+- [Languages](#Languages)
+- [Technologies](#Technologies)
+- [Editor](#Editor)
+- [FAQ](#faq)
+- [Support](#support)
+- [License](#license)
 
 
-> Subtitle or Short Description Goes Here
 
-> ideally one sentence
 
-> include terms/tags that can be searched
+## Functionalities and features
 
-**Badges will go here**
+> Platform is viewable by everyone
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
+> interactions: comment, post, edit and delete are only possible when registered
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+> Forum thread styled pages for code, pay-it-forwerd, technews, and memejokes called BrainFarts
 
-- For more on these wonderful ~~badgers~~ badges, refer to <a href="http://badges.github.io/badgerbadgerbadger/" target="_blank">`badgerbadgerbadger`</a>.
 
-***INSERT ANOTHER GRAPHIC HERE***
+## Languages
 
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+
+
+## Technologies
+
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+STILL NEED TO FIND AD BADGE FOR INERTIA AND BREEZE
+
+## Editor
+editor
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+
+
+## Team
+
+
+| <h4>Franciska Den Doven</h4> | <h4>Franciska Den Doven</h4> | <h4>Franciska Den Doven</h4> |
+| :---: |:---:| :---:|
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
+| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
+
+- You can just grab their GitHub profile image URL
+- You should probably resize their picture using `?s=200` at the end of the image URL.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+## Learning About Resources
+![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+
+[documentation](https://laravel.com/docs)
+
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+
+add laracast? or all documentation that we used and worked from trello???
+
+
+link to mockup
+
+ADD link to our Mockup and maybe a img
+
+
+
+
+
+
+
+
+
+
+
+## License
+- Copyright 2022 © Atrium - byy Team Deadpool
+
+
 
 - Most people will glance at your `README`, *maybe* star it, and leave
 - Ergo, people should understand instantly what your project is about based on your repo
@@ -61,6 +127,7 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 ![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
 
 ---
+
 
 ## Table of Contents (Optional)
 
@@ -184,23 +251,9 @@ Reach out to me at one of the following places!
 - Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
 - Insert more social links here.
 
----
-
-## Donations (Optional)
-
-- You could include a <a href="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png" target="_blank">Gratipay</a> link as well.
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/fvcproductions/)
-
-
----
 
 ## License
-
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
+- Copyright 2022 © Atrium - byy Team Deadpool
 
 
 ## installing
@@ -221,7 +274,7 @@ npm run dev
 
 This project develop under [MPL-2.0](./LICENSE) license.
 
-## Functionnalities
+
 
 
 ## WIP
