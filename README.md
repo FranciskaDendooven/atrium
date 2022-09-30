@@ -58,7 +58,7 @@ editor
 
 | <h4>Franciska Dendoven</h4> | <h4>Madalena Rio</h4> | <h4>Gladys Haelters</h4> |
 | :---: |:---:| :---:|
-|  [![Franciska](https://avatars.githubusercontent.com/u/104010563?v=4)](https://github.com/FranciskaDendooven)     | ![Madalena](https://avatars.githubusercontent.com/u/104010119?v=4)](https://github.com/madalenaRio)| [![Gladys](https://avatars.githubusercontent.com/u/104009219?v=4)](https://github.com/Gladyshaelters) ! |
+|  [![Franciska](https://avatars.githubusercontent.com/u/104010563?v=4)](https://github.com/FranciskaDendooven)     |  [![Madalena](https://avatars.githubusercontent.com/u/104010119?v=4)](https://github.com/madalenaRio)     |  [![Gladys](https://avatars.githubusercontent.com/u/104009219?v=4)](https://github.com/Gladyshaelters)     |
 | <a href="https://github.com/FranciskaDendooven" target="_blank">`github.com/FranciskaDendooven`</a> | <a href="https://github.com/madalenaRio" target="_blank">`github.com/madalenaRio`</a> | <a href="https://github.com/Gladyshaelters" target="_blank">`github.com/Gladyshaelters`</a> |
 
 - You can just grab their GitHub profile image URL
