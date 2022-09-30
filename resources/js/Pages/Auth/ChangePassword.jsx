@@ -28,6 +28,16 @@ export default function updatePassword( props ) {
             <Head title="Reset Password" />
             <div className="flex flex-col justify-center items-center my-20">
                 <div className="flex flex-col justify-center p-4 m-5 max-w-4xl min-w-3/4 bg-white rounded-xl border-2 border-darkblue shadow-md">
+                <h1 className="my-4"> Change your password</h1>
+    
+    <section className="flex items-start my-4 mb-6">
+           <Link
+               className="px-6 py-2 text-white bg-redOrange rounded-full focus:outline-none"
+               href={route("userSettings")}
+           >
+               Back
+           </Link>
+       </section>
                     <form onSubmit={handleSubmit}>
                     <div className="mt-4">
                             <Label forInput="current_password" value="Current Password" />
