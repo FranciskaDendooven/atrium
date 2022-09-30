@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, Head, usePage } from "@inertiajs/inertia-react";
+import React, { useState } from "react";
+import { Link, Head } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -10,16 +10,7 @@ import '/resources/CSS/app.css';
 
 
 export default function Welcome(props) {
-    // const [showingNavigationDropdown, setShowingNavigationDropdown] =
-    //     useState(false);
-    // const [display, setDisplay] = useState("hidden");
-    // const [postId, setPostId] = useState(0);
-    // useEffect(() => {}, [display, postId]);
-
-    //const { posts } = usePage().props;
     const [posts] = useState(props.posts);
-
-     
 
     return (
         <>

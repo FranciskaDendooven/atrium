@@ -86,19 +86,16 @@ export default function Posts(props) {
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        Testing <br />
-                        this <br />
-                        shit out <br />
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Had a breakthrough?
+                        <br/>Wanna share?
+                        <br/>Post it!
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
             <div className="flex flex-col items-center sm:items-center sm:pt-10">
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
-                </section>
-                <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">Welcome to Code Share</h1>
                 </section>
 
                 <div className="py-12 m-8">

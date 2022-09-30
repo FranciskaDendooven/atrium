@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/Layouts/Navbar";
-import { Head, usePage, Link } from "@inertiajs/inertia-react";
+import { Head, Link } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -14,8 +14,8 @@ export default function Profile(props) {
 
     useEffect(() => {}, [display, postId]);
 
-    /// the useState atributed to the posts array is being used for the pagination functionality ////
-    const [posts, setposts] = useState(props.posts);
+    /// The useState attributed to the posts array is being used for the pagination ////
+    const [posts] = useState(props.posts);
 
     const deleteMsg = (e, id) => {
         e.preventDefault();
@@ -81,7 +81,7 @@ export default function Profile(props) {
 
             <Head title="Profile" />
 
-            <div className="w-full h-96 flex flex-col overflow-auto items-center">
+            <div className="relative w-full h-fit flex flex-col overflow-auto items-center">
                 <DarkBlueBlockHeader className="">
                     <section className="flex-row">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
@@ -94,8 +94,9 @@ export default function Profile(props) {
                         alt="user avater image"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        This is a subtitle
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Lost in posts?
+                        <br/>This page contains them all.
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -103,9 +104,6 @@ export default function Profile(props) {
             <div className="flex flex-col max-w-full sm:pt-10">
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
-                </section>
-                <section className="flex justify-center items-center sm:items-center sm:pt-10">
-                    <h1 className="font-bold text-3xl">Your Posts</h1>
                 </section>
 
                 <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
@@ -121,19 +119,9 @@ export default function Profile(props) {
                                 if (page === "CodeQA") {
                                     return (
                                         <PostCard key={id}>
-                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
-                                            <p>{user.name}</p>
-                                            <p className="text-ellipsis overflow-hidden">
-                                                {content}
-                                            </p>
-                                            <p>{tag}</p>
-                                            <p>{page}</p>
-
                                             <Link
                                                 tabIndex="1"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
@@ -143,14 +131,48 @@ export default function Profile(props) {
                                             </Link>
 
                                             <button
-                                                onClick={(e) =>
-                                                    deleteMsg(e, id)
+                                                onClick={(
+                                                    e
+                                                ) =>
+                                                    deleteMsg(
+                                                        e,
+                                                        id
+                                                    )
                                                 }
                                                 type="submit"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                             >
                                                 Delete
                                             </button>
+
+                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                {title}
+                                            </h1>
+
+                                            <p className="ml-2 mb-4 text-gray-700">
+                                                <b>
+                                                    by{" "}
+                                                    {user.name}
+                                                </b>
+                                            </p>
+
+                                            <div className="content">
+                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                {content}
+                                            </p>
+                                            </div>
+                                            
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    tags: {tag}
+                                                </b>
+                                            </p>
+
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    from: {page}
+                                                </b>
+                                            </p>
                                         </PostCard>
                                     );
                                 }
@@ -184,19 +206,9 @@ export default function Profile(props) {
                                 if (page === "Code Share") {
                                     return (
                                         <PostCard className="" key={id}>
-                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
-                                            <p>{user.name}</p>
-                                            <p className="text-ellipsis overflow-hidden">
-                                                {content}
-                                            </p>
-                                            <p>{tag}</p>
-                                            <p>{page}</p>
-
                                             <Link
                                                 tabIndex="1"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
@@ -206,14 +218,48 @@ export default function Profile(props) {
                                             </Link>
 
                                             <button
-                                                onClick={(e) =>
-                                                    deleteMsg(e, id)
+                                                onClick={(
+                                                    e
+                                                ) =>
+                                                    deleteMsg(
+                                                        e,
+                                                        id
+                                                    )
                                                 }
                                                 type="submit"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                             >
                                                 Delete
                                             </button>
+
+                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                {title}
+                                            </h1>
+
+                                            <p className="ml-2 mb-4 text-gray-700">
+                                                <b>
+                                                    by{" "}
+                                                    {user.name}
+                                                </b>
+                                            </p>
+
+                                            <div className="content">
+                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                {content}
+                                            </p>
+                                            </div>
+                                            
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    tags: {tag}
+                                                </b>
+                                            </p>
+
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    from: {page}
+                                                </b>
+                                            </p>
                                         </PostCard>
                                     );
                                 }
@@ -246,19 +292,9 @@ export default function Profile(props) {
                                 if (page === "PIF") {
                                     return (
                                         <PostCard className="" key={id}>
-                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
-                                            <p>{user.name}</p>
-                                            <p className="text-ellipsis overflow-hidden">
-                                                {content}
-                                            </p>
-                                            <p>{tag}</p>
-                                            <p>{page}</p>
-
                                             <Link
                                                 tabIndex="1"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
@@ -268,14 +304,48 @@ export default function Profile(props) {
                                             </Link>
 
                                             <button
-                                                onClick={(e) =>
-                                                    deleteMsg(e, id)
+                                                onClick={(
+                                                    e
+                                                ) =>
+                                                    deleteMsg(
+                                                        e,
+                                                        id
+                                                    )
                                                 }
                                                 type="submit"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                             >
                                                 Delete
                                             </button>
+
+                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                {title}
+                                            </h1>
+
+                                            <p className="ml-2 mb-4 text-gray-700">
+                                                <b>
+                                                    by{" "}
+                                                    {user.name}
+                                                </b>
+                                            </p>
+
+                                            <div className="content">
+                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                {content}
+                                            </p>
+                                            </div>
+                                            
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    tags: {tag}
+                                                </b>
+                                            </p>
+
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    from: {page}
+                                                </b>
+                                            </p>
                                         </PostCard>
                                     );
                                 }
@@ -306,19 +376,9 @@ export default function Profile(props) {
                                 if (page === "BrainFarts") {
                                     return (
                                         <PostCard key={id}>
-                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
-                                            <p>{user.name}</p>
-                                            <p className="text-ellipsis overflow-hidden">
-                                                {content}
-                                            </p>
-                                            <p>{tag}</p>
-                                            <p>{page}</p>
-
                                             <Link
                                                 tabIndex="1"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
@@ -328,14 +388,48 @@ export default function Profile(props) {
                                             </Link>
 
                                             <button
-                                                onClick={(e) =>
-                                                    deleteMsg(e, id)
+                                                onClick={(
+                                                    e
+                                                ) =>
+                                                    deleteMsg(
+                                                        e,
+                                                        id
+                                                    )
                                                 }
                                                 type="submit"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                             >
                                                 Delete
                                             </button>
+
+                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                {title}
+                                            </h1>
+
+                                            <p className="ml-2 mb-4 text-gray-700">
+                                                <b>
+                                                    by{" "}
+                                                    {user.name}
+                                                </b>
+                                            </p>
+
+                                            <div className="content">
+                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                {content}
+                                            </p>
+                                            </div>
+                                            
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    tags: {tag}
+                                                </b>
+                                            </p>
+
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    from: {page}
+                                                </b>
+                                            </p>
                                         </PostCard>
                                     );
                                 }
@@ -366,19 +460,9 @@ export default function Profile(props) {
                                 if (page === "TechNews") {
                                     return (
                                         <PostCard className="" key={id}>
-                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
-                                            <p>{user.name}</p>
-                                            <p className="text-ellipsis overflow-hidden">
-                                                {content}
-                                            </p>
-                                            <p>{tag}</p>
-                                            <p>{page}</p>
-
                                             <Link
                                                 tabIndex="1"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
@@ -388,14 +472,48 @@ export default function Profile(props) {
                                             </Link>
 
                                             <button
-                                                onClick={(e) =>
-                                                    deleteMsg(e, id)
+                                                onClick={(
+                                                    e
+                                                ) =>
+                                                    deleteMsg(
+                                                        e,
+                                                        id
+                                                    )
                                                 }
                                                 type="submit"
-                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                             >
                                                 Delete
                                             </button>
+
+                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                {title}
+                                            </h1>
+
+                                            <p className="ml-2 mb-4 text-gray-700">
+                                                <b>
+                                                    by{" "}
+                                                    {user.name}
+                                                </b>
+                                            </p>
+
+                                            <div className="content">
+                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                {content}
+                                            </p>
+                                            </div>
+                                            
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    tags: {tag}
+                                                </b>
+                                            </p>
+
+                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                <b className="text-lightBlue">
+                                                    from: {page}
+                                                </b>
+                                            </p>
                                         </PostCard>
                                     );
                                 }
