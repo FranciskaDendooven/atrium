@@ -33,8 +33,8 @@ export default function UserSettings(props) {
                 </DarkBlueBlockHeader>
             </div>
 
-            <div className="flex flex-col place-items-center">
-                <section className="flex flex-col justify-start mx-10 my-10 px-20 py-10 rounded-xl border-2 border-darkblue shadow-md">
+            <div className="flex flex-col place-items-center mt-4 mb-14">
+                <section id="userSettingsForm" className="w-[300px] h-[450px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg text-center">
                     <h1 className="m-5">Account Settings</h1>
                     <section>
                     <h3>Name: {props.auth.user.name}</h3>
@@ -45,17 +45,19 @@ export default function UserSettings(props) {
                     <section className="mt-4">
                         <Link
                             tabIndex="1"
-                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                             href={route("showEditUserSettings", props.auth.user.id)}
                         >
                             Edit Settings
                         </Link>
                     </section>  
-                    <hr className="border-2 border-darkblue m-10"/>
-                    <h3>Password:</h3>
+                    <hr className="border-darkblue m-10"/>
+
+                    <h3 className="ml-6">Password:</h3>
+                    <br/>
                     <Link
                             tabIndex="1"
-                            className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                             href={route("changePassword")}
                            
                         >

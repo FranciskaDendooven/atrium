@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, Head, usePage } from "@inertiajs/inertia-react";
+import React, { useState } from "react";
+import { Link, Head } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
@@ -10,21 +10,7 @@ import '/resources/CSS/app.css';
 
 
 export default function Welcome(props) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
-    const [display, setDisplay] = useState("hidden");
-    const [postId, setPostId] = useState(0);
-    useEffect(() => {}, [display, postId]);
-
-    //const { posts } = usePage().props;
-    const [posts, setposts] = useState(props.posts);
-
-    const deleteMsg = (e, id) => {
-        e.preventDefault();
-        setDisplay("block");
-        setPostId(id);};
-
-     
+    const [posts] = useState(props.posts);
 
     return (
         <>
@@ -32,24 +18,30 @@ export default function Welcome(props) {
 
             <Head title="Welcome" />
             <DarkBlueBlockHeader>
-                <div className="flex flex-row justify-center items-center">
+                <div className="flex flex-row h-[500px] justify-center items-center">
                     <section className="justify-center items-center">
                         <h1 className="font-bold text-gray-100 text-5xl m-4 p-2">
-                            In Becodians we trust!
+                        Welcome to <u>Atrium!</u>
                         </h1>
                         <h1 className="text-gray-400 font-bold text-3xl m-4 p-2">
-                            This is a subtitle
+                            <br/>Your home of trust and connection.
+                            <br/>For in <u>BeCodians</u> we trust!
+                            <br/><u>Connect</u> with your peers on a <u>global</u> level. 
                         </h1>
+                        <p className="text-gray-400 font-bold text-m m-4 p-2"
+                        >Join the BeCode <u>community</u>?
+                        <br/>Click on the register button below
+                        </p>
                         <section className="ml-0 m-10">
                             <Link
                                 href={route("login")}
-                                className="py-4 px-6 m-4 rounded-full font-bold  text-white text-xl bg-redOrange"
+                                className="py-2 px-6 m-4 rounded-full font-bold  text-white text-xl bg-redOrange"
                             >
                                 Log in
                             </Link>
                             <Link
                                 href={route("register")}
-                                className="py-4 px-6 m-4 rounded-full font-bold  text-white text-xl bg-redOrange"
+                                className="py-2 px-6 m-4 rounded-full font-bold  text-white text-xl bg-redOrange"
                             >
                                 Register
                             </Link>
@@ -64,10 +56,11 @@ export default function Welcome(props) {
                     <SearchBar />
                 </section>
                 <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">Whats' new?</h1>
+                    <h1 className="text-3xl">What's New?</h1>
+                    <p className="text-m">Check it out down below</p>
                 </section>
 
-                <div className="py-12 m-8">
+                <div className="m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white shadow-sm sm:rounded-lg">
                             <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
