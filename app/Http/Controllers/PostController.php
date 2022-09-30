@@ -81,7 +81,7 @@ class PostController extends Controller
         $post->tag     = $request->tag;
         $post->save();
 
-        return redirect()->route('showPosts');
+        return redirect()->route('loadWelcome');
     }
 
     public function destroy($id)
@@ -89,7 +89,7 @@ class PostController extends Controller
         Post::find($id)->delete();
 
 
-        return redirect()->route('showPosts');
+        return redirect()->route('loadWelcome');
     }
 
 }
