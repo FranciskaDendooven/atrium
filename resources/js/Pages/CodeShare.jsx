@@ -117,9 +117,7 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Code Share
-                                    </h1>
+                                    <h1 className="font-bold text-2xl">Code Share</h1>
 
                                     {posts
                                         .slice(
