@@ -230,17 +230,13 @@ export default function Posts(props) {
                                             nextLabel={"Next"}
                                             pageCount={totalPages}
                                             onPageChange={changePage}
-                                            containerClassName={
-                                                "navigationButtons"
-                                            }
-                                            previousLinkClassName={
-                                                "previousButton"
-                                            }
+                                            containerClassName={"navigationButtons"}
+                                            previousLinkClassName={"previousButton"}
                                             nextLinkClassName={"nextButton"}
-                                            disabledClassName={
-                                                "navigationDisabled"
-                                            }
+                                            disabledClassName={"navigationDisabled"}
                                             activeClassName={"navigationActive"}
+                                            pageRangeDisplayed={3}
+                                            renderOnZeroPageCount={null}
                                         />
                                     </section>
                                 </section>
