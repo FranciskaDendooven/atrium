@@ -10,7 +10,7 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 
 
 ## Table of Contents
-- [Functionalities and features](#Functionalities)
+- [Features](#Features)
 - [Languages](#Languages)
 - [Technologies](#Technologies)
 - [Editor](#Editor)
