@@ -24,13 +24,13 @@ export default function updatePassword( props ) {
 
     return (
         <>
-             <Navbar auth={props.auth} errors={props.errors}></Navbar>
             <Head title="Reset Password" />
-            <div className="flex flex-col justify-center items-center my-20">
-                <div className="flex flex-col justify-center p-4 m-5 max-w-4xl min-w-3/4 bg-white rounded-xl border-2 border-darkblue shadow-md">
-                <h1 className="my-4"> Change your password</h1>
+            <div className="grid justify-center py-12">
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div id="changePasswordPage" className="w-[700px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg p-8">
+                <h1 className="my-4 font-bold"> Change your password</h1>
     
-    <section className="flex items-start my-4 mb-6">
+    <section className="flex items-center justify-between mb-6">
            <Link
                className="px-6 py-2 text-white bg-redOrange rounded-full focus:outline-none"
                href={route("userSettings")}
@@ -38,14 +38,15 @@ export default function updatePassword( props ) {
                Back
            </Link>
        </section>
-                    <form onSubmit={handleSubmit}>
-                    <div className="mt-4">
+       <section className="flex flex-col">
+                    <form name="updateUserSettings" onSubmit={handleSubmit}>
+                    <div className="flex flex-col">
+                    <div className="mb-4">
                             <Label forInput="current_password" value="Current Password" />
                             <Input
                                 type="password"
                                 name="current_password"
-                                //value=""
-                                className="mt-1 block w-full"
+                                className="w-full px-4 py-2 rounded-md"
                                 handleChange={onHandleChange}
                             />
                             <InputError
@@ -53,13 +54,14 @@ export default function updatePassword( props ) {
                                 className="mt-2"
                             />
                         </div>
-                        <div className="mt-4">
+                        <div className="flex flex-col mt-4">
+                        <div className="mb-4">
                             <Label forInput="password" value="New Password" />
                             <Input
                                 type="password"
                                 name="password"
                                 value={data.password}
-                                className="mt-1 block w-full"
+                                className="w-full px-4 py-2 rounded-md"
                                 autoComplete="new-password"
                                 isFocused={true}
                                 handleChange={onHandleChange}
@@ -68,9 +70,11 @@ export default function updatePassword( props ) {
                                 message={errors.password}
                                 className="mt-2"
                             />
+                            </div>
                         </div>
 
-                        <div className="mt-4">
+                        <div className="flex flex-col mt-4">
+                        <div className="mb-0">
                             <Label
                                 forInput="password_confirmation"
                                 value="Confirm new Password"
@@ -79,7 +83,7 @@ export default function updatePassword( props ) {
                                 type="password"
                                 name="password_confirmation"
                                 value={data.password_confirmation}
-                                className="mt-1 block w-full"
+                                className="w-full px-4 py-2 rounded-md"
                                 autoComplete="new-password"
                                 handleChange={onHandleChange}
                             />
@@ -88,14 +92,20 @@ export default function updatePassword( props ) {
                                 className="mt-2"
                             />
                         </div>
+                        </div>
 
-                        <div className="flex items-center justify-end mt-4">
-                            <Button className="ml-4" type="submit">
+                        <div className="mt-4">
+                            <Button 
+                            type="submit"
+                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none">
                                 Submit
                             </Button>
                         </div>
+                        </div>
                     </form>
+                    </section>
                 </div>
+            </div>
             </div>
         </>
     );
