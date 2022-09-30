@@ -22,9 +22,9 @@ export default function Dashboard(props) {
             
             <Head title="Posts" />
 
-            <div className="py-12 min-w-full">
+            <div className="grid justify-center py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
+                    <div id="editForm" className="w-[700px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
                             <div className="flex items-center justify-between mb-6">
                                 <Link
@@ -41,7 +41,7 @@ export default function Dashboard(props) {
                                         <label className="">Title</label>
                                         <input
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-4 py-2 rounded-md"
                                             label="Title"
                                             name="title"
                                             value={data.title}
@@ -53,14 +53,16 @@ export default function Dashboard(props) {
                                             {errors.title}
                                         </span>
                                     </div>
-
-                                    <div className="mb-0 mt-4">
+                                    
+                                    <div className="flex flex-col mt-4">
+                                    <div className="mb-0">
                                         <label className="">Content</label>
                                         <textarea
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full px-4 py-2 rounded-md"
                                             label="content"
                                             name="content"
+                                            row="15"
                                             errors={errors.content}
                                             value={data.content}
                                             onChange={(e) =>
@@ -74,12 +76,14 @@ export default function Dashboard(props) {
                                             {errors.content}
                                         </span>
                                     </div>
+                                    </div>
 
-                                    <div className="mb-0 mt-4">
+                                    <div className="flex flex-col mt-4">
+                                    <div className="mb-0">
                                         <label className="">Tag</label>
-                                        <textarea
+                                        <input
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full px-4 py-2 rounded-md"
                                             label="tag"
                                             name="tag"
                                             errors={errors.tag}
@@ -93,11 +97,12 @@ export default function Dashboard(props) {
                                         </span>
                                     </div>
                                 </div>
+                                </div>
 
                                 <div className="mt-4">
                                     <button
                                         type="submit"
-                                        className="px-6 py-2 font-bold text-white bg-lightBlue rounded"
+                                        className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                     >
                                         Update
                                     </button>

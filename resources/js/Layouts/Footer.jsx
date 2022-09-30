@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <div className="relative">
             <DarkBlueBlockHeader>
-                <div className=" w-full flex flex-row justify-center items-center">
+                <div className=" w-full h-[275px] flex flex-row justify-center items-center">
                     <Link href="/">
                         <ApplicationLogo />
                     </Link>

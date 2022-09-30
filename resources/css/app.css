@@ -86,7 +86,15 @@
           overflow-wrap: break-word;
         }
 
-        
+#createForm{
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 16px 0 rgba(149,176,181,2);
+}
+
+#editForm{
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 16px 0 rgba(149,176,181,2);
+}
 
 /* .button{
   box-shadow: 0 2px 4px 0 rgba(149,176,181,2)

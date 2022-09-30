@@ -68,7 +68,7 @@ export default function Welcome(props) {
 
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="bg-white shadow-sm sm:rounded-lg">
                             <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">
@@ -99,7 +99,7 @@ export default function Welcome(props) {
 
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -116,7 +116,7 @@ export default function Welcome(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>
@@ -160,7 +160,7 @@ export default function Welcome(props) {
 
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -177,7 +177,7 @@ export default function Welcome(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>
@@ -218,7 +218,7 @@ export default function Welcome(props) {
 
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -235,7 +235,7 @@ export default function Welcome(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>
@@ -274,7 +274,7 @@ export default function Welcome(props) {
 
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -291,7 +291,7 @@ export default function Welcome(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>
@@ -333,7 +333,7 @@ export default function Welcome(props) {
 
                                                             <Link
                                                                 tabIndex="1"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                                 href={route(
                                                                     "showUpdatedPost",
                                                                     id
@@ -350,7 +350,7 @@ export default function Welcome(props) {
                                                                     )
                                                                 }
                                                                 type="submit"
-                                                                className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
                                                             >
                                                                 Delete
                                                             </button>

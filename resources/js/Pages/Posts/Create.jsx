@@ -20,9 +20,9 @@ export default function Dashboard(props) {
         <>
             
             <Head title="Posts" />
-            <div className="grid justify-items-center py-12 min-w-[800px] max-w-[1024px]">
+            <div className="grid justify-items-center py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
+                    <div id="createForm" className="w-[700px] bg-white overflow-hidden shadow-sm rounded-xl border-2 border-darkblue sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
                             <div className="flex items-center justify-between mb-6">
                                 <Link
