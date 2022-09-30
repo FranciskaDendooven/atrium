@@ -86,10 +86,9 @@ export default function Posts(props) {
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        Testing <br />
-                        this <br />
-                        shit out <br />
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Hi there!<br/>Only use this page if you're in coding-trouble!<br/>
+                        Get ready to ask your question right below 😊
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -105,7 +104,7 @@ export default function Posts(props) {
 
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="shadow-sm sm:rounded-lg">
                             <div className="p-6 bg-white border-b border-gray-200">
                                 <div className="flex items-center justify-between mb-6">
                                     <Link
