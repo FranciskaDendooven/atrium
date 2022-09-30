@@ -144,7 +144,9 @@ export default function Posts(props) {
                                                     props.auth.user &&
                                                     user_id ==
                                                         props.auth.user.id
-                                                ) { visible = true; }
+                                                ) {
+                                                    visible = true;
+                                                }
                                                 if (page === "BrainFarts")
                                                     return (
                                                         <PostCard key={id}>
@@ -226,6 +228,8 @@ export default function Posts(props) {
                                                 "navigationDisabled"
                                             }
                                             activeClassName={"navigationActive"}
+                                            pageRangeDisplayed={3}
+                                            renderOnZeroPageCount={null}
                                         />
                                     </section>
                                 </section>

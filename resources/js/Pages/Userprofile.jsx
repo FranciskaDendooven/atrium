@@ -166,6 +166,8 @@ export default function Profile(props) {
                                 nextLinkClassName={"nextButton"}
                                 disabledClassName={"navigationDisabled"}
                                 activeClassName={"navigationActive"}
+                                pageRangeDisplayed={3}
+                                renderOnZeroPageCount={null}
                             />
                         </section>
                     </section>

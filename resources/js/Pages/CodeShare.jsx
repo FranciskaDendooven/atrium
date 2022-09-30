@@ -98,9 +98,7 @@ export default function Posts(props) {
                     <SearchBar />
                 </section>
                 <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">
-                        Welcome to Code Share
-                    </h1>
+                    <h1 className="text-3xl">Welcome to Code Share</h1>
                 </section>
 
                 <div className="py-12 m-8">
@@ -117,7 +115,9 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">Code Share</h1>
+                                    <h1 className="font-bold text-2xl">
+                                        Code Share
+                                    </h1>
 
                                     {posts
                                         .slice(
@@ -223,6 +223,8 @@ export default function Posts(props) {
                                                 "navigationDisabled"
                                             }
                                             activeClassName={"navigationActive"}
+                                            pageRangeDisplayed={3}
+                                            renderOnZeroPageCount={null}
                                         />
                                     </section>
                                 </section>

@@ -33,6 +33,7 @@ export default function Posts(props) {
     const changePage = ({ selected }) => {
         setPage(selected);
     };
+    console.log(page)
     //// pagination ////
 
     return (
@@ -225,17 +226,23 @@ export default function Posts(props) {
                                         )}
                                     <section className="mx-4 my-4">
                                         <ReactPaginate
-                                            previousLabel={"Previous"}
-                                            nextLabel={"Next"}
-                                            pageCount={totalPages}
-                                            onPageChange={changePage}
-                                            containerClassName={"navigationButtons"}
-                                            previousLinkClassName={"previousButton"}
-                                            nextLinkClassName={"nextButton"}
-                                            disabledClassName={"navigationDisabled"}
-                                            activeClassName={"navigationActive"}
-                                            pageRangeDisplayed={3}
-                                            renderOnZeroPageCount={null}
+                                          pageRangeDisplayed={10}
+                                          renderOnZeroPageCount={null}
+                                          previousLabel={"Previous"}
+                                          nextLabel={"Next"}
+                                          pageCount={totalPages}
+                                          onPageChange={changePage}
+                                          containerClassName={
+                                              "navigationButtons"
+                                          }
+                                          previousLinkClassName={
+                                              "previousButton"
+                                          }
+                                          nextLinkClassName={"nextButton"}
+                                          disabledClassName={
+                                              "navigationDisabled"
+                                          }
+                                          activeClassName={"navigationActive"}
                                         />
                                     </section>
                                 </section>

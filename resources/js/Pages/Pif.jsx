@@ -120,91 +120,100 @@ export default function Posts(props) {
                                 <section className="mb-6">
                                     <h1 className="font-bold text-2xl">PIF</h1>
 
-                                    {posts.map(
-                                        ({
-                                            id,
-                                            user_id,
-                                            title,
-                                            content,
-                                            tag,
-                                            page,
-                                            comments,
-                                            user,
-                                        }) => {
-                                            let visible = false;
+                                    {posts
+                                        .slice(
+                                            numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage
+                                        )
+                                        .map(
+                                            ({
+                                                id,
+                                                user_id,
+                                                title,
+                                                content,
+                                                tag,
+                                                page,
+                                                comments,
+                                                user,
+                                            }) => {
+                                                let visible = false;
 
-                                            if (
-                                                props.auth.user &&
-                                                user_id == props.auth.user.id
-                                            ) {
-                                                visible = true;
-                                            }
+                                                if (
+                                                    props.auth.user &&
+                                                    user_id ==
+                                                        props.auth.user.id
+                                                ) {
+                                                    visible = true;
+                                                }
 
-                                            if (page === "PIF")
-                                                return (
-                                                    <PostCard key={id}>
-                                                        <h1 className="m-4 mb-8 font-bold text-gray-700">
-                                                            {title}
-                                                        </h1>
-                                                        <p>
-                                                            <b>
-                                                                by {user.name}
-                                                            </b>
-                                                        </p>
-                                                        <p className="text-ellipsis overflow-hidden">
-                                                            {content}
-                                                        </p>
-                                                        <p>{tag}</p>
+                                                if (page === "PIF")
+                                                    return (
+                                                        <PostCard key={id}>
+                                                            <h1 className="m-4 mb-8 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            <p>
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
+                                                            <p className="text-ellipsis overflow-hidden">
+                                                                {content}
+                                                            </p>
+                                                            <p>{tag}</p>
 
-                                                        <p>
-                                                            <PostCommentText
-                                                                comments={
-                                                                    comments
-                                                                }
-                                                            />
-                                                        </p>
-
-                                                        {visible ? (
-                                                            <>
-                                                                <Link
-                                                                    tabIndex="1"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
-                                                                    href={route(
-                                                                        "showUpdatedPost",
-                                                                        id
-                                                                    )}
-                                                                >
-                                                                    Edit
-                                                                </Link>
-
-                                                                <button
-                                                                    onClick={(
-                                                                        e
-                                                                    ) =>
-                                                                        deleteMsg(
-                                                                            e,
-                                                                            id
-                                                                        )
+                                                            <p>
+                                                                <PostCommentText
+                                                                    comments={
+                                                                        comments
                                                                     }
-                                                                    type="submit"
-                                                                    className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
-                                                                >
-                                                                    Delete
-                                                                </button>
-                                                            </>
-                                                        ) : (
-                                                            " "
-                                                        )}
+                                                                />
+                                                            </p>
 
-                                                        <PostCommentCard
-                                                            postId={id}
-                                                        />
-                                                    </PostCard>
-                                                );
-                                        }
-                                    )}
-                                     <section className="mx-4 my-4">
+                                                            {visible ? (
+                                                                <>
+                                                                    <Link
+                                                                        tabIndex="1"
+                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-lightBlue"
+                                                                        href={route(
+                                                                            "showUpdatedPost",
+                                                                            id
+                                                                        )}
+                                                                    >
+                                                                        Edit
+                                                                    </Link>
+
+                                                                    <button
+                                                                        onClick={(
+                                                                            e
+                                                                        ) =>
+                                                                            deleteMsg(
+                                                                                e,
+                                                                                id
+                                                                            )
+                                                                        }
+                                                                        type="submit"
+                                                                        className="py-2 px-4 m-4 rounded text-white text-xl bg-redOrange"
+                                                                    >
+                                                                        Delete
+                                                                    </button>
+                                                                </>
+                                                            ) : (
+                                                                " "
+                                                            )}
+
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
+                                                        </PostCard>
+                                                    );
+                                            }
+                                        )}
+                                    <section className="mx-4 my-4">
                                         <ReactPaginate
+                                            pageRangeDisplayed={3}
+                                            renderOnZeroPageCount={null}
                                             previousLabel={"Previous"}
                                             nextLabel={"Next"}
                                             pageCount={totalPages}
