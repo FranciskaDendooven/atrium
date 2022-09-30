@@ -88,10 +88,10 @@ export default function Posts(props) {
                         alt="avatar image for brainfarts, a profile smile face"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        Testing <br />
-                        this <br />
-                        shit out <br />
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        Yes! You heard it!
+                        <br/>Time to be a pig and Meme your brains out!
+                        <br/>🧠💨
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -99,11 +99,7 @@ export default function Posts(props) {
                 <section className="absolute right-0 mr-32">
                     <SearchBar />
                 </section>
-                <section className="items-center justify-center font-bold">
-                    <h1 className="text-3xl">
-                        Welcome to the BrainFarts page 🧠💨
-                    </h1>
-                </section>
+
                 <div className="py-12 m-8">
                     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
