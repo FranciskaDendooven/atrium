@@ -18,11 +18,20 @@ export default function UserSettings(props) {
 
     return (
         <>
-         
-
             <Head title="User Settings" />
             <div className="flex flex-col justify-center place-items-center my-20">
-                <div className="flex flex-col justify-center p-4 m-5 max-w-4xl min-w-3/4 bg-white rounded-xl border-2 border-darkblue shadow-md">
+                <div className="flex flex-col justify-center items-center p-4 m-5 max-w-4xl min-w-3/4 bg-white rounded-xl border-2 border-darkblue shadow-md">
+                   <h1 className="my-4"> Change your settings</h1>
+    
+                         <section className="flex items-start my-4 mb-6">
+                                <Link
+                                    className="px-6 py-2 text-white bg-redOrange rounded-full focus:outline-none"
+                                    href={route("userSettings")}
+                                >
+                                    Back
+                                </Link>
+                            </section>
+            
                     <section className="flex flex-col justify-center w-96 mx-20 my-10">
                         <form name="updateUserSettings" onSubmit={handleSubmit}>
                             <div className="flex flex-col">
