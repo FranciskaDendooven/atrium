@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "@/Layouts/Navbar";
 import { Head, useForm, usePage, Link } from "@inertiajs/inertia-react";
 
 export default function UserSettings(props) {
@@ -19,7 +18,7 @@ export default function UserSettings(props) {
 
     return (
         <>
-            <Navbar auth={props.auth} errors={props.errors}></Navbar>
+         
 
             <Head title="User Settings" />
             <div className="flex flex-col justify-center place-items-center my-20">
