@@ -21,7 +21,7 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 
 
 
-## Functionalities and features
+## Features
 
 > Platform is viewable by everyone
 
@@ -56,10 +56,10 @@ editor
 ## Team
 
 
-| <h4>Franciska Den Doven</h4> | <h4>Franciska Den Doven</h4> | <h4>Franciska Den Doven</h4> |
+| <h4>Franciska Dendoven</h4> | <h4>Madalena Rio</h4> | <h4>Gladys Haelters</h4> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars.githubusercontent.com/u/104009219?v=4)] | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
+| <a href="https://github.com/FranciskaDendooven" target="_blank">`github.com/FranciskaDendooven`</a> | <a href="#" target="_blank">`github.com/#`</a> | <a href="https://github.com/Gladyshaelters" target="_blank">`github.com/Gladyshaelters`</a> |
 
 - You can just grab their GitHub profile image URL
 - You should probably resize their picture using `?s=200` at the end of the image URL.
@@ -191,7 +191,7 @@ $ bower install
 
 ---
 
-## Features
+
 ## Usage (Optional)
 ## Documentation (Optional)
 ## Tests (Optional)
