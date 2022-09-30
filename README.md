@@ -46,8 +46,10 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
  - ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
  - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
  - ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+ - ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
  - Breeze
  - Inertia
+
 
 
 ## Editor
@@ -61,7 +63,6 @@ So, get in touch with your fellow BeCodians and push that button! For in BeCodia
 
 [documentation](https://laravel.com/docs)
 
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 
 add laracast? or all documentation that we used and worked from trello???
 
@@ -74,7 +75,7 @@ ADD link to our Mockup and maybe a img
 
 
 ## Bugs 
-pagination bug:
+# pagination bug:
 We are using REACT-PAGINATE default component.
 When content is less than 5 posts per category it does not distribute posts per page properly.
 navigation between each pagination button works, but does not show 3 posts per page persistently.
