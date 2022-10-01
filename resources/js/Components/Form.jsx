@@ -48,42 +48,64 @@ export default function Form() {
                                 name="evening"
                             />
                         </div>
+
+                        <div className="m-4">
+                            <label className="">From who?</label>
+                            <input
+                                type="text"
+                                className="w-full px-4 py-2 rounded-md"
+                                label="FromWho"
+                                name="FromWho"
+                            />
+                        </div>
+
+                        <div className="m-4">
+                            <label className="">Class or role</label>
+                            <input
+                                type="text"
+                                className="w-full px-4 py-2 rounded-md"
+                                label="Class"
+                                name="Class"
+                            />
+                        </div>
                     </div>
 
                     <div className="mt-4">
                         <button
                             type="submit"
-                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                            className="py-2 px-5 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                         >
                             Send!
                         </button>
                     </div>
                 </form>
-            </section>
 
-            <br />
-            <br />
-            <br />
-            <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
-            <section className="flex flex-col">
                 <section className="items-center justify-center font-bold">
                     <h2 className="text-3xl">Compliment Bot</h2>
                 </section>
                 <form name="buttonBot">
                     <div className="flex flex-col">
                         <div className="m-4">
-                            <label className="">Who'd you like to compliment?</label>
+                            <label className="">
+                                Who'd you like to compliment?
+                            </label>
                             <input
                                 type="text"
                                 className="w-full px-4 py-2 rounded-md"
                                 label="Who"
                                 name="Who"
-                         />
+                            />
                         </div>
 
                         <div className="m-4">
-                            <label className="">What would you like to say?</label>
+                            <label className="">
+                                What would you like to say?
+                            </label>
                             <textarea
                                 type="text"
                                 className="w-full px-4 py-2 rounded-md"
@@ -101,20 +123,18 @@ export default function Form() {
                                 name="FromWho"
                             />
                         </div>
-
                     </div>
 
                     <div className="mt-4">
                         <button
                             type="submit"
-                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                            className="py-2 px-5 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                         >
                             Send!
                         </button>
                     </div>
                 </form>
             </section>
-           
         </>
     );
 }
