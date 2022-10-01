@@ -8,7 +8,7 @@ export default function Form() {
                     <h2 className="text-3xl">Button Bot</h2>
                 </section>
 
-                <section className="items-center justify-center font-bold">
+                <section className="items-center justify-center ">
                     <p>
                         The button bot on discord is very friendly, <br />
                         loves to get our attention when it's time to push a
@@ -97,7 +97,7 @@ export default function Form() {
                 <section className="items-center justify-center font-bold">
                     <h2 className="text-3xl">Compliment Bot</h2>
                 </section>
-                <section className="items-center justify-center font-bold">
+                <section className="items-center justify-center ">
                     <p>
                         The compliment bot for discord spreads compliments, <br />
                         and loves to make someones day by popping in on the server <br />
