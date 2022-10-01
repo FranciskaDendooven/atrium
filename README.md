@@ -24,7 +24,7 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 - [Languages](#Languages)
 - [Technologies](#Technologies)
 - [Editor](#Editor)
-- [version control](#Versioncontrol)
+- [Version control](#Version-control)
 - [Resources](#Resources)
 - [Design](#Design)
 - [WIP](#WIP)
