@@ -40,7 +40,7 @@ export default function Bots(props) {
                     <h1 className="text-3xl">Welcome to the Bots page 🤖</h1>
                 </section>
 
-                <div className="py-12">test Bots! --- UNDER CONSTRUCTION</div>
+                <div className="py-12">UNDER CONSTRUCTION</div>
                 <Form></Form>
             </div>
             <div className="flex flex-col items-center min-h-screen sm:items-center sm:pt-10"></div>
