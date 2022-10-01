@@ -116,9 +116,7 @@ export default function Posts(props) {
                                 </div>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Code Q&A
-                                    </h1>
+                                    <h1 className="font-bold text-2xl">Code Q&A</h1>
 
                                     {posts
                                         .slice(numberOfPostsVisited,
@@ -205,13 +203,13 @@ export default function Posts(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p>
+                                                            <section>
                                                                 <PostCommentText
                                                                     comments={
                                                                         comments
                                                                     }
                                                                 />
-                                                            </p>
+                                                            </section>
 
                                                             <PostCommentCard
                                                                 postId={id}

@@ -205,13 +205,13 @@ export default function Posts(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p>
+                                                            <section>
                                                                 <PostCommentText
                                                                     comments={
                                                                         comments
                                                                     }
                                                                 />
-                                                            </p>
+                                                            </section>
 
                                                             <PostCommentCard
                                                                 postId={id}
