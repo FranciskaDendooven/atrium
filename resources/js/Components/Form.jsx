@@ -7,6 +7,17 @@ export default function Form() {
                 <section className="items-center justify-center font-bold">
                     <h2 className="text-3xl">Button Bot</h2>
                 </section>
+
+                <section className="items-center justify-center font-bold">
+                    <p>
+                        The button bot on discord is very friendly, <br />
+                        loves to get our attention when it's time to push a
+                        button <br />
+                        on MyBecode But we are starting to know it's messages,
+                        <br />
+                        which means it's time to update it's vocabulary! <br />
+                    </p>
+                </section>
                 <form name="buttonBot">
                     <div className="flex flex-col">
                         <div className="m-4">
@@ -79,14 +90,20 @@ export default function Form() {
                         </button>
                     </div>
                 </form>
-
                 <br />
                 <br />
                 <br />
                 <br />
-
                 <section className="items-center justify-center font-bold">
                     <h2 className="text-3xl">Compliment Bot</h2>
+                </section>
+                <section className="items-center justify-center font-bold">
+                    <p>
+                        The compliment bot for discord spreads compliments, <br />
+                        and loves to make someones day by popping in on the server <br />
+                        Someone deserving of a pat on the shoulder? <br /> 
+                        show you appreciation and write a message for the bot to share and bring some love to Dirscord <br />
+                    </p>
                 </section>
                 <form name="buttonBot">
                     <div className="flex flex-col">
