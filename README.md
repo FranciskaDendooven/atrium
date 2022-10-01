@@ -7,9 +7,9 @@ Learn more at:
 
 # About Atrium
 
->It was created within the context of a final project by team "DeadPool" from Class YU-4 of Becode campus Ghent.<br/>
-Atrium is a social platform to unify BeCodians. It came from the desire of connecting all Becode Campuses in one unique platform and bridge the gap that Discord can't.<br/>
-Therefor Atrium allows each becodian, be it a student, coah or staff, to get in touch with their peers from other campuses. <br/>
+>It was created within the context of a final project by team "DeadPool" from Class YU-4 of Becode campus Ghent.
+Atrium is a social platform to unify BeCodians. It came from the desire of connecting all Becode Campuses in one unique platform and bridge the gap that Discord can't.
+Therefor Atrium allows each becodian, be it a student, coah or staff, to get in touch with their peers from other campuses. 
 We gave the platform several categories for different purposes. In the area CodeQ&A for example, the user can ask questions, help or feedback related to their code, and in the area Bots, users can share ideas for our beloved "alarm button".
 
 >It is meant to unify becode students globally, but it is also a learning tool. A tool to be constantly improved and worked upon (within BeCode rules of course ;) ).
