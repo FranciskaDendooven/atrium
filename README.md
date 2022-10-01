@@ -97,7 +97,7 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 ## Bugs & errors
 
 ### Pagination:
->We are using REACT-PAGINATE pacakge component.
+>We are using REACT-PAGINATE package component.
 ####  - Faulty behaviour
 >When content is less than 5 posts per category it does not distribute posts per page properly.
 navigation between each pagination button works, but does not show 3 posts per page persistently.
