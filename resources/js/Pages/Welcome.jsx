@@ -114,11 +114,12 @@ export default function Welcome(props) {
                                                             <section className="m-4">
                                                                 <Link
                                                                     href={route(
-                                                                        "register"
+                                                                        "showQAPosts"
                                                                     )}
                                                                     className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
                                                                 >
-                                                                    Show all posts
+                                                                    Show all
+                                                                    posts
                                                                 </Link>
                                                             </section>
                                                         </PostCard>
@@ -180,11 +181,17 @@ export default function Welcome(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                                <b className="text-lightBlue">
-                                                                    from: {page}
-                                                                </b>
-                                                            </p>
+                                                            <section className="m-4">
+                                                                <Link
+                                                                    href={route(
+                                                                        "showCodeSharePosts"
+                                                                    )}
+                                                                    className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
+                                                                >
+                                                                    Show all
+                                                                    posts
+                                                                </Link>
+                                                            </section>
                                                         </PostCard>
                                                     );
                                                 }
@@ -238,11 +245,17 @@ export default function Welcome(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                                <b className="text-lightBlue">
-                                                                    from: {page}
-                                                                </b>
-                                                            </p>
+                                                            <section className="m-4">
+                                                                <Link
+                                                                    href={route(
+                                                                        "showPifPosts"
+                                                                    )}
+                                                                    className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
+                                                                >
+                                                                    Show all
+                                                                    posts
+                                                                </Link>
+                                                            </section>
                                                         </PostCard>
                                                     );
                                                 }
@@ -294,11 +307,17 @@ export default function Welcome(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                                <b className="text-lightBlue">
-                                                                    from: {page}
-                                                                </b>
-                                                            </p>
+                                                            <section className="m-4">
+                                                                <Link
+                                                                    href={route(
+                                                                        "showBrainFartsPosts"
+                                                                    )}
+                                                                    className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
+                                                                >
+                                                                    Show all
+                                                                    posts
+                                                                </Link>
+                                                            </section>
                                                         </PostCard>
                                                     );
                                                 }
@@ -353,11 +372,17 @@ export default function Welcome(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                                <b className="text-lightBlue">
-                                                                    from: {page}
-                                                                </b>
-                                                            </p>
+                                                            <section className="m-4">
+                                                                <Link
+                                                                    href={route(
+                                                                        "showTechNewsPosts"
+                                                                    )}
+                                                                    className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
+                                                                >
+                                                                    Show all
+                                                                    posts
+                                                                </Link>
+                                                            </section>
                                                         </PostCard>
                                                     );
                                                 }
