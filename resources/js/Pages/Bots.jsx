@@ -26,8 +26,8 @@ export default function Bots(props) {
                         alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                     />
 
-                    <h1 className="text-gray-400 text-2xl m-4 p-2">
-                        Becodians can enter
+                    <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
+                        BeCodians can enter
                         <br />
                         suggestions for our
                         <br />

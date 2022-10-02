@@ -93,6 +93,7 @@ Atrium is therefore open-source. We build it with Laravel-Breeze (inertia) on th
 <p align="center"><a href="" target="_blank"><img src="./public/images/pics/moqup_atrium_example.png" width="400" alt="Laravel Logo"></a></p>
 
 ## WIP
+> - Make the platform available for all screens.
 > - The Bots page and its subsequente functionalities are in development.
 > - Flash Success/Error message when user changes his password.
 
