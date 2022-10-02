@@ -66,9 +66,7 @@ export default function Welcome(props) {
                         <div className="bg-white shadow-sm sm:rounded-lg">
                             <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Code Q&A
-                                    </h1>
+                             
 
                                     {posts.map(
                                             ({
@@ -82,6 +80,9 @@ export default function Welcome(props) {
                                                 if (page === "CodeQA") {
                                                     return (
                                                         <PostCard key={id}>
+                                                            <h1 className="text-gray-900 font-bold text-2xl">
+                                                                Code Q&A
+                                                            </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-19.png"
                                                                 width="150px"
@@ -131,10 +132,7 @@ export default function Welcome(props) {
                                 </section>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Code Share
-                                    </h1>
-
+                                
                                     {posts.map(
                                             ({
                                                 title,
@@ -200,7 +198,7 @@ export default function Welcome(props) {
                                 </section>
 
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">PIF</h1>
+
 
                                     {posts.map(
                                             ({
@@ -217,6 +215,9 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
+                                                            <h1 className="text-gray-900 font-bold text-2xl">
+                                                                PIF
+                                                            </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-11.png"
                                                                 width="150px"
@@ -263,10 +264,7 @@ export default function Welcome(props) {
                                         )}
                                 </section>
                                 <section className=" mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Brain Farts
-                                    </h1>
-
+                                   
                                     {posts.map(
                                             ({
                                                 title,
@@ -279,6 +277,9 @@ export default function Welcome(props) {
                                                 if (page === "BrainFarts") {
                                                     return (
                                                         <PostCard key={id}>
+                                                            <h1 className="text-gray-900 font-bold text-2xl">
+                                                                BrainFarts
+                                                            </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-21.png"
                                                                 width="150px"
@@ -325,10 +326,7 @@ export default function Welcome(props) {
                                         )}
                                 </section>
                                 <section className="mb-6">
-                                    <h1 className="font-bold text-2xl">
-                                        Tech News
-                                    </h1>
-
+                                
                                     {posts.map(
                                             ({
                                                 title,
@@ -344,6 +342,9 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
+                                                            <h1 className="text-gray-900 font-bold text-2xl">
+                                                               Technnews
+                                                            </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-16.png"
                                                                 width="150px"
