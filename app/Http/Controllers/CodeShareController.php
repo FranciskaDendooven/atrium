@@ -13,7 +13,7 @@ class CodeShareController extends Controller
 {
     public function show()
     {
-        $posts = Post::orderBy('updated_at', 'ASC')
+        $posts = Post::orderBy('updated_at', 'DESC')
             ->where('page','Code Share')
             ->with(['comments'])
             ->with('comments.user')

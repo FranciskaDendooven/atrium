@@ -12,7 +12,7 @@ class TechNewsController extends Controller
 {
     public function show()
     {
-        $posts = Post::orderBy('updated_at', 'ASC')
+        $posts = Post::orderBy('updated_at', 'DESC')
             ->where('page','TechNews')
             ->with(['comments'])
             ->with('comments.user')
