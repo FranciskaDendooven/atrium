@@ -13,6 +13,7 @@ class BrainFartsController extends Controller
     public function show()
     {
         $posts = Post::orderBy('updated_at', 'ASC')
+        ->where('page','BrainFarts')
         ->with(['comments'])
         ->with('comments.user')
         ->with('user')
@@ -50,8 +51,6 @@ class BrainFartsController extends Controller
             'tag' => $request->tag,
             'page' => $request->page,
         ]);
-
-        // return redirect()->back();
         return redirect()->route('loadWelcome');
     }
 

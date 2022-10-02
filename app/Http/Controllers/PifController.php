@@ -13,6 +13,7 @@ class PifController extends Controller
     public function show()
     {
         $posts = Post::orderBy('updated_at', 'ASC')
+            ->where('page','PIF')
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')

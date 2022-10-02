@@ -32,6 +32,11 @@ export default function Posts(props) {
     const changePage = ({ selected }) => {
         setPage(selected);
     };
+    console.log("posts.length:" + posts.length);
+    console.log("Post per page:" + postsPerPage);
+    console.log("Total Pages:" + totalPages);
+    console.log("Page Number:" + page);
+    console.log("Number of posts visited:" + numberOfPostsVisited);
     //// pagination ////
 
     return (
@@ -88,8 +93,10 @@ export default function Posts(props) {
 
                     <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
                         Had a breakthrough?
-                        <br/>Wanna share?
-                        <br/>Post it!
+                        <br />
+                        Wanna share?
+                        <br />
+                        Post it!
                     </h1>
                 </DarkBlueBlockHeader>
             </div>
@@ -140,7 +147,6 @@ export default function Posts(props) {
                                                 ) {
                                                     visible = true;
                                                 }
-                                                if (page === "Code Share")
                                                     return (
                                                         <PostCard key={id}>
                                                             <div className="ml-[610px]">
@@ -180,7 +186,7 @@ export default function Posts(props) {
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
-                                                            
+
                                                             <p className="ml-2 mb-4 text-gray-700">
                                                                 <b>
                                                                     by{" "}
@@ -189,11 +195,12 @@ export default function Posts(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p 
-                                                            type="textfield"
-                                                            className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p
+                                                                    type="textfield"
+                                                                    className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                                >
+                                                                    {content}
+                                                                </p>
                                                             </div>
 
                                                             <p className="ml-2 mb-1 font-small text-gray-600">

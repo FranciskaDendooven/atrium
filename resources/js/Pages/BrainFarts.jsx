@@ -143,11 +143,6 @@ export default function Posts(props) {
                                                 ) {
                                                     visible = true;
                                                 }
-                                                if (page === "BrainFarts")
-                                                // if (posts.length === 0 && page === "BrainFarts"){
-                                                //     <p>Be the first to post!</p>
-                                                //                                                     }
-                                             
                                                     return (
                                                         <PostCard key={id}>
                                                             <div className="ml-[610px]">

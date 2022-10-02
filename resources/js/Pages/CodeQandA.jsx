@@ -140,8 +140,6 @@ export default function Posts(props) {
                                                 ) {
                                                     visible = true;
                                                 }
-
-                                                if (page === "CodeQA")
                                                     return (
                                                         <PostCard key={id}>
                                                             <div className="ml-[610px]">
