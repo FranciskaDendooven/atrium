@@ -91,7 +91,8 @@ export default function Posts(props) {
                         <br/><b>P</b>ay <b>I</b>t <b>F</b>orward!
                     </h1>
                     <p className="text-center text-gray-400 font-bold text-m mb-4 p-2"
-                        >Help your fellow BeCodians by passing job-related stuff on.
+                        >Help your fellow BeCodians on their journey to a better professional live <br/>
+                        by sharing job-related stuff.
                         <br/>Examples: Internships, job-expectations vs reality,...
                     </p>
                 </DarkBlueBlockHeader>

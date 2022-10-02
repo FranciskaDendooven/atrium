@@ -41,7 +41,7 @@ Atrium is therefore open-source. We build it with Laravel-Breeze (inertia) on th
 - Login and Register
 - Posts section CRUD actions: publish posts, comment, edit and delete
 - User Profile CRUD actions:
-    - edit your name and email
+    - edit your user name and email
     - change you password.
 - Forum styled pages for code, pay-it-forward, technews, and memejokes called BrainFarts
 
