@@ -34,10 +34,17 @@
 .navigationButtons a {
   padding: 10px;
   margin: 8px;
-  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
   border: 1px solid #16232e;
   color: #16232e;
   cursor: pointer;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
  
 .navigationButtons a:hover {
