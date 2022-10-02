@@ -51,7 +51,6 @@ export default function Authenticated({ auth, header, children }) {
                                         <Dropdown.Content>
                                             <Dropdown.Link
                                                 href={route("showPosts")}
-                                                // active={route().current("showPosts")}
                                                 method="get"
                                                 as="button"
                                             >
@@ -207,28 +206,6 @@ export default function Authenticated({ auth, header, children }) {
                         " sm:hidden"
                     }
                 >
-                
-
-                    {/* <div className="pt-4 pb-1 border-t border-gray-200">
-                        <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">
-                                {auth.user.name}
-                            </div>
-                            <div className="font-medium text-sm text-gray-500">
-                                {auth.user.email}
-                            </div>
-                        </div>
-
-                        <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink
-                                method="post"
-                                href={route("logout")}
-                                as="button"
-                            >
-                                Log Out
-                            </ResponsiveNavLink>
-                        </div>
-                    </div> */}
                 </div>
             </nav>
 

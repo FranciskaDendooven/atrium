@@ -51,6 +51,7 @@ class BrainFartsController extends Controller
             'tag' => $request->tag,
             'page' => $request->page,
         ]);
+
         return redirect()->route('loadWelcome');
     }
 
@@ -58,7 +59,6 @@ class BrainFartsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-
         return Inertia::render('Posts/Edit', [
             'post' => $post
         ]);
@@ -85,8 +85,6 @@ class BrainFartsController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-
-
         return redirect()->route('showBrainFartsPosts');
     }
 }
