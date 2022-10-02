@@ -84,7 +84,7 @@ export default function Welcome(props) {
                                                         <PostCard key={id}>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-19.png"
-                                                                width="200px"
+                                                                width="150px"
                                                                 alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                                                             />
 
@@ -111,11 +111,16 @@ export default function Welcome(props) {
                                                                 </b>
                                                             </p>
 
-                                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                                <b className="text-lightBlue">
-                                                                    from: {page}
-                                                                </b>
-                                                            </p>
+                                                            <section className="m-4">
+                                                                <Link
+                                                                    href={route(
+                                                                        "register"
+                                                                    )}
+                                                                    className="py-2 px-6 m-4 rounded-full font-bold  text-white text-l bg-redOrange"
+                                                                >
+                                                                    Show all posts
+                                                                </Link>
+                                                            </section>
                                                         </PostCard>
                                                     );
                                                 }
@@ -144,9 +149,12 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
+                                                            <h1 className="text-gray-900 font-bold text-2xl">
+                                                                Code Share
+                                                            </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-12.png"
-                                                                width="200px"
+                                                                width="150px"
                                                                 alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                                                             />
                                                             <h1 className="mt-1 font-bold text-gray-700">
@@ -204,7 +212,7 @@ export default function Welcome(props) {
                                                         >
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-11.png"
-                                                                width="200px"
+                                                                width="150px"
                                                                 alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                                                             />
                                                             <h1 className="mt-1 font-bold text-gray-700">
@@ -260,7 +268,7 @@ export default function Welcome(props) {
                                                         <PostCard key={id}>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-21.png"
-                                                                width="200px"
+                                                                width="150px"
                                                                 alt="avatar image for brainfarts, a profile smile face"
                                                             />
                                                             <h1 className="mt-1 font-bold text-gray-700">
@@ -319,7 +327,7 @@ export default function Welcome(props) {
                                                         >
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-16.png"
-                                                                width="200px"
+                                                                width="150px"
                                                                 alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
                                                             />
                                                             <h1 className="mt-1 font-bold text-gray-700">
