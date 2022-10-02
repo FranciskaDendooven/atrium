@@ -25,7 +25,6 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        //dd($id);
         $request->validate([
             'username' => 'required|max:255|min:1',
             'email' => 'required|max:10000|min:1',
@@ -46,9 +45,6 @@ class UserController extends Controller
 
     public function updatePassword(Request $request)
     {
-        //dd('does it get here');
-        //dd($request);
-
             # Validation
             $request->validate([
                 'password' => 'required',
@@ -56,16 +52,12 @@ class UserController extends Controller
                 'current_password' => 'required',
             ]);
 
-            //dd('does it get here');
-
             #Match The Old Password
             if(!Hash::check($request->current_password, auth()->user()->password)){
                 dd($request);
                 return back()->with('errors' , 'Current Password does not match!');
             }
             
-           
-
             #Update the new Password
             User::whereId(auth()->user()->id)->update([
                 'password' => Hash::make($request->password)

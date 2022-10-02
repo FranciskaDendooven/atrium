@@ -42,7 +42,6 @@ class PostController extends Controller
             'page' => 'required',
         ]);
        
-
         Post::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
@@ -51,16 +50,13 @@ class PostController extends Controller
             'page' => $request->page,
         ]);
 
-        // return redirect()->back();
         return redirect()->route('loadWelcome');
-        
     }
 
 
     public function edit($id)
     {
         $post = Post::find($id);
-
         return Inertia::render('Posts/Edit', [
             'post'=> $post
         ]);
@@ -87,8 +83,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-
-
         return redirect()->route('loadWelcome');
     }
 

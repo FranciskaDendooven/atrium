@@ -51,7 +51,6 @@ class TechNewsController extends Controller
             'page' => $request->page,
         ]);
 
-        // return redirect()->back();
         return redirect()->route('loadWelcome');
     }
 

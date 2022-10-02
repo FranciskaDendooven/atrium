@@ -44,7 +44,6 @@ class CodeShareController extends Controller
             'page' => $request->page,
         ]);
 
-        // return redirect()->back();
         return redirect()->route('loadWelcome');
     }
 
@@ -52,7 +51,6 @@ class CodeShareController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-
         return Inertia::render('Posts/Edit', [
             'post' => $post
         ]);
@@ -79,8 +77,6 @@ class CodeShareController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-
-
         return redirect()->route('showCodeSharePosts');
     }
 }

@@ -25,19 +25,19 @@ class WelcomeController extends Controller
             ->with('user')
             ->first();
         $pifPost = Post::latest('updated_at')
-            ->where('page','PIF')
+            ->where('page', 'PIF')
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')
             ->first();
         $brainFartsPost = Post::latest('updated_at')
-            ->where('page','BrainFarts')
+            ->where('page', 'BrainFarts')
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')
             ->first();
         $codeQAPost = Post::latest('updated_at')
-            ->where('page','CodeQA')
+            ->where('page', 'CodeQA')
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')
@@ -45,8 +45,6 @@ class WelcomeController extends Controller
 
         $posts = [];
         array_push($posts, $techPost, $CodeSharePost, $pifPost, $brainFartsPost, $codeQAPost);
-
-       // dd($posts);
 
         return Inertia::render('Welcome', [
             'canLogin' => Route::has('login'),
