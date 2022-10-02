@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
+import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
 import Footer from "@/Layouts/Footer";
@@ -81,6 +82,12 @@ export default function Welcome(props) {
                                                 if (page === "CodeQA") {
                                                     return (
                                                         <PostCard key={id}>
+                                                            <CentralLogo
+                                                                src="images/icon/atriumIcons-19.png"
+                                                                width="200px"
+                                                                alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
+                                                            />
+
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
@@ -93,12 +100,11 @@ export default function Welcome(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                    {content}
+                                                                </p>
                                                             </div>
-                                                
-                                                            
+
                                                             <p className="ml-2 mb-1 font-small text-gray-600">
                                                                 <b className="text-lightBlue">
                                                                     tags: {tag}
@@ -138,7 +144,12 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
-                                                           <h1 className="mt-1 font-bold text-gray-700">
+                                                            <CentralLogo
+                                                                src="images/icon/atriumIcons-12.png"
+                                                                width="200px"
+                                                                alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
+                                                            />
+                                                            <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
 
@@ -150,11 +161,11 @@ export default function Welcome(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                    {content}
+                                                                </p>
                                                             </div>
-                                                            
+
                                                             <p className="ml-2 mb-1 font-small text-gray-600">
                                                                 <b className="text-lightBlue">
                                                                     tags: {tag}
@@ -191,6 +202,11 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
+                                                            <CentralLogo
+                                                                src="images/icon/atriumIcons-11.png"
+                                                                width="200px"
+                                                                alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
+                                                            />
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
@@ -203,11 +219,11 @@ export default function Welcome(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                    {content}
+                                                                </p>
                                                             </div>
-                                                            
+
                                                             <p className="ml-2 mb-1 font-small text-gray-600">
                                                                 <b className="text-lightBlue">
                                                                     tags: {tag}
@@ -242,6 +258,11 @@ export default function Welcome(props) {
                                                 if (page === "BrainFarts") {
                                                     return (
                                                         <PostCard key={id}>
+                                                            <CentralLogo
+                                                                src="images/icon/atriumIcons-21.png"
+                                                                width="200px"
+                                                                alt="avatar image for brainfarts, a profile smile face"
+                                                            />
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
@@ -254,11 +275,11 @@ export default function Welcome(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                    {content}
+                                                                </p>
                                                             </div>
-                                                            
+
                                                             <p className="ml-2 mb-1 font-small text-gray-600">
                                                                 <b className="text-lightBlue">
                                                                     tags: {tag}
@@ -296,6 +317,11 @@ export default function Welcome(props) {
                                                             className=""
                                                             key={id}
                                                         >
+                                                            <CentralLogo
+                                                                src="images/icon/atriumIcons-16.png"
+                                                                width="200px"
+                                                                alt="avatar image for tech news, a profile smile face with lab jar for a speech bubble"
+                                                            />
                                                             <h1 className="mt-1 font-bold text-gray-700">
                                                                 {title}
                                                             </h1>
@@ -308,11 +334,11 @@ export default function Welcome(props) {
                                                             </p>
 
                                                             <div className="content">
-                                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                                {content}
-                                                            </p>
+                                                                <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
+                                                                    {content}
+                                                                </p>
                                                             </div>
-                                                            
+
                                                             <p className="ml-2 mb-1 font-small text-gray-600">
                                                                 <b className="text-lightBlue">
                                                                     tags: {tag}
