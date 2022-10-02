@@ -94,7 +94,7 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 
 ## WIP
 > - The Bots page and its subsquente functionalities still need to be developed. Right now is only a static page.
-> - When changing the password, an error or success message still needs to be prompt to the user, for them to know if there action was accomplished or not.
+> - Missing flash Success/Error message when user changes password.
 
 ## Bugs
 
