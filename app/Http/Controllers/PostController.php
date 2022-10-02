@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $posts = Post::orderBy('page', 'DESC')
+        $posts = Post::orderBy('updated_at', 'DESC')
             ->with(['comments'])
             ->with('comments.user')
             ->with('user')
@@ -24,7 +24,12 @@ class PostController extends Controller
     
     {
         $id = auth()->user()->id;
-        $posts = Post::where('user_id', $id)->with('user')->get();
+        $posts = Post::orderBy('page', 'DESC')
+        ->where('user_id', $id)
+        ->with(['comments'])
+        ->with('comments.user')
+        ->with('user')
+        ->get();
         return Inertia::render('Userprofile', ['posts' => $posts]);
     }
 

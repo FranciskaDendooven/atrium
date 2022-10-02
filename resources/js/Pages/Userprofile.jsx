@@ -4,6 +4,8 @@ import { Head, Link } from "@inertiajs/inertia-react";
 import CentralLogo from "@/Components/CentralLogo";
 import DarkBlueBlockHeader from "@/Components/DarkBlueBlockHeader";
 import PostCard from "@/Components/PostCard";
+import PostCommentCard from "@/Components/PostCommentCard";
+import PostCommentText from "@/Components/PostCommentText";
 import Footer from "@/Layouts/Footer";
 import SearchBar from "@/Components/SearchBar";
 import ReactPaginate from "react-paginate";
@@ -107,92 +109,135 @@ export default function Profile(props) {
                 </section>
 
                 <div className="flex flex-col justify-center items-center sm:items-center sm:pt-10">
-                    <section className="mb-6">
-                        <h1 className="font-bold text-2xl">My posts</h1>
+                <section className="mb-6">
+                                    <h1 className="font-bold text-2xl">My Posts</h1>
 
-                        {posts
-                            .slice(
-                                numberOfPostsVisited,
-                                numberOfPostsVisited + postsPerPage
-                            )
-                            .map(({ title, content, page, tag, id, user }) => {
-                                {
-                                    return (
-                                        <PostCard key={id}>
-                                            <Link
-                                                tabIndex="1"
-                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
-                                                href={route(
-                                                    "showUpdatedPost",
-                                                    id
-                                                )}
-                                            >
-                                                Edit
-                                            </Link>
+                                    {posts
+                                        .slice(numberOfPostsVisited,
+                                            numberOfPostsVisited + postsPerPage).map(
+                                            ({
+                                                id,
+                                                user_id,
+                                                title,
+                                                content,
+                                                tag,
+                                                page,
+                                                comments,
+                                                user,
+                                            }) => {
+                                                let visible = false;
 
-                                            <button
-                                                onClick={(
-                                                    e
-                                                ) =>
-                                                    deleteMsg(
-                                                        e,
-                                                        id
-                                                    )
+                                                if (
+                                                    props.auth.user &&
+                                                    user_id ==
+                                                        props.auth.user.id
+                                                ) {
+                                                    visible = true;
                                                 }
-                                                type="submit"
-                                                className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
-                                            >
-                                                Delete
-                                            </button>
+                                                    return (
+                                                        <PostCard key={id}>
+                                                            <div className="ml-[610px]">
+                                                                {visible ? (
+                                                                    <>
+                                                                        <Link
+                                                                            tabIndex="1"
+                                                                            className="py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                                                                            href={route(
+                                                                                "showUpdatedPost",
+                                                                                id
+                                                                            )}
+                                                                        >
+                                                                            Edit
+                                                                        </Link>
 
-                                            <h1 className="mt-1 font-bold text-gray-700">
-                                                {title}
-                                            </h1>
+                                                                        <button
+                                                                            onClick={(
+                                                                                e
+                                                                            ) =>
+                                                                                deleteMsg(
+                                                                                    e,
+                                                                                    id
+                                                                                )
+                                                                            }
+                                                                            type="submit"
+                                                                            className="py-2 px-3 ml-2 rounded-full text-white text-l bg-redOrange focus:outline-none"
+                                                                        >
+                                                                            Delete
+                                                                        </button>
+                                                                    </>
+                                                                ) : (
+                                                                    " "
+                                                                )}
+                                                            </div>
 
-                                            <p className="ml-2 mb-4 text-gray-700">
-                                                <b>
-                                                    by{" "}
-                                                    {user.name}
-                                                </b>
-                                            </p>
 
-                                            <div className="content">
-                                            <p className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis ">
-                                                {content}
-                                            </p>
-                                            </div>
-                                            
-                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                <b className="text-lightBlue">
-                                                    tags: {tag}
-                                                </b>
-                                            </p>
+                                                            <h1 className="mt-1 font-bold text-gray-700">
+                                                                {title}
+                                                            </h1>
+                                                            
+                                                            <p className="ml-2 mb-4 text-gray-700">
+                                                                <b>
+                                                                    by{" "}
+                                                                    {user.name}
+                                                                </b>
+                                                            </p>
 
-                                            <p className="ml-2 mb-1 font-small text-gray-600">
-                                                <b className="text-lightBlue">
-                                                    from: {page}
-                                                </b>
-                                            </p>
-                                        </PostCard>
-                                    );
-                                }
-                            })}
-                        <section className="mx-4 my-4">
-                            <ReactPaginate
-                                previousLabel={"Previous"}
-                                nextLabel={"Next"}
-                                pageCount={totalPages}
-                                onPageChange={changePage}
-                                containerClassName={"navigationButtons"}
-                                previousLinkClassName={"previousButton"}
-                                nextLinkClassName={"nextButton"}
-                                disabledClassName={"navigationDisabled"}
-                                activeClassName={"navigationActive"}
-                                pageRangeDisplayed={3}
-                                renderOnZeroPageCount={null}
-                            />
-                        </section>
-                    </section>
+                                                            <div
+                                                                id="postContent"
+                                                                type="textfield"
+                                                                className="flex flex-col ml-2 mb-5 w-[500px] text-ellipsis "
+                                                            >
+                                                                {content}
+                                                            </div>
+                                                            <p className="ml-2 mb-1 text-lg font-bold text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    From: {page}
+                                                                </b>
+                                                            </p>
+
+                                                            <p className="ml-2 mb-1 font-small text-gray-600">
+                                                                <b className="text-lightBlue">
+                                                                    tags: {tag}
+                                                                </b>
+                                                            </p>
+
+                                                            <section>
+                                                                <PostCommentText
+                                                                    comments={
+                                                                        comments
+                                                                    }
+                                                                />
+                                                            </section>
+
+                                                            <PostCommentCard
+                                                                postId={id}
+                                                            />
+                                                        </PostCard>
+                                                    );
+                                            }
+                                        )}
+                                    <section className="mx-4 my-4">
+                                        <ReactPaginate
+                                          pageRangeDisplayed={10}
+                                          renderOnZeroPageCount={null}
+                                          previousLabel={"Previous"}
+                                          nextLabel={"Next"}
+                                          pageCount={totalPages}
+                                          onPageChange={changePage}
+                                          containerClassName={
+                                              "navigationButtons"
+                                          }
+                                          previousLinkClassName={
+                                              "previousButton"
+                                          }
+                                          nextLinkClassName={"nextButton"}
+                                          disabledClassName={
+                                              "navigationDisabled"
+                                          }
+                                          activeClassName={"navigationActive"}
+                                        />
+                                    </section>
+                                </section>
 
                 </div>
             </div>
