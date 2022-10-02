@@ -98,7 +98,7 @@ Atrium is therefore open-source. We build it with Laravel-Breeze (inertia) on th
 
 ## Bugs
 
-> - You have to reload the page, when posting several comments.
+> - When posting several comments, the user has to reload the page, 
 
 # Team
 
