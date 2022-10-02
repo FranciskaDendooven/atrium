@@ -31,7 +31,7 @@ export default function Bots(props) {
                         <br />
                         suggestions for our
                         <br />
-                        Dicord server bots. <br />
+                        Discord server bots. <br />
                     </h1>
                 </DarkBlueBlockHeader>
             </div>

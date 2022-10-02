@@ -9,12 +9,12 @@ Learn more at:
 
 >It was created within the context of a final project by team "DeadPool" from Class YU-4 of Becode campus Ghent.
 >Atrium is a social platform to unify BeCodians. It came from the desire of connecting all Becode Campuses in one unique platform and bridge the gap that Discord can't.
-Therefor Atrium allows each becodian, be it a student, coah or staff, to get in touch with their peers from other campuses. 
+Therefore Atrium allows each BeCodian, be it a student, coah or staff, to get in touch with their peers from other campuses. 
 We gave the platform several categories for different purposes. In the area CodeQ&A for example, the user can ask questions, help or feedback related to their code, and in the area Bots, users can share ideas for our beloved "alarm button".
 
 >It is meant to unify becode students globally, but it is also a learning tool. A tool to be constantly improved and worked upon (within BeCode rules of course ;) ).
-It was such an ambitious project, that we knew perfectly that 4 weeks (the time given in "Kingsize project" exercise) was not enough to build all we had envisioned, so we leave this project open to future Becodians to pick it up and build from where we left.
-Atrium is therefor open-source. We build it with Laravel-Breeze on the back end and ReactJS on the front end.
+It was such an ambitious project, that we knew 4 weeks (the time given in "Kingsize project" exercise) was not enough to build all we had envisioned. So we leave this project open to future BeCodians to pick it up and build from where we left.
+Atrium is therefore open-source. We build it with Laravel-Breeze (inertia) on the back end and ReactJS on the front end.
 
 >So, get in touch with your fellow BeCodians and push that button! For in BeCodians we trust!
 
@@ -35,7 +35,7 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 
 ## Features
 
-> Platform is public but only registerd users can participate
+> The platform is public but only registered users can participate.
 
 ### Acomplished so far:
 - Login and Register
@@ -46,9 +46,9 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 - Forum styled pages for code, pay-it-forward, technews, and memejokes called BrainFarts
 
 ### Desired future features:
- - Adding pictures to users Profile
- - WUSIWYG editor for post and comments
- - Acessibility darkmode
+ - Users abbility to upload their own profile picture
+ - WYSIWYG editor for posts and comments
+ - Darkmode toggle
  - Ability to share pictures or videos
 
 ## Languages
@@ -93,12 +93,12 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 <p align="center"><a href="" target="_blank"><img src="./public/images/pics/moqup_atrium_example.png" width="400" alt="Laravel Logo"></a></p>
 
 ## WIP
-> - The Bots page and its subsquente functionalities still need to be developed. Right now is only a static page.
-> - Missing flash Success/Error message when user changes password.
+> - The Bots page and its subsequente functionalities are in development.
+> - Flash Success/Error message when user changes his password.
 
 ## Bugs
 
-None that we have noticed at date of delivery.
+> - You have to reload the page, when posting several comments.
 
 # Team
 
