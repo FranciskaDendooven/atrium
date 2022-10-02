@@ -208,7 +208,7 @@ export default function Profile(props) {
                                         <PostCard className="" key={id}>
                                             <Link
                                                 tabIndex="1"
-                                                className="ml-[610px] py-2 px-3 mt-1 ml-2 rounded-full text-white text-l bg-lightBlue focus:outline-none"
+                                                className="ml-[610px] py-2 px-3 mt-1 rounded-full text-white text-l bg-lightBlue focus:outline-none"
                                                 href={route(
                                                     "showUpdatedPost",
                                                     id
