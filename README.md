@@ -9,7 +9,7 @@ Learn more at:
 
 >It was created within the context of a final project by team "DeadPool" from Class YU-4 of Becode campus Ghent.
 >Atrium is a social platform to unify BeCodians. It came from the desire of connecting all Becode Campuses in one unique platform and bridge the gap that Discord can't.
-Therefor Atrium allows each becodian, be it a student, coah or staff, to get in touch with their peers from other campuses. 
+Therefor Atrium allows each becodian, be it a student, coach or staff, to get in touch with their peers from other campuses. 
 We gave the platform several categories for different purposes. In the area CodeQ&A for example, the user can ask questions, help or feedback related to their code, and in the area Bots, users can share ideas for our beloved "alarm button".
 
 >It is meant to unify becode students globally, but it is also a learning tool. A tool to be constantly improved and worked upon (within BeCode rules of course ;) ).
@@ -35,13 +35,13 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 
 ## Features
 
-> Platform is public but only registerd users can participate
+> Platform is public but only registered users can participate.
 
 ### Acomplished so far:
 - Login and Register
 - Posts section CRUD actions: publish posts, comment, edit and delete
 - User Profile CRUD actions:
-    - edit your name and email
+    - edit your user name and email
     - change you password.
 - Forum styled pages for code, pay-it-forward, technews, and memejokes called BrainFarts
 
@@ -94,11 +94,11 @@ Atrium is therefor open-source. We build it with Laravel-Breeze on the back end 
 
 ## WIP
 > - The Bots page and its subsquente functionalities still need to be developed. Right now is only a static page.
-> - Missing flash Success/Error message when user changes password.
+> - Missing flash Success/Error message when user changes password, email and user name.
 
 ## Bugs
 
-None that we have noticed at date of delivery.
+None that we have noticed up to delivery date.
 
 # Team
 

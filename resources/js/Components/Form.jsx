@@ -10,10 +10,11 @@ export default function Form() {
 
                 <section className="items-center justify-center ">
                     <p>
-                        The button bot on discord is very friendly, <br />
-                        loves to get our attention when it's time to push a
-                        button <br />
-                        on MyBecode But we are starting to know it's messages,
+                        <b>The button bot!</b><br/>
+                        This bot is very friendly. <br />
+                        Loves to get our attention just before it's time to push that attendance
+                        button on MyBecode.<br />
+                        But somtimes we may grow fatigued of it's messages,
                         <br />
                         which means it's time to update it's vocabulary! <br />
                     </p>
@@ -99,10 +100,11 @@ export default function Form() {
                 </section>
                 <section className="items-center justify-center ">
                     <p>
-                        The compliment bot for discord spreads compliments, <br />
-                        and loves to make someones day by popping in on the server <br />
+                    <b>The compliment bot!</b><br/>
+                        This bot spreads compliments, <br />
+                        and loves to make someone's day when popping by surprise on the server with a "Thank you @becodian!"<br />
                         Someone deserving of a pat on the shoulder? <br /> 
-                        show you appreciation and write a message for the bot to share and bring some love to Dirscord <br />
+                        Show you appreciation and write a message for the bot to share and bring some love to Discord <br />
                     </p>
                 </section>
                 <form name="buttonBot">

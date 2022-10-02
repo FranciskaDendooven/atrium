@@ -92,7 +92,7 @@ export default function Posts(props) {
                         Get ready to ask your question right below 😊
                     </h1>
                     <p className="text-center text-gray-400 font-bold text-m mb-4 p-2"
-                        >Pssst! The Code Share page is the one you need to for your YES-code moment 😉
+                        >Pssst! The Code Share page is the one you need for your YES!-code moment 😉
                     </p>
                 </DarkBlueBlockHeader>
             </div>
