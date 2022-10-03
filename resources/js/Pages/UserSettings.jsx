@@ -29,8 +29,10 @@ export default function UserSettings(props) {
 
                     <h1 className="text-center text-gray-400 text-2xl m-4 p-2">
                         Edit your account settings here!
-                        <br/>Changing your password every now and then is good practice.
                     </h1>
+                    <p className="text-center text-gray-400 font-bold text-m mb-4 p-2"
+                        >Do you know that, changing your password every now and then is good practice? 😉
+                    </p>
                 </DarkBlueBlockHeader>
             </div>
 

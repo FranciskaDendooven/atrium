@@ -343,7 +343,7 @@ export default function Welcome(props) {
                                                             key={id}
                                                         >
                                                             <h1 className="text-gray-900 font-bold text-2xl">
-                                                               Technnews
+                                                               Tech News
                                                             </h1>
                                                             <CentralLogo
                                                                 src="images/icon/atriumIcons-16.png"
